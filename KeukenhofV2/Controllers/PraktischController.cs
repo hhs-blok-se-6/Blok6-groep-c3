@@ -18,11 +18,11 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Praktisch()
+        public async Task<IActionResult> Toegankelijkheid()
         {
-            var toegankelijkheidContent = from tc in _context.Toegankelijkheid select tc;
+            var toegankelijkheidContent = from tc in _context.ToegankelijkheidContent select tc;
 
-            return View("Toegankelijkheid", await toegankelijkheidContent.AsNoTracking().ToListAsync());
+            return View("Praktischepaginas/Toegankelijkheid", await toegankelijkheidContent.AsNoTracking().ToListAsync());
         }
     }
 }

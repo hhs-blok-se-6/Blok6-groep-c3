@@ -2,7 +2,7 @@
     background-color: #CEDBD8;
     border: none;
     color: #36454E;
-    font-family: Avenir;
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -13,11 +13,30 @@
     border-radius: 2px;
 }
 
+.rolstoelbutton {
+    width: 179px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1.5px solid #00694C;
+    box-sizing: border-box;
+    border-radius: 27px;
+    border-color: #00694C;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+    align-items: center;
+    text-align: center;
+    color: #36454E;
+}
+
 .datum {
     width: 134px;
     height: 12px;
     left: 184px;
     top: 73px;
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 800;
     font-size: 12px;
@@ -33,6 +52,7 @@
     height: 84px;
     left: 125px;
     top: 110px;
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -41,7 +61,32 @@
     vertical-align: top;
 }
 
+.evenementtextklein {
+    left: 11.11%;
+    right: 51.39%;
+    top: 48.05%;
+    bottom: 44.14%;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #36454E;
+    vertical-align: top;
+}
+
+.grijzetext{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    vertical-align: top;
+    color: #808E96;
+}
+
 .breadcrumbs {
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -51,6 +96,7 @@
 }
 
 .breadcrumbsactive {
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -78,4 +124,24 @@
     width: 1152px;
     height: 329px;
     object-fit: cover;
+}
+
+.toegankelijkheidoftitel {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 48px;
+    vertical-align: top;
+    color: #1F2325;
+}
+
+.kleinetitel {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    vertical-align: top;
+    color: #1F2325;
 }
