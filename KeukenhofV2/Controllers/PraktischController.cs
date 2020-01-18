@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using KeukenhofV2.Data;
 using Microsoft.AspNetCore.Mvc;
+using KeukenhofV2.Data;
+using KeukenhofV2.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace KeukenhofV2.Controllers
@@ -17,11 +18,11 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Toegankelijkheid()
+        public async Task<IActionResult> Praktisch()
         {
-            var toegankelijkheidContents = from tc in _context.EvenementenContent select tc;
+            var toegankelijkheidContent = from tc in _context.Toegankelijkheid select tc;
 
-            return View("Toegankelijkheid", await toegankelijkheidContents.AsNoTracking().ToListAsync());
+            return View("Toegankelijkheid", await toegankelijkheidContent.AsNoTracking().ToListAsync());
         }
     }
 }

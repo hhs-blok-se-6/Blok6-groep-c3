@@ -10,8 +10,6 @@ using Microsoft.AspNetCore.Authorization;
 using KeukenhofV2.Data;
 using Microsoft.EntityFrameworkCore;
 
-
-
 namespace KeukenhofV2.Controllers
 {
     public class HomeController : Controller
