@@ -1,0 +1,760 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+
+/*Google Fonts*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+    /* main colors */
+    --green: #00694C;
+    --green-secundary: #2B7F68;
+    --green-light: #CEDBD8;
+    --green-background: #E1EBE9;
+    --orange: #EA6025;
+    --orange-dark: #CC4207;
+    --orange-light: #FBDFD3;
+    --black: #1F2325;
+    --grey-dark: #36454E;
+    --grey-light: #808E96;
+    /* icons*/
+    --chevron-down: url(../images/Icons/Essentials/chevron-down.png);
+    --chevron-up: url(../images/Icons/Essentials/chevron-up.png);
+}
+
+body {
+    font-family: "Helvetica Neue,Helvetica,Arial,sans-serif";
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    left: 0;
+    top: 0;
+}
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+/* main elements */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", "Verdana", "Tahoma", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    position: center;
+    /*mix-blend-mode: darken;*/
+    display: block;
+}
+
+/*Home*/
+
+.cover {
+    background-image: url(../images/P01Home/cover1.png);
+    width: 100%;
+    height: 628px;
+    left: 0;
+    top: 0;
+}
+
+    .cover .textbox {
+        cursor: pointer;
+    }
+
+.cover-img {
+    float: left;
+    margin-left: 15%;
+}
+
+.cover-text {
+    color: white;
+    padding-top: 35%;
+    padding-left: 3%;
+    font-size: 52px;
+    line-height: 56px;
+    float: left;
+}
+
+.textbox {
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    margin-left: 0;
+    padding: 16px;
+}
+
+
+#left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.white {
+    color: black;
+    background: white;
+}
+
+.orange {
+    color: white;
+    background: orange;
+}
+
+h4.orange, label + .textbox orange {
+    color: white;
+}
+
+h4.white, label.white {
+    color: var(--black);
+}
+
+label.textbox.orange {
+    color: red;
+}
+
+.icon-white {
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+}
+
+.icon-black {
+    filter: black;
+}
+
+.icon-orange {
+    filter: orange;
+}
+
+/*Header*/
+
+
+header .nav-container, header #actions-container {
+    display: block;
+    width: auto;
+    margin: auto;
+    max-width: 1152px;
+    position: relative;
+}
+
+
+header nav {
+    position: static;
+    width: auto;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.navbar {
+    background: white;
+    border-color: white;
+    color: var(--grey-dark);
+    text-align: left;
+    z-index: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5px;
+}
+
+.nav-link-item {
+    /* Label */
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    /* Dark Grey */
+    color: #36454E;
+}
+
+.nav-list-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.pointer {
+    margin-top: 15px;
+}
+
+.header-keukenhof-logo {
+    margin-left: 26px;
+}
+/*Footer*/
+footer {
+    position: relative;
+    background: var(--white);
+}
+
+.footer-logo-keukenhof {
+    display: initial;
+    margin-top: 20px;
+}
+
+.footer-social-icons {
+    margin-top: 112px;
+}
+
+.centered {
+    margin: auto;
+    margin-top: 20%;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid var(--green-light);
+}
+
+h1, h2, h3, h4, h5, h6, p, label, caption {
+    display: flex;
+    align-items: center;
+}
+
+p, a, label, caption {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* mobile */
+@media screen and (max-width: 480px) {
+
+    h1 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    h3 {
+        font-size: 21px;
+        line-height: 24px;
+    }
+
+    h4 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    h5 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 18px;
+        color: #36454E;
+    }
+
+    small {
+        font-size: 11px;
+        line-height: 18px;
+        color: var(--grey-dark);
+    }
+
+    label {
+        font-weight: 800;
+        font-size: 12px;
+        line-height: 21px;
+    }
+
+    caption {
+        font-weight: 800;
+        font-size: 8px;
+        line-height: 120%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--grey-dark);
+    }
+
+    a {
+        font-size: 12px;
+        line-height: 28px;
+    }
+
+        a:hover {
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+/* desktop */
+
+h1 {
+    font-size: 52px;
+    line-height: 56px;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 40px;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 31px;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+h5 {
+    font-size: 20px;
+    line-height: 28px;
+    border-radius: 4px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--grey-dark);
+}
+
+small {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--grey-dark);
+}
+
+label {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+}
+
+caption {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--grey-dark);
+}
+
+a {
+    font-family: Avenir;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+    a:hover {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+
+
+/* icons */
+
+.arrow-left {
+    width: 15px;
+    height: 14px;
+    background-image: url('../images/Icons/Essentials/arrow-left.png');
+}
+
+.arrow-right {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    right: 10%;
+    background-image: url('../images/Icons/Essentials/arrow-right.png');
+}
+
+.arrow-up {
+    width: 15px;
+    height: 14px;
+    background-image: url('../images/Icons/Essentials/arrow-up.png');
+}
+
+.arrow-down {
+    width: 15px;
+    height: 14px;
+    background-image: url('../images/Icons/Essentials/arrow-down.png');
+}
+
+.chevron-left {
+    list-style-image: url('../images/Icons/Essentials/chevron-left.png');
+}
+
+.chevron-right {
+    list-style-image: url('../images/Icons/Essentials/chevron-right.png');
+}
+
+.chevron-up {
+    list-style-image: url('../images/Icons/Essentials/chevron-up.png');
+}
+
+.chevron-down {
+    list-style-image: url('../images/Icons/Essentials/chevron-down.png');
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.container-img-2 {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+.container-img-3 {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.container-img-4 {
+    float: left;
+    width: 25%;
+    padding: 5px;
+}
+
+/* colors */
+/*.color {
+    border: 4px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+}*/
+
+.green {
+    background: var(--green);
+    /*border: 1.5px solid #00694C;*/
+}
+
+.green-secundary {
+    background: var(--green-secundary);
+}
+
+.green-light {
+    background: var(--green-light);
+}
+
+.green-background {
+    background: var(--green-background);
+}
+
+#orange {
+    background-color: var(--orange);
+    color: white;
+}
+
+.orange-dark {
+    background: var(--orange-dark);
+}
+
+.orange-light {
+    background: var(--orange-light);
+}
+
+.black {
+    background: var(--black);
+}
+
+.Grey-dark {
+    background: var(--grey-dark);
+}
+
+.Grey-light {
+    background: var(--green-light);
+}
+
+#white {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+textarea, textarea:focus, input, input:focus {
+    border-width: 0;
+    outline-width: 0;
+}
+
+/* Blocks and Buttons*/
+
+.button {
+    position: absolute;
+    border: 1px solid var(--orange);
+    text-align: right;
+    margin-top: 10%;
+    margin-left: 10px;
+    border-radius: 27px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#wrap {
+    display: flex;
+}
+
+#box {
+    border: 1px solid #c3c3c3;
+    display: flex;
+    flex-direction: row;
+}
+
+    #box div {
+        width: 50px;
+        height: 50px;
+        border: 1px solid red;
+    }
+
+.plate {
+    background: var(--green-secundary);
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.rectangle {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: inline-block;
+    padding-left: 32px;
+    text-align: left;
+}
+
+.round { /* rounds the border */
+    border-radius: 27px;
+}
+
+
+.default {
+    cursor: default;
+}
+
+#overlay { /* makes the site darker */
+    position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.7;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* featured */
+
+.feature {
+    position: absolute;
+    margin: 4px auto;
+}
+
+    .feature .rectangle::before {
+        float: right;
+        content: url(../images/Icons/Essentials/arrow-right.png);
+    }
+
+    .feature .rectangle {
+        border-radius: 4px;
+        background: white;
+        color: var(--black);
+    }
+
+        .feature .rectangle:hover {
+            background: var(--orange);
+            color: white;
+            cursor: pointer;
+        }
+
+/* news */
+
+.news {
+    position: absolute;
+    text-align: left;
+    width: 120px;
+    display: grid;
+    background: white;
+}
+
+    .news img {
+        width: 250px;
+        height: 175px;
+    }
+
+    .news small {
+        position: absolute;
+        margin: 10px;
+        padding: 5px;
+        background: white;
+    }
+
+    .news label {
+        color: #808E96;
+    }
+
+    .news .text {
+        text-align: left;
+        background: white;
+        margin-left: 0;
+        padding: 16px;
+    }
+
+/* map */
+
+.map {
+    position: absolute;
+    width: 528px;
+    height: 352px;
+    background: url(../images/P01Home/Map.png);
+}
+
+    .map label::before {
+        content: url(../images/Icons/Misc/Download.png);
+    }
+
+    .map img {
+        float: left;
+    }
+
+        .map img:hover {
+            opacity: 0.8;
+        }
+
+.map-text {
+    display: contents;
+}
+
+    .map-text p {
+        display: inherit;
+    }
+
+    .map-text .button {
+        display: inherit;
+    }
+
+.download-btn {
+    position: absolute;
+    padding: 10px;
+    background: white;
+    border-radius: 27px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+    .download-btn:hover {
+        cursor: pointer;
+    }
+
+    .download-btn label {
+        cursor: pointer;
+    }
+
+
+.accordion {
+    width: 70%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 4px;
+}
+
+    .accordion div {
+        height: 200px;
+        padding: 10px;
+        display: none;
+    }
+
+    .accordion h5 {
+        text-align: center;
+        margin-top 0;
+        margin-bottom: 0;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+        .accordion h5:hover {
+            cursor: pointer;
+        }
+
+/*Evenementen*/
+
+.pinkbg {
+    background-color: #FBDFD3;
+}
+
+.linkbutton {
+    position: absolute;
+    border: 1px solid var(--orange);
+    text-align: right;
+    margin-top: 10%;
+    margin-left: 10px;
+    border-radius: 27px;
+    display: inline-block;
+    cursor: pointer;
+}

@@ -1,0 +1,84 @@
+﻿@model List<EvenementenContent>
+@{
+    ViewData["Title"] = "BloemenFesitval";
+}
+<!DOCTYPE html>
+<html lang="nl-nl">
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/stylesheet.css" />
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length };
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <img class="hoofd-foto hoofdfoto" src="~/images/Evenementen/BloemenFesitval/Slider/Auto.png" alt="Hoofdfoto" />
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col-xs-12 col-md-4 col-lg-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumbsvisual" style="margin-left: -150px">
+                        <li class="breadcrumb-item"><a class="nav-link-item" asp-controller="Home" asp-action="Home">Home</a></li>
+                        <li class="breadcrumb-item breadcrumbsactive" aria-current="page">Bloemenfestival</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-1 col-md-1 col-lg-1" style="margin-left: -16px">
+                <button class="button showbutton">Show</button>
+            </div>
+            <div class="col-xs-12 col-md-2 col-lg-2" style="margin-left: -20px; margin-top: 3px">
+                <h4 align="left" class="datum">@Model[4].Content</h4>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-10 col-lg-10">
+                <p align="left" class="evenementtext">@Model[2].Content</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-10 col-lg-10" style="margin-top: 20px">
+                <p align="left" class="evenementtext">@Model[3].Content</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-10 col-lg-10" style="margin-top: 20px">
+                <img class="mySlides slideimages" src="~/images/Evenementen/BloemenFesitval/Slider/Auto.png" style="width: 100%" />
+                <img class="mySlides slideimages" src="~/images/Evenementen/BloemenFesitval/Slider/Jurken.png" style="width: 100%" />
+                <img class="mySlides slideimages" src="~/images/Evenementen/BloemenFesitval/Slider/Karavan.png" style="width: 100%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5 col-md-5 col-lg-5"></div>
+            <div class="col-xs-1 col-md-1 col-lg-1" style="margin-top: 20px">
+                <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094</button>
+                <button class="w3-button w3-display-right" onclick="plusDivs(-1)">&#10095</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

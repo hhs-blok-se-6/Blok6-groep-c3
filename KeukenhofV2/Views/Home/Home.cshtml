@@ -1,0 +1,189 @@
+﻿@model List<HomeContent>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="cover">
+    <h1 class="cover-text">@Model[7].Content</h1>
+    <div class="cover-img">
+        <div id="left" class="textbox white">
+            <h4>@Model[0].Content</h4>
+            <label>@Model[2].Content</label>
+        </div>
+        <div class="textbox orange">
+            <h4>@Model[3].Content</h4>
+            <label>@Model[4].Content</label>
+        </div>
+        <div id="right" class="textbox white">
+            <h4>@Model[5].Content</h4>
+            <label>@Model[6].Content</label>
+        </div>
+    </div>
+</div>
+<div class="rectangle" style="height:421px; background:var(--orange-light)">
+    <h3>Waar bent u naar opzoek?</h3>
+    <div class="row">
+        <div class="feature">
+            <div class="col-lg-3">
+                <img src="~/images/P01Home/featured-1.png" alt="bereikbaarheid image" style="width:100%;" />
+                <div class="rectangle">
+                    <h5>Bereikbaarheid</h5>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <img src="~/images/P01Home/featured-2.png" alt="evenementen image" style="width:100%;" />
+                <div class="rectangle">
+                    <h5>Evenementen</h5>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <img src="~/images/P01Home/featured-3.png" alt="faciliteiten image" style="width:100%;" />
+                <div class="rectangle">
+                    <h5>Faciliteiten</h5>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <img src="~/images/P01Home/featured-4.png" alt="bloemenshows image" style="width:100%;" />
+                <div class="rectangle">
+                    <h5>Bloemenshows</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rectangle" style="height:512px; background:var(--green-light)">
+    <div class="row">
+        <div class="col-lg-10">
+            <h2>Praktische informatie</h2>
+        </div>
+        <div class="col-lg-2">
+            <label><a asp-controller="Praktisch" asp-action="Praktisch" />Meer praktische informatie</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="map">
+                <div class="download-btn">
+                    <a href="~/images/PLATTEGROND Keukenhof 2019.png" download>
+                        <label>Download de kaart</label>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="accordion">
+                <h1>Heading1</h1>
+                <div id="faq-text_1" class="faq-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+            <div class="accordion">
+                <h1>Heading2</h1>
+                <div id="faq-text_2" class="faq-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+            <div class="accordion">
+                <h1>Heading3</h1>
+                <div id="faq-text_3" class="faq-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+            <div class="accordion">
+                <h1>Heading4</h1>
+                <div id="faq-text_4" class="faq-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rectangle" style="height:498px; background:var(--orange-light)">
+    <div class="row">
+        <div class="col-lg-10">
+            <h3>Nieuws</h3>
+        </div>
+        <div class="col-lg-2">
+            <label><a href="#"></a>Bekijk alles</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="news">
+                <small>news</small>
+                <img src="~/images/P01Home/news-1.png" alt="hovenier image">
+                <div class="text">
+                    <label>5 okt 2019</label>
+                    <h4>De bloembollenmarkt was weer een groot succes</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="news">
+                <small>news</small>
+                <img src="~/images/P01Home/news-1.png" alt="hovenier image">
+                <div class="text">
+                    <label>5 okt 2019</label>
+                    <h4>De bloembollenmarkt was weer een groot succes</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="news">
+                <small>news</small>
+                <img src="~/images/P01Home/news-1.png" alt="hovenier image">
+                <div class="text">
+                    <label>5 okt 2019</label>
+                    <h4>De bloembollenmarkt was weer een groot succes</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="news">
+                <small>news</small>
+                <img src="~/images/P01Home/news-1.png" alt="hovenier image">
+                <div class="text">
+                    <label>5 okt 2019</label>
+                    <h4>De bloembollenmarkt was weer een groot succes</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rectangle" style="height:528px; background: var(--green-background)">
+    <div class="feature">
+        <img src="~/images/P01Home/cover2.png" />
+        <div class="rectangle">
+            <h4>Groepen</h4>
+        </div>
+    </div>
+</div>
+<div class="rectangle" style="height:378px; background:var(--orange-light)">
+    <h2>Instagram #VisitKeukenhof</h2>
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="~/images/P01Home/instagram-1.png" />
+        </div>
+        <div class="col-lg-3">
+            <img src="~/images/P01Home/instagram-2.png" />
+        </div>
+        <div class="col-lg-3">
+            <img src="~/images/P01Home/instagram-3.png" />
+        </div>
+        <div class="col-lg-3">
+            <img src="~/images/P01Home/instagram-4.png" />
+        </div>
+    </div>
+</div>
