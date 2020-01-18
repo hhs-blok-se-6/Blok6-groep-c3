@@ -1,4 +1,4 @@
-﻿.button{
+﻿.button {
     background-color: #CEDBD8;
     border: none;
     color: #36454E;
@@ -7,13 +7,13 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 22px;
-    
 }
 
-.showbutton{
+.showbutton {
     border-radius: 2px;
 }
-.datum{
+
+.datum {
     width: 134px;
     height: 12px;
     left: 184px;
@@ -28,7 +28,7 @@
     color: #36454E;
 }
 
-.evenementtext{
+.evenementtext {
     width: 902px;
     height: 84px;
     left: 125px;
@@ -41,7 +41,7 @@
     vertical-align: top;
 }
 
-.breadcrumbs{
+.breadcrumbs {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -50,7 +50,7 @@
     vertical-align: top;
 }
 
-.breadcrumbsactive{
+.breadcrumbsactive {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -59,22 +59,22 @@
     vertical-align: top;
 }
 
-.breadcrumbsvisual{
+.breadcrumbsvisual {
     border-color: transparent;
     background-color: transparent;
 }
 
-.mySlides{
+.mySlides {
     display: none;
 }
 
-.slideimages{
+.slideimages {
     width: 902px;
     height: 400px;
     object-fit: cover;
 }
 
-.hoofdfoto{
+.hoofdfoto {
     width: 1152px;
     height: 329px;
     object-fit: cover;
