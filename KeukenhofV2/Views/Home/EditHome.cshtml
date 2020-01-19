@@ -4,21 +4,28 @@
 }
 
 <div class="cover">
-    <h1 class="cover-text">@Model[7].Content</h1>
-    <div class="cover-img">
-        <div id="left" class="textbox white">
-            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@Model[0].Id"><h4>@Model[0].Content</h4></a>
-            <label>@Model[2].Content</label>
+    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@Model[7].Id">
+        <h1 class="cover-text">@Model[7].Content</h1></a>
+        <div class="cover-img">
+            <div id="left" class="textbox white">
+                <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@Model[0].Id"><h4>@Model[0].Content</h4></a>
+                <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@Model[2].Id"><label>@Model[2].Content</label></a>
+            </div>
+            <div class="textbox orange">
+                <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@Model[3].Id">
+                    <h4>@Model[3].Content</h4>
+                </a>
+                <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@Model[4].Id">
+                    <label>@Model[4].Content</label>
+                </a>
+            </div>
+            <div id="right" class="textbox white">
+                <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@Model[5].Id">
+                    <h4>@Model[5].Content</h4>
+                </a>
+                <label>@Model[6].Content</label>
+            </div>
         </div>
-        <div class="textbox orange">
-            <h4>@Model[3].Content</h4>
-            <label>@Model[4].Content</label>
-        </div>
-        <div id="right" class="textbox white">
-            <h4>@Model[5].Content</h4>
-            <label>@Model[6].Content</label>
-        </div>
-    </div>
 </div>
 <div class="rectangle" style="height:421px; background:var(--orange-light)">
     <h3>Waar bent u naar opzoek?</h3>

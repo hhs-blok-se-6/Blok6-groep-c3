@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using KeukenhofV2.Data;
 using KeukenhofV2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KeukenhofV2.Controllers
 {
+    [Authorize]
     public class EditPagesController : Controller
     {
         private readonly KeukenhofContext _context;
@@ -19,7 +21,7 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
-        // GET: EditPages
+        [Route("Edit")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.EditPagesModel.ToListAsync());
