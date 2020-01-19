@@ -6,13 +6,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20200119145108_Chris2.cs" />
+    <Compile Remove="Data\Migrations\20200119145108_Chris2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200119150333_pages.cs" />
+    <Compile Remove="Data\Migrations\20200119150333_pages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200119150604_Initial.cs" />
+    <Compile Remove="Data\Migrations\20200119150604_Initial.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft-web-helpers" Version="2.1.20710.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+    <PackageReference Include="WebGridMvc" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Home\EditHome.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
   </ItemGroup>
 
 </Project>

@@ -17,5 +17,6 @@ namespace KeukenhofV2.Data
         public DbSet<HomeContent> HomeContent { get; set; }
         public DbSet<EvenementenContent> EvenementenContent { get; set; }
         public DbSet<Evenementen> Evenementen { get; set; }
+        public DbSet<EditPagesModel> EditPagesModel { get; set; }
     }
 }

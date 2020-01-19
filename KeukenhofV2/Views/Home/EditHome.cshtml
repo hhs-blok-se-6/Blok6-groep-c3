@@ -7,7 +7,7 @@
     <h1 class="cover-text">@Model[7].Content</h1>
     <div class="cover-img">
         <div id="left" class="textbox white">
-            <a href="HomeContents/Edit/@Model[0].Id"><h4>@Model[0].Content</h4></a>
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@Model[0].Id"><h4>@Model[0].Content</h4></a>
             <label>@Model[2].Content</label>
         </div>
         <div class="textbox orange">

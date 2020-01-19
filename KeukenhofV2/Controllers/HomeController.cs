@@ -45,9 +45,19 @@ namespace KeukenhofV2.Controllers
         public async Task<IActionResult> Home()
         {
             var homeContent = from hc in _context.HomeContent select hc;
+            
+            
 
             return View(await homeContent.AsNoTracking().ToListAsync());
         }
+        [Authorize]
+        public async Task<IActionResult> Edit()
+        {
+            var homeContent = from hc in _context.HomeContent select hc;
+
+            return View("EditHome", await homeContent.AsNoTracking().ToListAsync());
+        }
+
 
         [HttpGet]
         public IActionResult Zoekresultaten(string trefwoord)
