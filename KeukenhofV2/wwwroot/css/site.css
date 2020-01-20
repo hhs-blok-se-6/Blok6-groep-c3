@@ -731,9 +731,9 @@ textarea, textarea:focus, input, input:focus {
 }
 
 .accordion h5 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding-left: 20px;
     padding-top: 24px;
     padding-bottom: 24px;
@@ -741,7 +741,7 @@ textarea, textarea:focus, input, input:focus {
 
 .accordion h5:after {
     margin-top: 10px;
-    margin-left: 120px;
+    margin-left: auto;
     content: var(--chevron-down);
 }
 
