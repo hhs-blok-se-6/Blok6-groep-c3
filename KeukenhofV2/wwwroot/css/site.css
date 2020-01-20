@@ -89,6 +89,12 @@ img {
         cursor: pointer;
     }
 
+@media only screen and (max-width: 1026px) {
+    #hideWhenSmall {
+        display: none;
+    }
+}
+
 .cover-img {
     float: left;
     margin-left: 15%;
@@ -110,6 +116,10 @@ img {
     margin-left: 0;
     padding: 16px;
 }
+
+    .textbox #mobile {
+        width: 80%;
+    }
 
 
 #left {
@@ -232,178 +242,6 @@ footer {
     margin: auto;
     margin-top: 20%;
 }
-
-hr {
-    width: 100%;
-    border: 1px solid var(--green-light);
-}
-
-h1, h2, h3, h4, h5, h6, p, label, caption {
-    display: flex;
-    align-items: center;
-}
-
-p, a, label, caption {
-    font-family: Avenir;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: none;
-}
-
-/* headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: 600;
-}
-
-/* mobile */
-@media screen and (max-width: 480px) {
-
-    h1 {
-        font-size: 28px;
-        line-height: 32px;
-    }
-
-    h2 {
-        font-size: 24px;
-        line-height: 28px;
-    }
-
-    h3 {
-        font-size: 21px;
-        line-height: 24px;
-    }
-
-    h4 {
-        font-size: 18px;
-        line-height: 22px;
-    }
-
-    h5 {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    p {
-        font-size: 12px;
-        line-height: 18px;
-        color: #36454E;
-    }
-
-    small {
-        font-size: 11px;
-        line-height: 18px;
-        color: var(--grey-dark);
-    }
-
-    label {
-        font-weight: 800;
-        font-size: 12px;
-        line-height: 21px;
-    }
-
-    caption {
-        font-weight: 800;
-        font-size: 8px;
-        line-height: 120%;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: var(--grey-dark);
-    }
-
-    a {
-        font-size: 12px;
-        line-height: 28px;
-    }
-
-        a:hover {
-            font-size: 12px;
-            line-height: 18px;
-        }
-
-    [class*="col-"] {
-        width: 100%;
-    }
-}
-
-/* desktop */
-
-h1 {
-    font-size: 52px;
-    line-height: 56px;
-}
-
-h2 {
-    font-size: 40px;
-    line-height: 40px;
-}
-
-h3 {
-    font-size: 32px;
-    line-height: 31px;
-}
-
-h4 {
-    font-size: 24px;
-    line-height: 32px;
-}
-
-h5 {
-    font-size: 20px;
-    line-height: 28px;
-    border-radius: 4px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 28px;
-    color: var(--grey-dark);
-}
-
-small {
-    font-family: Avenir;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 22px;
-    color: var(--grey-dark);
-}
-
-label {
-    font-family: Avenir;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 120%;
-}
-
-caption {
-    font-family: Avenir;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 12px;
-    line-height: 100%;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: var(--grey-dark);
-}
-
-a {
-    font-family: Avenir;
-    font-size: 18px;
-    line-height: 28px;
-}
-
-    a:hover {
-        font-family: Avenir;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 28px;
-    }
-
-
 
 /* icons */
 
@@ -729,7 +567,7 @@ textarea, textarea:focus, input, input:focus {
 
     .accordion h5 {
         text-align: center;
-        margin-top 0;
+        margin-top: 0;
         margin-bottom: 0;
         padding-top: 7px;
         padding-bottom: 7px;
