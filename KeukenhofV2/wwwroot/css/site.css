@@ -718,29 +718,37 @@ textarea, textarea:focus, input, input:focus {
 
 
 .accordion {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     background: white;
     border-radius: 4px;
 }
 
-    .accordion div {
-        height: 200px;
-        padding: 10px;
-        display: none;
-    }
+.accordion div {
+    height: 200px;
+    padding: 10px;
+    display: none;
+}
 
-    .accordion h5 {
-        text-align: center;
-        margin-top 0;
-        margin-bottom: 0;
-        padding-top: 7px;
-        padding-bottom: 7px;
-    }
+.accordion h5 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 20px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
 
-        .accordion h5:hover {
-            cursor: pointer;
-        }
+.accordion h5:after {
+    margin-top: 10px;
+    margin-left: 120px;
+    content: var(--chevron-down);
+}
+
+.accordion h5:hover {
+    cursor: pointer;
+    background-color: gray;
+}
 
 /*Evenementen*/
 
