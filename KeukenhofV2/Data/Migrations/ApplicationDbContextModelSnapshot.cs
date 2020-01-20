@@ -51,21 +51,6 @@ namespace KeukenhofV2.Data.Migrations
                     b.ToTable("EvenementenContent");
                 });
 
-            modelBuilder.Entity("KeukenhofV2.Models.FAQ", b =>
-                {
-                    b.Property<int>("FAQId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("antwoord");
-
-                    b.Property<string>("vraag");
-
-                    b.HasKey("FAQId");
-
-                    b.ToTable("FAQ");
-                });
-
             modelBuilder.Entity("KeukenhofV2.Models.HomeContent", b =>
                 {
                     b.Property<int>("Id")
@@ -93,7 +78,22 @@ namespace KeukenhofV2.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Toegankelijkheid");
+                    b.ToTable("ToegankelijkheidContent");
+                });
+
+            modelBuilder.Entity("KeukenhofV2.Models.VeelgesteldeVragen", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VeelgesteldeVragen");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -1,4 +1,4 @@
-﻿.button {
+﻿.sbutton {
     left: 0%;
     background-color: #CEDBD8;
     border: none;
@@ -137,7 +137,16 @@
     font-style: normal;
     font-weight: 600;
     font-size: 40px;
-    line-height: 48px;
+    line-height: 40px;
     vertical-align: top;
     color: #1F2325;
+}
+
+.labeltext{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FFFFFF;
 }
