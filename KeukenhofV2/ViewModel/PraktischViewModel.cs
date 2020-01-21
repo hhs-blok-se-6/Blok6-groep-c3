@@ -7,7 +7,7 @@ namespace KeukenhofV2.ViewModel
     {
         public string Image { get; set; }
         public string ButtonText { get; set; }
-        public IEnumerable<FAQ> FAQ { get; set; }
+        public IEnumerable<VeelgesteldeVragen> FAQ { get; set; }
         public string Theme { get; set; }
     }
 }
