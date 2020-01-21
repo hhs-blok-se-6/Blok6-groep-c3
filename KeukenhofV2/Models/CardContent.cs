@@ -9,7 +9,7 @@
         public string Date { get; set; }
         public string Title { get; set; }
         public string Button1 { get; set; }
-        public string Button2 { get; set; }
+        public string Link { get; set; }
         public string Theme { get; set; }
     }
 }

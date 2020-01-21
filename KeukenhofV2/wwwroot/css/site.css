@@ -78,9 +78,9 @@ img {
 /*Home*/
 
 .cover {
-    background-image: url(../images/P01Home/ctaImage.png);
+    background-image: url(../images/P01Home/cover1.png);
     width: 100%;
-    height: 628px;
+    height: auto;
     left: 0;
     top: 0;
 }
@@ -97,7 +97,8 @@ img {
 
 .cover-img {
     float: left;
-    margin-left: 15%;
+    padding-left: 25px;
+    display: flex;
 }
 
 .cover-text {
@@ -109,6 +110,15 @@ img {
     float: left;
 }
 
+@media only screen and (max-width: 1026px) {
+    .textbox {
+        position: absolute;
+        margin: 5px;
+        width: 100%;
+        display: none;
+    }
+}
+
 .textbox {
     text-align: left;
     position: relative;
@@ -117,10 +127,15 @@ img {
     padding: 16px;
 }
 
-    .textbox #mobile {
-        width: 80%;
+    .textbox .white {
+        color: var(--black);
+        background: #FFFFFF;
     }
 
+    .textbox .orange {
+        color: #FFFFFF;
+        background: var(--orange);
+    }
 
 #left {
     border-top-left-radius: 5px;
@@ -130,16 +145,6 @@ img {
 #right {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-
-.white {
-    color: black;
-    background: white;
-}
-
-.orange {
-    color: white;
-    background: orange;
 }
 
 h4.orange, label + .textbox orange {
@@ -498,6 +503,15 @@ textarea, textarea:focus, input, input:focus {
         background: white;
         margin-left: 0;
         padding: 16px;
+    }
+
+    .news button {
+        position: initial;
+        text-align: center;
+        padding: 5px;
+        border: 1.5px solid var(--orange);
+        border-radius: 27px;
+        background: #FFFFFF;
     }
 
 /* map */

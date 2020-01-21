@@ -16,5 +16,6 @@ namespace KeukenhofV2.Data
         public DbSet<Evenementen> Evenementen { get; set; }
         public DbSet<FeaturedContent> FeaturedContent { get; set; }
         public DbSet<CardContent> CardContent { get; set; }
+        public DbSet<CTAButton> CTAButtons { get; set; }
     }
 }
