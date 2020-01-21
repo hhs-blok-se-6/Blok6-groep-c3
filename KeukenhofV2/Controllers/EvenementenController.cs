@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using KeukenhofV2.Data;
 using KeukenhofV2.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KeukenhofV2.Controllers
 {
+    
     public class EvenementenController : Controller
     {
         private readonly KeukenhofContext _context;
@@ -31,5 +33,14 @@ namespace KeukenhofV2.Controllers
 
             return View("Evenementenpaginas/BloemenFestival", await evenementenContent.AsNoTracking().ToListAsync());
         }
+
+        [Authorize]
+        public async Task<IActionResult> Edit()
+        {
+            var evenementContent = from hc in _context.EvenementenContent select hc;
+
+            return View("EditEvenementen", await evenementContent.AsNoTracking().ToListAsync());
+        }
+
     }
 }
