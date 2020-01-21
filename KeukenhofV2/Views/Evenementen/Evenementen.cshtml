@@ -1,7 +1,9 @@
 ﻿
 @{
     ViewData["Title"] = "Evenementen";
+
 }
+
 <div class="pinkbg">
     <div class="container">
         <div class="row">
@@ -24,7 +26,8 @@
     <div class="evenemten-list">
         @foreach (var evenement in Model.Evenementen)
         {
-            @Html.Partial("_Evenement", (Evenementen)evenement);
+            
+            @await Html.PartialAsync("_Evenement", (Evenementen)evenement);
         }
     </div>
 </div>

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace KeukenhofProject.Migrations
+namespace KeukenhofV2.Migrations
 {
     public partial class addedautoincrementtoeventtable : Migration
     {

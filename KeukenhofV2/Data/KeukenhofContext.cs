@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using KeukenhofV2.Models;
-using KeukenhofProject.Models;
+using KeukenhofV2.Models;
 
 namespace KeukenhofV2.Data
 {

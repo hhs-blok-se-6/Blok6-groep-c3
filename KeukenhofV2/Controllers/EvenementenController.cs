@@ -1,4 +1,4 @@
-﻿using KeukenhofProject.ViewModels;
+﻿using KeukenhofV2.ViewModels;
 using KeukenhofV2.Data;
 using KeukenhofV2.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KeukenhofProject.Controllers
+namespace KeukenhofV2.Controllers
 {
     public class EvenementenController : Controller
     {

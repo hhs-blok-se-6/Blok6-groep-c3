@@ -1,10 +1,10 @@
-﻿using KeukenhofProject.Models;
+﻿using KeukenhofV2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KeukenhofProject.ViewModels
+namespace KeukenhofV2.ViewModels
 {
     public class EvenementenPaginaViewModel
     {
