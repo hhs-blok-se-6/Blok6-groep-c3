@@ -23,6 +23,7 @@ namespace KeukenhofV2.Data
         public DbSet<ContactContent> ContactContent { get; set; }
         public DbSet<ParkContent> ParkContent { get; set; }
         public DbSet<PrivacyContent> PrivacyContent { get; set; }
+        public DbSet<PraktischContent> PraktischContent { get; set; }
         public DbSet<CTAButton> CTAButtons { get; set; }
     }
 }
