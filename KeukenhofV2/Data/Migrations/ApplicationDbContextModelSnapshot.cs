@@ -15,9 +15,24 @@ namespace KeukenhofV2.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
+                .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("KeukenhofV2.Models.BereikbaarheidContent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BereikbaarheidContent");
+                });
 
             modelBuilder.Entity("KeukenhofV2.Models.CardContent", b =>
                 {
@@ -46,6 +61,21 @@ namespace KeukenhofV2.Data.Migrations
                     b.ToTable("CardContent");
                 });
 
+            modelBuilder.Entity("KeukenhofV2.Models.ContactContent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactContent");
+                });
+
             modelBuilder.Entity("KeukenhofV2.Models.CTAButton", b =>
                 {
                     b.Property<int>("Id")
@@ -65,6 +95,23 @@ namespace KeukenhofV2.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CTAButtons");
+                });
+
+            modelBuilder.Entity("KeukenhofV2.Models.EditPagesModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Action");
+
+                    b.Property<string>("Controller");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EditPagesModel");
                 });
 
             modelBuilder.Entity("KeukenhofV2.Models.Evenementen", b =>
@@ -150,6 +197,66 @@ namespace KeukenhofV2.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("HomeContent");
+                });
+
+            modelBuilder.Entity("KeukenhofV2.Models.ParkContent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ParkContent");
+                });
+
+            modelBuilder.Entity("KeukenhofV2.Models.PrivacyContent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PrivacyContent");
+                });
+
+            modelBuilder.Entity("KeukenhofV2.Models.ToegankelijkheidContent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ToegankelijkheidContent");
+                });
+
+            modelBuilder.Entity("KeukenhofV2.Models.VeelgesteldeVragen", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VeelgesteldeVragen");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using KeukenhofV2.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,15 @@ namespace KeukenhofV2.Controllers
         {
             var veelgesteldevragenContent = from vc in _context.VeelgesteldeVragen select vc;
             return View("VeelgesteldeVragen", await veelgesteldevragenContent.AsNoTracking().ToListAsync());
+        }
+
+
+        [Authorize]
+        public async Task<IActionResult> Edit()
+        {
+            var veelgesteldevragenContent = from vc in _context.VeelgesteldeVragen select vc;
+
+            return View("EditVeelgesteldeVragen", await veelgesteldevragenContent.AsNoTracking().ToListAsync());
         }
     }
 }

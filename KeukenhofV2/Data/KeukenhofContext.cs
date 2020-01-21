@@ -19,5 +19,10 @@ namespace KeukenhofV2.Data
         public DbSet<CardContent> CardContent { get; set; }
         public DbSet<EditPagesModel> EditPagesModel { get; set; }
         public DbSet<FAQ> FAQ { get; set; }
+        public DbSet<KeukenhofV2.Models.BereikbaarheidContent> BereikbaarheidContent { get; set; }
+        public DbSet<ContactContent> ContactContent { get; set; }
+        public DbSet<ParkContent> ParkContent { get; set; }
+        public DbSet<PrivacyContent> PrivacyContent { get; set; }
+        public DbSet<CTAButton> CTAButtons { get; set; }
     }
 }
