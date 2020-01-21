@@ -6,9 +6,38 @@ $(document).ready(function () {
          
         $(".navbar-header-items").hide();
         $(".mobile-menu-button").show();
-        
+        $(".header-p-mobile-menu").show();
 
+        $(".mobile-menu-button").on("click", function (e) {
+            $(".mobile-menu-button").hide();
+            $(".header-p-mobile-menu").hide();
+            $(".mobile-close-button").show();
+            $(".header-p-mobile-close").show();
+            $(".mobile-sub-menu").show();
+           
+        });
+
+        $(".mobile-close-button").on("click", function (e) {
+            $(".mobile-close-button").hide();
+            $(".header-p-mobile-close").hide();
+            $(".mobile-menu-button").show();
+            $(".header-p-mobile-menu").show();
+            $(".mobile-sub-menu").hide();
+        });
     }
+
+    $(".search-icon").on("click", function (e) {
+        $(".search-dialog").show();
+        $('#overlay').fadeIn(300);
+        $('.expose').css('z-index', '99999');
+
+    });
+
+    $(".search-dialog-cancel-button").on("click", function (e) {
+        $('#overlay').stop().fadeOut(300);
+        $(".search-dialog").hide();
+        $('.expose').css('z-index', '1');
+    });
     
 });
 

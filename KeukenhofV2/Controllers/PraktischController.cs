@@ -8,7 +8,8 @@ namespace KeukenhofV2.Controllers
 {
     public class PraktischController : Controller
     {
-        public IActionResult Index()
+        [Route("/Praktisch")]
+        public IActionResult Praktisch()
         {
             return View();
         }

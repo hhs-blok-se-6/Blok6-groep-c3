@@ -8,7 +8,9 @@ namespace KeukenhofV2.Controllers
 {
     public class ParkController : Controller
     {
-        public IActionResult Index()
+
+        [Route("/Park")]
+        public IActionResult Park()
         {
             return View();
         }

@@ -8,9 +8,13 @@ namespace KeukenhofV2.Controllers
 {
     public class ZoekresultatenController : Controller
     {
-        public IActionResult Index()
+        [Route("/Zoekresultaten")]
+        public IActionResult Zoekresultaten(string searchValue)
         {
+            ViewData["Search"] = searchValue; 
             return View();
         }
+
+
     }
 }

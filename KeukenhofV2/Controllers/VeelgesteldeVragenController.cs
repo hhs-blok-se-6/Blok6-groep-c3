@@ -8,7 +8,8 @@ namespace KeukenhofV2.Controllers
 {
     public class VeelgesteldeVragenController : Controller
     {
-        public IActionResult Index()
+        [Route("/VeelgesteldeVragen")]
+        public IActionResult VeelgesteldeVragen()
         {
             return View();
         }

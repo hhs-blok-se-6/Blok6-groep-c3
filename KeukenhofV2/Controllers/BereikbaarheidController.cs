@@ -8,7 +8,8 @@ namespace KeukenhofV2.Controllers
 {
     public class BereikbaarheidController : Controller
     {
-        public IActionResult Index()
+        [Route("/Bereikbaarheid")]
+        public IActionResult Bereikbaarheid()
         {
             return View();
         }

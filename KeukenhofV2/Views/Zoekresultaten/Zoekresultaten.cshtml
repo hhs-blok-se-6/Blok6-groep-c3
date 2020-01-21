@@ -1,11 +1,9 @@
 ﻿
 @{
     ViewData["Title"] = "Zoekresultaten";
-    string trefwoord = (string)ViewData["trefwoord"];
+    string trefwoord = (string)ViewData["Search"];
 }
 
-<div class="search-bar">
-    <input class="green" id="search" type="text" value="@trefwoord" />
-    <input type="submit" value="zoeken" class="button orange" />
-</div>
+
 <h1>Zoekresultaten</h1>
+<h2>@trefwoord</h2>
