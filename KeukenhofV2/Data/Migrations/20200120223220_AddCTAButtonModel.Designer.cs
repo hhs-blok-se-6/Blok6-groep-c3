@@ -4,14 +4,16 @@ using KeukenhofV2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KeukenhofV2.Data.Migrations
 {
     [DbContext(typeof(KeukenhofContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200120223220_AddCTAButtonModel")]
+    partial class AddCTAButtonModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,11 +29,11 @@ namespace KeukenhofV2.Data.Migrations
 
                     b.Property<string>("Button1");
 
+                    b.Property<string>("Button2");
+
                     b.Property<string>("Date");
 
                     b.Property<string>("Image");
-
-                    b.Property<string>("Link");
 
                     b.Property<string>("Page");
 
@@ -44,27 +46,6 @@ namespace KeukenhofV2.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CardContent");
-                });
-
-            modelBuilder.Entity("KeukenhofV2.Models.CTAButton", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Image");
-
-                    b.Property<string>("Link");
-
-                    b.Property<string>("Page");
-
-                    b.Property<string>("Text");
-
-                    b.Property<string>("Theme");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CTAButtons");
                 });
 
             modelBuilder.Entity("KeukenhofV2.Models.Evenementen", b =>
@@ -105,11 +86,9 @@ namespace KeukenhofV2.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Antwoord");
+                    b.Property<string>("antwoord");
 
-                    b.Property<string>("Page");
-
-                    b.Property<string>("Vraag");
+                    b.Property<string>("vraag");
 
                     b.HasKey("FAQId");
 
@@ -123,8 +102,6 @@ namespace KeukenhofV2.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Image");
-
-                    b.Property<string>("Link");
 
                     b.Property<string>("Page");
 
