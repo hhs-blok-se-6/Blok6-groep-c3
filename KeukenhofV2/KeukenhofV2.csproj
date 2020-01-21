@@ -12,6 +12,12 @@
     <Compile Remove="Data\Migrations\20200119150333_pages.Designer.cs" />
     <Compile Remove="Data\Migrations\20200119150604_Initial.cs" />
     <Compile Remove="Data\Migrations\20200119150604_Initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200121145954_RefineDatabase.cs" />
+    <Compile Remove="Data\Migrations\20200121145954_RefineDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200121150742_UpdateFAQ.cs" />
+    <Compile Remove="Data\Migrations\20200121150742_UpdateFAQ.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200121184737_ModelsV3.cs" />
+    <Compile Remove="Data\Migrations\20200121184737_ModelsV3.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,10 +39,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Bereikbaarheid\Bereikbaarheid.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Contact\EditContact.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Evenementen\EditEvenementen.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Home\EditHome.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Park\EditPark.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Praktisch\EditPraktisch.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Privacy\EditPrivacy.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

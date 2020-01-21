@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using KeukenhofV2.Data;
 using KeukenhofV2.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KeukenhofV2.Controllers
 {
@@ -23,6 +24,14 @@ namespace KeukenhofV2.Controllers
             var toegankelijkheidContent = from tc in _context.ToegankelijkheidContent select tc;
 
             return View("Praktischepaginas/Toegankelijkheid", await toegankelijkheidContent.AsNoTracking().ToListAsync());
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Edit()
+        {
+            var toegankelijkheidContent = from hc in _context.ToegankelijkheidContent select hc;
+
+            return View("EditPraktisch", await toegankelijkheidContent.AsNoTracking().ToListAsync());
         }
     }
 }
