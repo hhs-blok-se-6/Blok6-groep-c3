@@ -755,3 +755,41 @@ textarea, textarea:focus, input, input:focus {
     display: inline-block;
     cursor: pointer;
 }
+
+/*Evenementen*/
+
+.pinkbg {
+    background-color: #FBDFD3;
+}
+
+.linkbutton {
+    position: absolute;
+    border: 1px solid var(--orange);
+    text-align: right;
+    margin-top: 10%;
+    margin-left: 10px;
+    border-radius: 27px;
+    display: inline;
+    cursor: pointer;
+}
+
+.evenement-list {
+    background-color: #FBDFD3;
+}
+
+.evenement-item {
+    width: 200px;
+    height: 300px;
+    background: #FFFFFF;
+    float: left;
+    margin: 0 32px 0 32px;
+    border-radius: 4px;
+}
+
+    .evenement-item h1 {
+        font-size: 14px;
+    }
+
+    .evenement-item img {
+        width: 100%;
+    }

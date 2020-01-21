@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using KeukenhofV2.Models;
+using KeukenhofProject.Models;
 
 namespace KeukenhofV2.Data
 {
@@ -18,5 +19,7 @@ namespace KeukenhofV2.Data
         public DbSet<EvenementenContent> EvenementenContent { get; set; }
         public DbSet<Evenementen> Evenementen { get; set; }
         public DbSet<EditPagesModel> EditPagesModel { get; set; }
+        public DbSet<EvenementenPagina> EvenementenPagina { get; set; }
+        
     }
 }
