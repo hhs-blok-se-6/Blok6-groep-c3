@@ -4,11 +4,11 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Index</h2>
+<partial name="_LoginPartial" />
+<h2>Pagina bewerking</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-controller="Home"  asp-action="Edit">Keer terug naar Homepagina</a>
 </p>
 <table class="table">
     <thead>

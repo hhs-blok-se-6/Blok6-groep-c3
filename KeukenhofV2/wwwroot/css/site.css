@@ -6,6 +6,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+
 :root {
     /* main colors */
     --green: #00694C;
@@ -211,8 +212,13 @@ header nav {
 }
 
 .header-keukenhof-logo {
-    margin-left: 26px;
+    margin:20px;
 }
+
+.navbar-header-items {
+    padding-top: 20px;
+}
+
 /*Footer*/
 footer {
     position: relative;
@@ -257,75 +263,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-/* mobile */
-@media screen and (max-width: 480px) {
 
-    h1 {
-        font-size: 28px;
-        line-height: 32px;
-    }
 
-    h2 {
-        font-size: 24px;
-        line-height: 28px;
-    }
-
-    h3 {
-        font-size: 21px;
-        line-height: 24px;
-    }
-
-    h4 {
-        font-size: 18px;
-        line-height: 22px;
-    }
-
-    h5 {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    p {
-        font-size: 12px;
-        line-height: 18px;
-        color: #36454E;
-    }
-
-    small {
-        font-size: 11px;
-        line-height: 18px;
-        color: var(--grey-dark);
-    }
-
-    label {
-        font-weight: 800;
-        font-size: 12px;
-        line-height: 21px;
-    }
-
-    caption {
-        font-weight: 800;
-        font-size: 8px;
-        line-height: 120%;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: var(--grey-dark);
-    }
-
-    a {
-        font-size: 12px;
-        line-height: 28px;
-    }
-
-        a:hover {
-            font-size: 12px;
-            line-height: 18px;
-        }
-
-    [class*="col-"] {
-        width: 100%;
-    }
-}
 
 /* desktop */
 
@@ -755,3 +694,41 @@ textarea, textarea:focus, input, input:focus {
     display: inline-block;
     cursor: pointer;
 }
+
+/*Media queries*/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+    /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    /* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    /* Styles */
+}
+

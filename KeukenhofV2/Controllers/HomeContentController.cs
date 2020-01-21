@@ -44,29 +44,7 @@ namespace KeukenhofV2.Controllers
 
             return View(homeContent);
         }
-
-        // GET: HomeContents/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: HomeContents/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Type,Content")] HomeContent homeContent)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(homeContent);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(homeContent);
-        }
-
+        
         // GET: HomeContents/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -118,35 +96,7 @@ namespace KeukenhofV2.Controllers
             return View(homeContent);
         }
 
-        // GET: HomeContents/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var homeContent = await _context.HomeContent
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (homeContent == null)
-            {
-                return NotFound();
-            }
-
-            return View(homeContent);
-        }
-
-        // POST: HomeContents/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var homeContent = await _context.HomeContent.FindAsync(id);
-            _context.HomeContent.Remove(homeContent);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
+        
         private bool HomeContentExists(int id)
         {
             return _context.HomeContent.Any(e => e.Id == id);

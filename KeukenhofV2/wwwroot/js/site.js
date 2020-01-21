@@ -1,7 +1,15 @@
 ﻿//LEES: Alles dat onderstaande functie staat, wordt automatisch uitgevoerd bij het opstarten van de pagina.
 //Dit is de meest fijne manier om met Javascript te werken, omdat je hierdoor niet zelf in HTML nog javascript functies hebt aangeroepen
 $(document).ready(function () {
+    var mq = window.matchMedia("(max-width: 812px)");
+    if (mq.matches) {
+         
+        $(".navbar-header-items").hide();
+        $(".mobile-menu-button").show();
+        
 
+    }
+    
 });
 
 var x = document.getElementById("search-bar"); /* the search bar */
@@ -19,6 +27,8 @@ function off() {
     document.getElementById('search').value = "";
     cover.style.display = "none";
 }
+
+
 
 $(document).ready(function () {
     $(".accordion h1").click(function () {

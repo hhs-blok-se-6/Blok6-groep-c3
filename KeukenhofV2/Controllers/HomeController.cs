@@ -41,7 +41,9 @@ namespace KeukenhofV2.Controllers
             ViewData["message"] = message;
             return View();
         }
-
+        [Route("")]
+        [Route("Home")]
+        [Route("Home/Index")]
         public async Task<IActionResult> Home()
         {
             var homeContent = from hc in _context.HomeContent select hc;
