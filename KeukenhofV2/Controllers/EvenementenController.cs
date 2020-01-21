@@ -20,6 +20,7 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
+        [Route("/Evenementen")]
         public async Task<IActionResult> Evenementen()
         {
             var evenementen = from ec in _context.Evenementen select ec;
