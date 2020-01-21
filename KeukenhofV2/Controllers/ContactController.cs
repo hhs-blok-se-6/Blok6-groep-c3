@@ -16,6 +16,9 @@ namespace KeukenhofV2.Controllers
         [Route("/Contact")]
         public IActionResult Contact()
         {
+            //var contact = from c in _context.ContactContent select c;
+
+
             return View();
         }
     }
