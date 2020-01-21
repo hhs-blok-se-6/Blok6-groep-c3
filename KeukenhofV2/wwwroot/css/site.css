@@ -869,6 +869,16 @@ textarea, textarea:focus, input, input:focus {
     cursor: pointer;
 }
 
+/* alinea */ 
+
+.alinea {
+    margin: 5%;
+}
+
+.alinea p {
+    color: var(--grey-dark);
+}
+
 /*Media queries*/
 
 /* Smartphones (portrait and landscape) ----------- */

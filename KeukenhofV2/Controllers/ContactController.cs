@@ -1,14 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using KeukenhofV2.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KeukenhofV2.Controllers
 {
     public class ContactController : Controller
     {
-        public IActionResult Index()
+        private readonly KeukenhofContext _context;
+
+        public ContactController(KeukenhofContext context)
+        {
+            this._context = context;
+
+        }
+
+        [Route("/Contact")]
+        public IActionResult Contact()
         {
             return View();
         }
