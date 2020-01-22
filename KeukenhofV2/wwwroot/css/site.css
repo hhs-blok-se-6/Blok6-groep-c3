@@ -209,8 +209,6 @@ header nav {
 
 .pointer {
     margin-top: 15px;
-    
-    
 }
 
     .pointer:hover {
@@ -218,7 +216,7 @@ header nav {
     }
 
 .header-keukenhof-logo {
-    margin:20px;
+    margin: 20px;
 }
 
 .navbar-header-items {
@@ -234,7 +232,7 @@ header nav {
     color: #36454E;
 }
 
-.mobile-menu-button{
+.mobile-menu-button {
     margin-top: 35px;
 }
 
@@ -243,7 +241,7 @@ header nav {
         background: #ffacac;
     }
 
-.mobile-close-button{
+.mobile-close-button {
     margin-top: 35px;
 }
 
@@ -259,7 +257,6 @@ header nav {
     width: 80%;
     padding-inline-start: 15px;
     padding-block-start: 10px;
-
 }
 
 .mobile-sub-menu-header {
@@ -295,6 +292,7 @@ header nav {
     border-radius: 4px;
     padding: 10px;
 }
+
 .search-dialog-search-label {
     font-family: Source Sans Pro;
     font-style: normal;
@@ -345,7 +343,6 @@ header nav {
 }
 
 .search-dialog-search-icon {
-   
     padding-inline-end: 5px;
 }
 
@@ -357,7 +354,6 @@ header nav {
     display: inline-flex;
     background: #FFFFFF;
     /* Orange default */
- 
     box-sizing: border-box;
     border-radius: 27px;
 }
@@ -784,10 +780,6 @@ textarea, textarea:focus, input, input:focus {
     background: url(../images/P01Home/Map.png);
 }
 
-    .map label::before {
-        content: url(../images/Icons/Misc/Download.png);
-    }
-
     .map img {
         float: left;
     }
@@ -817,6 +809,10 @@ textarea, textarea:focus, input, input:focus {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+    .download-btn label::before {
+        content: url(../images/Icons/Misc/Download.png);
+    }
 
     .download-btn:hover {
         cursor: pointer;
@@ -877,15 +873,15 @@ textarea, textarea:focus, input, input:focus {
     cursor: pointer;
 }
 
-/* alinea */ 
+/* alinea */
 
 .alinea {
 }
 
-.alinea p {
-    padding: 15px;
-    color: var(--grey-dark);
-}
+    .alinea p {
+        padding: 15px;
+        color: var(--grey-dark);
+    }
 
 /*Media queries*/
 
@@ -923,4 +919,3 @@ textarea, textarea:focus, input, input:focus {
 @media only screen and (min-width : 1224px) {
     /* Styles */
 }
-

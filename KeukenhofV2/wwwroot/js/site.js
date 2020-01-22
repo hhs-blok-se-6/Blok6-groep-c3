@@ -57,7 +57,7 @@ function off() {
     cover.style.display = "none";
 }
 
-$(document).ready(function () { /* ensures elements whith this class will be hidden */
+$(document).ready(function () { /* ensures elements whithin this class will be hidden */
     $('.download-hide').each(function () {
         $(this).hide();
     });

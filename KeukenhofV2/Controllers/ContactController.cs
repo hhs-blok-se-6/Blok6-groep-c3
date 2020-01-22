@@ -22,7 +22,7 @@ namespace KeukenhofV2.Controllers
             var feature = from f in _context.FeaturedContent where f.Page.Equals("Contact") select f;
             var faq = from fq in _context.FAQ where fq.Page.Equals("Contact") select fq;
 
-            MiniFaqViewModel faqVM = new MiniFaqViewModel()
+            MiniFaqViewModel miniFaq = new MiniFaqViewModel()
             {
                 Image = "/images/P08Contact/FAQImage.png",
                 FAQ = faq,
@@ -35,7 +35,7 @@ namespace KeukenhofV2.Controllers
                 FeaturedContent = feature,
                 FeatureRows = 1,
                 FeatureColumns = 4,
-                MiniFAQ = faqVM
+                MiniFAQ = miniFaq
             };
             return View(cvm);
         }
