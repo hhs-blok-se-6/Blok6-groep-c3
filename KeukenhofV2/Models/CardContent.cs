@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string Page { get; set; }
+        public string Fragment { get; set; }
         public string Image { get; set; }
         public string Tag { get; set; }
         public string Date { get; set; }
