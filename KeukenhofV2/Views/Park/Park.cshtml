@@ -1,7 +1,98 @@
-﻿
+﻿@model KeukenhofV2.ViewModel.ParkViewModel
 @{
     ViewData["Title"] = "Park";
+    var park = Model.ParkContent.ToList();
+    var bezigheden = Model.Bezigheden.ToList();
+    var evenementen = Model.Evenementen.ToList();
+    var shows = Model.Bloemenshows.ToList();
 }
 
-<h2>Het park</h2>
-
+<div class="alinea">
+    <img src="~/images/P02Park/cover.png" />
+    <h1>Het fleurigste dagje uit</h1>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <p>Dit voorjaar staan meer dan 7 miljoen bloembollen in bloei met wel 800 verschillende soorten tulpen.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <p>In alle rust genieten van Keukenhof? Voor 10:30 uur en na 16:00 uur is het minder druk.</p>
+        </div>
+    </div>
+    <button class="button green">Geschiedenis</button>
+</div>
+<div class="row" style="margin-top: 20px">
+    <div style="background: #36454E; height: 64px" class="col-xs-12 col-md-12 col-lg-12">
+        <div style="left: 1.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1">Wat is er te doen?<a id="1" class="labeltext"></a></div>
+        <div style="left: 3.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="2" class="labeltext">Plattegron</a></div>
+        <div style="left: 7.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">Evenementen</a></div>
+        <div style="left: 10.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">Tulpomania</a></div>
+        <div style="left: 10.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">Bloemenshows</a></div>
+    </div>
+</div>
+<div class="rectangle" style="height:562px; background:var(--orange-light);">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <h2> Wat is er te doen bij de Keukenhof?</h2>
+            <p>Naast de ruim 32ha aan bloemen kunt u genieten van verrassende inspiratietuinen. Voor kinderen is er de gratis speurtocht, een kinderboerderij, doolhof en speeltuin.</p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+            <label style="float:right;"><a href="#"></a>Bekijk alle</label>
+        </div>
+    </div>
+    <div class="row">
+        @for (var j = 0; j < Model.BezighedenColumns; j++)
+        {
+            <partial name="_CardPartial" model="bezigheden[j]" />
+        }
+    </div>
+</div>
+<div class="rectangle" style="height:528px; background: var(--green-background)">
+    <div class="feature">
+        <img src="~/images/P02Park/mapdownload.png" />
+        <div class="rectangle">
+            <h4>Download de plattegrond van het park</h4>
+        </div>
+    </div>
+</div>
+<div class="rectangle" style="height:562px; background:var(--orange-light);">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <h2>Evenementen</h2>
+            <p>In Keukenhof kunt u genieten van geweldige evenementen. Elke weekend zijn er verschillende evenementen, dus zoek de juiste datum voor uw bezoek uit!</p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+            <label style="float:right;"><a href="#"></a>Bekijk alle</label>
+        </div>
+    </div>
+    <div class="row">
+        @for (var j = 0; j < Model.EvenementenColumns; j++)
+        {
+            <partial name="_CardPartial" model="evenementen[j]" />
+        }
+    </div>
+</div>
+<div class="rectangle" style="height:528px; background: var(--green-background)">
+    <div class="feature">
+        <img src="~/images/P02Park/tulpomania.png" />
+        <div class="rectangle">
+            <h4>Tulpomania</h4>
+        </div>
+    </div>
+</div>
+<div class="rectangle" style="height:562px; background:var(--orange-light);">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <h2>Bloemenshows</h2>
+            <p>In Keukenhof kunt u genieten van spectaculaire bloemenshows en unieke kunstwerken. Vergeet vooral de Tulpomania tentoonstelling in het Juliana Paviljoen niet.</p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+            <label style="float:right;"><a href="#"></a>Bekijk alle</label>
+        </div>
+    </div>
+    <div class="row">
+        @for (var j = 0; j < Model.BloemenshowsColumns; j++)
+        {
+            <partial name="_CardPartial" model="shows[j]" />
+        }
+    </div>
+</div>
