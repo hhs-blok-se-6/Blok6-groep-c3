@@ -29,7 +29,7 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color: #fff;
+    background-color: #FFFFFF;
 }
 
 /* Wrapping element */
@@ -112,6 +112,16 @@ img {
     padding: 16px;
 }
 
+    .textbox.white {
+        color: black;
+        background: white;
+    }
+
+    .textbox.orange {
+        color: white;
+        background: orange;
+    }
+
 
 #left {
     border-top-left-radius: 5px;
@@ -121,16 +131,6 @@ img {
 #right {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-
-.white {
-    color: black;
-    background: white;
-}
-
-.orange {
-    color: white;
-    background: orange;
 }
 
 h4.orange, label + .textbox orange {
@@ -601,10 +601,9 @@ a {
     border-radius: 2px;
 }*/
 
-.green {
+/*.green {
     background: var(--green);
-    /*border: 1.5px solid #00694C;*/
-}
+}*/
 
 .green-secundary {
     background: var(--green-secundary);
@@ -656,15 +655,19 @@ textarea, textarea:focus, input, input:focus {
 /* Blocks and Buttons*/
 
 .button {
-    position: absolute;
-    border: 1px solid var(--orange);
-    text-align: right;
-    margin-top: 10%;
-    margin-left: 10px;
+    padding: 15px;
     border-radius: 27px;
-    display: inline-block;
+    background: #FFFFFF;
     cursor: pointer;
 }
+
+    .button.orange {
+        border: 1.5px solid var(--orange);
+    }
+
+    .button.green {
+        border: 1.5px solid var(--green);
+    }
 
 #wrap {
     display: flex;
@@ -875,14 +878,18 @@ textarea, textarea:focus, input, input:focus {
 
 /* alinea */
 
-.alinea p, h1 {
-    padding-left: 15%;
+.alinea {
+    margin: 0 auto;
 }
 
-.alinea p {
-    color: var(--grey-dark);
-    padding-bottom: 10px;
-}
+    .alinea p, h1, button {
+        margin-left: 50px;
+    }
+
+    .alinea p {
+        color: var(--grey-dark);
+        padding-bottom: 10px;
+    }
 
 /*Media queries*/
 
