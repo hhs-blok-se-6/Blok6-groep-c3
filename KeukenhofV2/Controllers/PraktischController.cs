@@ -20,11 +20,18 @@ namespace KeukenhofV2.Controllers
         }
 
         [Route("/Praktisch")]
+        public async Task<IActionResult> Praktisch()
+        {
+            var PraktischContent = from pc in _context.PraktischContent select pc;
+
+            return View("Praktisch", await PraktischContent.AsNoTracking().ToListAsync());
+        }
+
         public async Task<IActionResult> Toegankelijkheid()
         {
-            var toegankelijkheidContent = from tc in _context.ToegankelijkheidContent select tc;
+            var ToegankelijkheidContent = from tc in _context.ToegankelijkheidContent select tc;
 
-            return View("Praktischepaginas/Toegankelijkheid", await toegankelijkheidContent.AsNoTracking().ToListAsync());
+            return View("Praktischepaginas/Toegankelijkheid", await ToegankelijkheidContent.AsNoTracking().ToListAsync());
         }
 
         [Authorize]

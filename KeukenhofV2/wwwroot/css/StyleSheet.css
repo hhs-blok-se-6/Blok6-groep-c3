@@ -1,8 +1,13 @@
-﻿.button {
+﻿:root{
+    --arrow-right: url(../images/Icons/Essentials/arrow-right.png);
+}
+
+.sbutton {
+    left: 0%;
     background-color: #CEDBD8;
     border: none;
     color: #36454E;
-    font-family: Avenir;
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -13,11 +18,25 @@
     border-radius: 2px;
 }
 
+.rolstoelbutton {
+    height: 40px;
+    background: #FFFFFF;
+    border: 1.5px solid #00694C;
+    box-sizing: border-box;
+    border-radius: 27px;
+    border-color: #00694C;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+    align-items: center;
+    text-align: center;
+    color: #36454E;
+}
+
 .datum {
-    width: 134px;
-    height: 12px;
-    left: 184px;
-    top: 73px;
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 800;
     font-size: 12px;
@@ -29,10 +48,8 @@
 }
 
 .evenementtext {
-    width: 902px;
-    height: 84px;
-    left: 125px;
     top: 110px;
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -41,7 +58,33 @@
     vertical-align: top;
 }
 
+.evenementtextklein {
+    left: 11.11%;
+    right: 51.39%;
+    top: 48.05%;
+    bottom: 44.14%;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #36454E;
+    vertical-align: top;
+}
+
+.grijzetext {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    vertical-align: top;
+    color: #808E96;
+}
+
 .breadcrumbs {
+    top: 0%;
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -51,6 +94,8 @@
 }
 
 .breadcrumbsactive {
+    top: 0%;
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -75,7 +120,170 @@
 }
 
 .hoofdfoto {
-    width: 1152px;
+    top: 72px;
+    width: 100%;
     height: 329px;
+    object-fit: cover;
+}
+
+.toegankelijkheidoftitel {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 48px;
+    vertical-align: top;
+    color: #1F2325;
+}
+
+.kleinetitel {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 40px;
+    vertical-align: top;
+    color: #1F2325;
+}
+
+.labeltext {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.labeltextzwart {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+    color: #36454E;
+}
+
+    .labeltextzwart:after {
+        vertical-align: top;
+        content: var(--arrow-right);
+        fill: #00694C;
+    }
+
+.videobutton {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 28px;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1.5px solid #00694C;
+    box-sizing: border-box;
+    border-radius: 27px;
+    width: 152px;
+    height: 56px;
+}
+
+.bereikbaarheidtitel {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 31px;
+    align-items: center;
+    display: flex;
+    color: #1F2325;
+    vertical-align: central;
+}
+
+.kleinefoto {
+    top: 72px;
+    width: 100%;
+    height: 248px;
+    object-fit: cover;
+}
+
+.kleinefototext {
+    height: 63px;
+    margin-top: -5px;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: #36454E;
+    background-color: #FFFFFF;
+}
+
+    .kleinefototext:after {
+        margin-left: auto;
+        margin-top: 10px;
+        content: var(--arrow-right);
+        fill: #EA6025;
+    }
+
+    .kleinefototext:hover {
+        cursor: pointer;
+        background-color: #EA6025;
+    }
+
+.voorzieningentext {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    color: #36454E;
+}
+
+.voorzieningenicoon{
+    width: 40px;
+    height: 40px;
+}
+
+.voorzieningenicoon:hover{
+    cursor: pointer;
+    text-underline-position: below;
+}
+
+.voorzieningenfoto{
+    margin-top: 30px;
+    width: 100%;
+    height: 396px;
+}
+
+.voorzieningfototext {
+    width: 100%;
+    height: 88px;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #36454E;
+    background-color: #FFFFFF;
+    align-items:center;
+    display: flex;
+}
+
+    .voorzieningfototext:after {
+        margin-left: auto;
+        margin-top: 10px;
+        content: var(--arrow-right);
+        fill: #EA6025;
+    }
+
+    .voorzieningfototext:hover {
+        cursor: pointer;
+        background-color: #EA6025;
+    }
+
+.groepenfoto{
+    width: 100%;
+    height: 400px;
     object-fit: cover;
 }
