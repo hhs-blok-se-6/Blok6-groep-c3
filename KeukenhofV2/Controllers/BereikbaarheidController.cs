@@ -20,9 +20,11 @@ namespace KeukenhofV2.Controllers
         }
 
         [Route("/Bereikbaarheid")]
-        public IActionResult Bereikbaarheid()
+        public async Task<IActionResult> Bereikbaarheid()
         {
-            return View();
+            var BereikbaarheidContent = from bc in _context.BereikbaarheidContent select bc;
+
+            return View("Bereikbaarheid", await BereikbaarheidContent.AsNoTracking().ToListAsync());
         }
 
         [Authorize]
