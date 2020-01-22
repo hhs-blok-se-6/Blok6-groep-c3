@@ -9,5 +9,6 @@ namespace KeukenhofV2.ViewModel
         public IEnumerable<FeaturedContent> FeaturedContent { get; set; }
         public int FeatureRows { get; set; }
         public int FeatureColumns { get; set; }
+        public MiniFaqViewModel MiniFAQ { get; set; }
     }
 }

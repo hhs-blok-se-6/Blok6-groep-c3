@@ -1,23 +1,24 @@
 ﻿@model KeukenhofV2.ViewModel.ContactViewModel
 @{
     ViewData["Title"] = "Contact";
-    var home = Model.ContactContent.ToList();
+    var contact = Model.ContactContent.ToList();
     var feature = Model.FeaturedContent.ToList();
     var featureCounter = 0;
+    var miniFaq = Model.MiniFAQ;
 }
 <div class="alinea">
-    <img src="~/images/P08Contact/cover.png"/>
-    <h1>Contact</h1>
+    <img src="~/images/P08Contact/cover.png" />
+    <h1>@contact[0].Content</h1>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <p>In 2020 is Keukenhof open van 21 maart tot en met 10 mei tussen 9:00-17:00 uur.</p>
+            <p>@contact[1].Content</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <p>Bezoekersadres: Stationsweg 166A, 2161 AM Lisse</p>
+            <p>@contact[2].Content</p>
         </div>
     </div>
     <div class="rectangle" style="height:421px; background:var(--green-background)">
-        <h3>Waarvoor zoekt u contact?</h3>
+        <h3>@contact[3].Content</h3>
         @for (var i = 0; i < Model.FeatureRows; i++)
         {
             <div class="row feature">
@@ -26,7 +27,11 @@
                     <partial name="_FeaturedPartial" model="feature[j+featureCounter]" />
                 }
             </div>
-            featureCounter += 4; <!--zodat de loop elke keer de 4 volgende neemt-->
+            featureCounter += Model.FeatureColumns; <!--zodat de loop elke keer de <column aantal> volgende neemt-->
         }
+    </div>
+    <div class="rectangle" style="height:495px; background:var(--orange-light)">
+        <h2>@contact[4].Content</h2>
+        <partial name="_MiniFaqPartial" model="miniFaq" />
     </div>
 </div>

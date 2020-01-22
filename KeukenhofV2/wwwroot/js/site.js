@@ -57,10 +57,14 @@ function off() {
     cover.style.display = "none";
 }
 
-
+$(document).ready(function () { /* ensures elements whith this class will be hidden */
+    $('.download-hide').each(function () {
+        $(this).hide();
+    });
+});
 
 $(document).ready(function () {
-    $(".accordion h1").click(function () {
+    $(".accordion h5").click(function () {
         var id = this.id;
         $(".accordion-content").each(function () {
             if ($("#" + id).next()[0].id != this.id) {

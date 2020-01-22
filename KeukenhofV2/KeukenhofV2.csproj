@@ -12,6 +12,8 @@
     <Compile Remove="Data\Migrations\20200119150333_pages.Designer.cs" />
     <Compile Remove="Data\Migrations\20200119150604_Initial.cs" />
     <Compile Remove="Data\Migrations\20200119150604_Initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200121210641_AddMiniFaqViewModel.cs" />
+    <Compile Remove="Data\Migrations\20200121210641_AddMiniFaqViewModel.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

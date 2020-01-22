@@ -1,5 +1,8 @@
 ﻿using KeukenhofV2.Data;
+using KeukenhofV2.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+
 
 namespace KeukenhofV2.Controllers
 {
@@ -9,17 +12,32 @@ namespace KeukenhofV2.Controllers
 
         public ContactController(KeukenhofContext context)
         {
-            this._context = context;
-
+            _context = context;
         }
 
         [Route("/Contact")]
         public IActionResult Contact()
         {
-            //var contact = from c in _context.ContactContent select c;
+            var contact = from c in _context.ContactContent select c;
+            var feature = from f in _context.FeaturedContent where f.Page.Equals("Contact") select f;
+            var faq = from fq in _context.FAQ where fq.Page.Equals("Contact") select fq;
 
+            MiniFaqViewModel faqVM = new MiniFaqViewModel()
+            {
+                Image = "/images/P08Contact/FAQImage.png",
+                FAQ = faq,
+                Theme = "orange"
+            };
 
-            return View();
+            ContactViewModel cvm = new ContactViewModel()
+            {
+                ContactContent = contact,
+                FeaturedContent = feature,
+                FeatureRows = 1,
+                FeatureColumns = 4,
+                MiniFAQ = faqVM
+            };
+            return View(cvm);
         }
     }
 }

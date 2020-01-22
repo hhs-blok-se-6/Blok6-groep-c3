@@ -10,7 +10,7 @@ namespace KeukenhofV2.ViewModels
         public IEnumerable<FeaturedContent> FeaturedContent { get; set; }
         public int FeatureRows { get; set; }
         public int FeatureColumns { get; set; }
-        public PraktischViewModel Praktisch { get; set; }
+        public MiniFaqViewModel MiniFaq { get; set; }
         public IEnumerable<CardContent> CardContent { get; set; }
         public int CardRows { get; set; }
         public int CardColumns { get; set; }
