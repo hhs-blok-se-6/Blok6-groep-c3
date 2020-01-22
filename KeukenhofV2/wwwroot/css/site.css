@@ -875,13 +875,14 @@ textarea, textarea:focus, input, input:focus {
 
 /* alinea */
 
-.alinea {
+.alinea p, h1 {
+    padding-left: 15%;
 }
 
-    .alinea p {
-        padding: 15px;
-        color: var(--grey-dark);
-    }
+.alinea p {
+    color: var(--grey-dark);
+    padding-bottom: 10px;
+}
 
 /*Media queries*/
 

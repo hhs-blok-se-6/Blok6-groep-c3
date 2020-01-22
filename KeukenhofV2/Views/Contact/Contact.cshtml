@@ -14,11 +14,11 @@
             <p>@contact[1].Content</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <p>@contact[2].Content</p>
+            <p>@contact[2].Content<br />@contact[3].Content</p>
         </div>
     </div>
     <div class="rectangle" style="height:421px; background:var(--green-background)">
-        <h3>@contact[3].Content</h3>
+        <h3>@contact[4].Content</h3>
         @for (var i = 0; i < Model.FeatureRows; i++)
         {
             <div class="row feature">
@@ -31,7 +31,7 @@
         }
     </div>
     <div class="rectangle" style="height:495px; background:var(--orange-light)">
-        <h2>@contact[4].Content</h2>
+        <h2>@contact[5].Content</h2>
         <partial name="_MiniFaqPartial" model="miniFaq" />
     </div>
 </div>
