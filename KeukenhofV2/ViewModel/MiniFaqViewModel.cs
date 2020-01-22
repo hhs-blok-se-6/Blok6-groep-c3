@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace KeukenhofV2.ViewModel
 {
-    public class PraktischViewModel
+    public class MiniFaqViewModel
     {
         public string Image { get; set; }
         public string ButtonText { get; set; }

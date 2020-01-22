@@ -49,7 +49,7 @@ namespace KeukenhofV2.Controllers
             var cardContent = from cc in _context.CardContent where cc.Page.Equals("Home") select cc;
             var praktisch = from p in _context.FAQ where p.Page.Equals("Home") select p;
 
-            PraktischViewModel pvm = new PraktischViewModel()
+            MiniFaqViewModel pvm = new MiniFaqViewModel()
             {
                 Image = "/images/P01Home/Map.png",
                 FAQ = praktisch,
@@ -66,7 +66,7 @@ namespace KeukenhofV2.Controllers
                 CardContent = cardContent,
                 CardRows = 1,
                 CardColumns = 4,
-                Praktisch = pvm
+                MiniFaq = pvm
             };
 
             return View(cvm);
