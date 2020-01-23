@@ -1223,7 +1223,7 @@ textarea, textarea:focus, input, input:focus {
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (min-width : 400px) {
-    ..zoekresultaten-search-button {
+    .zoekresultaten-search-button {
         margin-left: 0%;
     }
 }
