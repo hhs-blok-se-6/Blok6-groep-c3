@@ -1,10 +1,15 @@
-﻿namespace KeukenhofV2.Models
+﻿using System;
+
+namespace KeukenhofV2.Models
 {
     public class Evenementen
     {
         public int Id { get; set; }
-        public string Links { get; set; }
-        public string Type { get; set; }
-        public string Content { get; set; }
+        public string name { get; set; }
+        public string image { get; set; }
+        public DateTime startTime { get; set; }
+        public DateTime endTime { get; set; }
+        public string description { get; set; }
+        public string type { get; set; }
     }
 }
