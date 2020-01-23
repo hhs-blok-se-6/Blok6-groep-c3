@@ -18,7 +18,7 @@ namespace KeukenhofV2.Controllers
         {
             _context = context;
         }
-
+        [Route("/Bereikbaarheid/Index")]
         [Route("/Bereikbaarheid")]
         public async Task<IActionResult> Bereikbaarheid()
         {

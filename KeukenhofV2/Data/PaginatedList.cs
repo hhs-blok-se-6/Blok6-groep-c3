@@ -35,5 +35,7 @@ namespace KeukenhofV2.Data
         {
             return (PageIndex < TotalPages);
         }
+
+        
     }
 }

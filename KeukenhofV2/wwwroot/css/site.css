@@ -331,6 +331,9 @@ header nav {
     padding-inline-start: 20px;
     padding-inline-end: 15px;
     padding-block-start: 5px;
+    margin-left: 45px;
+    margin-top: 10px;
+    margin-right: -40px;
 }
 
 .search-dialog-cancel-button {
@@ -370,7 +373,7 @@ header nav {
     line-height: 28px;
     color: #808E96;
     width: 60%;
-    margin-left: 150px;
+    margin-left: 5%;
     padding-bottom: 15px;
 }
 
@@ -444,6 +447,41 @@ p, a, label, caption {
     text-decoration: none;
 }
 
+.footer-li {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 156% */
+    /* Black */
+    color: #1F2325;
+    border-radius: 4px;
+}
+
+.footer-h5 {
+    /* H5 */
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+    /* Dark Grey */
+    color: #36454E;
+    border-radius: 4px;
+}
+
+.footer-p5 {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 156% */
+    /* Dark Grey */
+    color: #36454E;
+}
 /* headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: Source Sans Pro;
@@ -1009,7 +1047,7 @@ textarea, textarea:focus, input, input:focus {
     box-sizing: border-box;
     border-radius: 27px;
     padding-block-end: 5px;
-    margin-left: 20%;
+    margin-left:20%;
     margin-top: 2%;
 }
 
@@ -1075,6 +1113,12 @@ textarea, textarea:focus, input, input:focus {
     color: #00694C;
     cursor: pointer;
 }
+.mobile-pagination {
+    margin-left: 18%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+}
 
 .zoekresultaten-row-background h5 {
     text-align: left;
@@ -1106,7 +1150,7 @@ textarea, textarea:focus, input, input:focus {
 }
 
 .custom-col-location{
-    width: 12%;
+    width: 16%;
 }
 
 .zoekresultaten-row-arrow-right{
@@ -1115,18 +1159,38 @@ textarea, textarea:focus, input, input:focus {
 }
 /*Media queries*/
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 736px) {
     /* Styles */
-}
+    .zoekresultaten-header-text {
+        display:none;
+    }
 
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-    /* Styles */
-}
+    .zoekresultaten-aantal-p {
+        margin-top: 10%;
+    }
+
+    .zoekresultaten-row-background{
+        padding-bottom: 8%;
+    }
+    .footer-social-icons {
+        margin: 10px;
+        padding:10px;
+
+    }
+
+    .footer-logo-keukenhof{
+        margin: 15px;
+    }
+    /* Smartphones (landscape) ----------- */
+    @media only screen and (min-width : 321px) {
+        /* Styles */
+    }
 
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-    /* Styles */
+@media only screen and (min-width : 400px) {
+    ..zoekresultaten-search-button {
+        margin-left: 0%;
+    }
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -1145,6 +1209,12 @@ textarea, textarea:focus, input, input:focus {
 }
 
 /* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {
-    /* Styles */
+@media and (min-width : 1070px) {
+    .zoekresultaten-zoek-input {
+        padding-bottom: 2%;
+    }
+
+    .zoekresultaten-search-button{
+        margin-left: 20%;
+    }
 }

@@ -6,7 +6,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+    var maxColumn = 12;
     
 
 }
@@ -20,10 +20,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-10 col-md-10 col-lg-9">
+        <div class="col-xs-6 col-md-10 col-lg-9">
             <h1 class="zoekresultaten-header-text">Zoekresultaten</h1>
         </div>
-        <div class="col-xs-2 col-md-2 col-lg-3">
+        <div class="col-xs-12 col-md-2 col-lg-3">
             <p class="zoekresultaten-aantal-p"> @ViewData["Counter"] </p>
         </div>
     </div>
@@ -78,43 +78,62 @@
     }
 
     <!--Einde van row 1-->
-            <div class="row">
-
-                @{
-                    var prevDisabled = !Model.HasPreviousPage() ? "disabled" : "";
-                    var nextDisabled = !Model.HasNextPage() ? "disabled" : "";
-                }
-
-                <a asp-controller="Zoekresultaten" asp-action="Index" asp-route-pagina="@(Model.PageIndex - 1)"
-                   asp-route-sortOrder="@ViewBag.NewSort"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default @prevDisabled">
-                    < Vorige
-                </a>
-                <a asp-controller="Zoekresultaten" asp-route-pagina="@(Model.PageIndex + 1)"
-                   asp-route-sortOrder="@ViewBag.NewSort"
-                   asp-route-currentFilter="@ViewBag.CurrentFilter"
-                   class="btn btn-default @nextDisabled">
-                    Volgende >
-                </a>
-
-            </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-12 col-lg-12">
+    
+    <div class="row desktop-pagination">
+        @if(Model.TotalPages > 4)
+        {
+            maxColumn = 6;
+        }
+        
+        <div class="col-xs-12 col-md-@maxColumn col-lg-@maxColumn">
             <label class="zoekresultaten-pagination-labels">
-                <label class="zoekresultaten-pagination-bg">
-                    <label class="zoekresultaten-pagination-deselected">
-                        1
+                @for (int i = 1; i < Model.TotalPages; i++)
+                {
+                    var numbOfPages = i;
+                    @if (i == Model.PageIndex)
+                    {
+                <a asp-controller="Zoekresultaten" asp-action="Index" 
+                   asp-route-pagina="@numbOfPages" asp-route-searchVal="@ViewBag.CurrentFilter">
+                    <label class="zoekresultaten-pagination-bg">
+                        <label class="zoekresultaten-pagination-selected">
+                            @numbOfPages
+                        </label>
                     </label>
-                </label>
-                <label class="zoekresultaten-pagination-bg">
-                    <label class="zoekresultaten-pagination-selected">
-                        2
+                </a>
+                    }
+                    else
+                    {
+                <a asp-controller="Zoekresultaten" asp-action="Index" 
+                   asp-route-pagina="@numbOfPages" asp-route-searchVal="@ViewBag.CurrentFilter">
+                    <label class="zoekresultaten-pagination-bg">
+                        <label class="zoekresultaten-pagination-deselected">
+                            @numbOfPages
+                        </label>
                     </label>
-                </label>
-            </label>
+                </a>
+                    }
 
-            <p></p>
+                }
+            </label>
+        </div>
+    </div>
+    <div class="row mobile-pagination" hidden>
+        <div class="col-xs-12">
+            @{
+                string prevDisabled = !Model.HasPreviousPage() ? "disabled" : "";
+                string nextDisabled = !Model.HasNextPage() ? "disabled" : "";
+            }
+            <a asp-action="Index" asp-route-pagina="@(Model.PageIndex - 1)"
+               asp-route-searchVal="@ViewBag.CurrentFilter"
+               class="btn btn-default @prevDisabled">
+                < Vorige
+            </a>
+            <a asp-action="Index" asp-route-pagina="@(Model.PageIndex + 1)"
+               asp-route-searchVal="@ViewBag.CurrentFilter"
+               class="btn btn-default @nextDisabled">
+                Volgende >
+            </a>
+
         </div>
     </div>
 </div>
