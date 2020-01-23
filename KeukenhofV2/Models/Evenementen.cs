@@ -1,4 +1,6 @@
-﻿namespace KeukenhofV2.Models
+﻿using System;
+
+namespace KeukenhofV2.Models
 {
     public class Evenementen
     {
