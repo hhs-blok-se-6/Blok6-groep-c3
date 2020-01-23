@@ -1,7 +1,37 @@
-﻿
+﻿@model KeukenhofV2.ViewModel.ContactViewModel
 @{
     ViewData["Title"] = "Contact";
+    var contact = Model.ContactContent.ToList();
+    var feature = Model.FeaturedContent.ToList();
+    var featureCounter = 0;
+    var miniFaq = Model.MiniFAQ;
 }
-
-<h2>Contact</h2>
-
+<div class="alinea">
+    <img src="~/images/P08Contact/cover.png" />
+    <h1>@contact[0].Content</h1>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <p>@contact[1].Content</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <p>@contact[2].Content<br />@contact[3].Content</p>
+        </div>
+    </div>
+</div>
+<div class="rectangle" style="height:421px; background:var(--green-background)">
+    <h3>@contact[4].Content</h3>
+    @for (var i = 0; i < Model.FeatureRows; i++)
+    {
+        <div class="row feature">
+            @for (var j = 0; j < Model.FeatureColumns; j++)
+            {
+                <partial name="_FeaturedPartial" model="feature[j+featureCounter]" />
+            }
+        </div>
+        featureCounter += Model.FeatureColumns; <!--zodat de loop elke keer de <column aantal> volgende neemt-->
+    }
+</div>
+<div class="rectangle" style="height:495px; background:var(--orange-light)">
+    <h2>@contact[5].Content</h2>
+    <partial name="_MiniFaqPartial" model="miniFaq" />
+</div>
