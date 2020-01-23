@@ -24,19 +24,6 @@
                 }, 2000);
             });
         });
-
-        $(document).ready(function () {
-            $(".accordion h5").click(function () {
-                var id = this.id;
-                $(".accordion-content").each(function () {
-                    if ($("#" + id).next()[0].id != this.id) {
-                        $(this).slideUp("slow");
-                    }
-                });
-
-                $(this).next().toggle("slow");
-            });
-        }); 
     </script>
 </head>
 <body>
