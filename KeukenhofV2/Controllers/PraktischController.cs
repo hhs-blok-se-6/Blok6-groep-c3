@@ -18,8 +18,8 @@ namespace KeukenhofV2.Controllers
         {
             _context = context;
         }
-
         [Route("/Praktisch")]
+        [Route("/Praktisch/Index")]
         public async Task<IActionResult> Praktisch()
         {
             var PraktischContent = from pc in _context.PraktischContent select pc;

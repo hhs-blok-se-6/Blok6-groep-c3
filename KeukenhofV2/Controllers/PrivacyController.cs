@@ -22,7 +22,8 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
-
+        [Route("/Privacy")]
+        [Route("/Privacy/Index")]
         public IActionResult Index()
         {
             return View();
