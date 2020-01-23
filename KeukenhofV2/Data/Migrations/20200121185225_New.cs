@@ -7,6 +7,8 @@ namespace KeukenhofV2.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+
+
             migrationBuilder.RenameColumn(
                 name: "vraag",
                 table: "FAQ",

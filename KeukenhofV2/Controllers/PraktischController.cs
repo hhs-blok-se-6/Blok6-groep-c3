@@ -19,7 +19,7 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
-        [Route("/Praktisch")]
+        [Route("/Toegankelijkheid")]
         public async Task<IActionResult> Toegankelijkheid()
         {
             var toegankelijkheidContent = from tc in _context.ToegankelijkheidContent select tc;

@@ -24,6 +24,12 @@ namespace KeukenhofV2.Data
         public DbSet<ParkContent> ParkContent { get; set; }
         public DbSet<PrivacyContent> PrivacyContent { get; set; }
         public DbSet<PraktischContent> PraktischContent { get; set; }
+        public DbSet<TestViewContent> TestViewContent { get; set; }
         public DbSet<CTAButton> CTAButtons { get; set; }
+        public DbSet<KeukenhofV2.Models.LolView> LolView { get; set; }
+        public DbSet<KeukenhofV2.Models.LastView> LastView { get; set; }
+        public DbSet<KeukenhofV2.Models.ZoekResultaten> ZoekResultaten { get; set; }
+
+        
     }
 }

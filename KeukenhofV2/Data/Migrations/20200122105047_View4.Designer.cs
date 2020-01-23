@@ -4,14 +4,16 @@ using KeukenhofV2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KeukenhofV2.Data.Migrations
 {
     [DbContext(typeof(KeukenhofContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200122105047_View4")]
+    partial class View4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,43 +201,6 @@ namespace KeukenhofV2.Data.Migrations
                     b.ToTable("HomeContent");
                 });
 
-            modelBuilder.Entity("KeukenhofV2.Models.LastView", b =>
-                {
-                    b.Property<string>("Nid")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Content");
-
-                    b.Property<int>("Id");
-
-                    b.Property<string>("Location");
-
-                    b.Property<string>("Type");
-
-                    b.HasKey("Nid");
-
-                    b.ToTable("LastView");
-                });
-
-            modelBuilder.Entity("KeukenhofV2.Models.LolView", b =>
-                {
-                    b.Property<int>("ViewId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Content");
-
-                    b.Property<int>("Id");
-
-                    b.Property<string>("Location");
-
-                    b.Property<string>("Type");
-
-                    b.HasKey("ViewId");
-
-                    b.ToTable("LolView");
-                });
-
             modelBuilder.Entity("KeukenhofV2.Models.ParkContent", b =>
                 {
                     b.Property<int>("Id")
@@ -283,17 +248,19 @@ namespace KeukenhofV2.Data.Migrations
 
             modelBuilder.Entity("KeukenhofV2.Models.TestViewContent", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ViewId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Content");
 
+                    b.Property<int>("Id");
+
                     b.Property<string>("Location");
 
                     b.Property<string>("Type");
 
-                    b.HasKey("Id");
+                    b.HasKey("ViewId");
 
                     b.ToTable("ViewTest");
                 });
