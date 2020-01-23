@@ -35,7 +35,9 @@ namespace KeukenhofV2.Controllers
             return View("Evenementenpaginas/BloemenFestival", await evenementenContent.AsNoTracking().ToListAsync());
         }
 
+
         [Authorize]
+        [Route("/Evenementen/Edit")]
         public async Task<IActionResult> Edit()
         {
             var evenementContent = from hc in _context.EvenementenContent select hc;

@@ -39,6 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Bereikbaarheid\EditBereikbaarheid.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Bereikbaarheid\Bereikbaarheid.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
@@ -54,7 +57,10 @@
     <Content Update="Views\Park\EditPark.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Praktisch\EditPraktisch.cshtml">
+    <Content Update="Views\Praktisch\Praktisch.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Praktisch\Praktischepaginas\EditToegankelijkheid.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Privacy\EditPrivacy.cshtml">
