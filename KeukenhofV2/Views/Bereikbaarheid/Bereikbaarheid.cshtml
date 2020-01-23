@@ -26,15 +26,10 @@
         });
 
         $(document).ready(function () {
-            $(".accordion h5").click(function () {
-                var id = this.id;
-                $(".accordion-content").each(function () {
-                    if ($("#" + id).next()[0].id != this.id) {
-                        $(this).slideUp("slow");
-                    }
-                });
-
-                $(this).next().toggle("slow");
+            $("#3").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#div3").offset().top
+                }, 2000);
             });
         });
     </script>
@@ -74,7 +69,7 @@
                 <div style="margin-left: -5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-2 col-lg-2"><a id="3" class="labeltext">@Model[5].Content</a></div>
             </div>
         </div>
-        <div class="row">
+        <div id="div1" class="row">
             <div class="col-xs-1 col-md-1 col-lg-1"></div>
             <div class="col-xs-12 col-md-10 col-lg-10">
                 <h2 class="kleinetitel">@Model[6].Content</h2>
@@ -103,12 +98,45 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div id="div2" class="row">
             <div class="col-xs-1 col-md-1 col-lg-1"></div>
             <div class="col-xs-12 col-md-10 col-lg-10">
                 <h2 class="kleinetitel">@Model[10].Content</h2>
                 <p class="evenementtextklein">@Model[11].Content</p>
             </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: #FBDFD3; height: 439px">
+        <div class="row" style="margin-top: 20px">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <img style="width: 100%; height:375px" src="~/images/P06Bereikbaarheid/fietsen.png" alt="Fietsen" />
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="accordion">
+                    <h5>@Model[12].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[13].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[14].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[15].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[16].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[17].Content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="div3" class="container" style="background: #E1EBE9">
+        <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
+            <img class="groepenfoto" src="~/images/P05Praktisch/bloemenveld.png" alt="Bloemenveld" />
+            <label class="voorzieningfototext">@Model[18].Content</label>
         </div>
     </div>
 </body>
