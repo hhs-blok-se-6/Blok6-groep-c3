@@ -22,15 +22,16 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        @foreach (var item in faq)
-        {
+
+    @foreach (var item in faq)
+    {
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="accordion">
                 <h5>@item.Vraag</h5>
                 <div id="faq-text_@counter" class="faq-text">
                     @item.Antwoord
                 </div>
             </div>
-        }
-    </div>
+        </div>
+    }
 </div>
