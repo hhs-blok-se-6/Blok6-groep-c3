@@ -1,7 +1,180 @@
-﻿
-@{
+﻿@model List<VeelgesteldeVragen>
+@{ 
     ViewData["Title"] = "VeelgesteldeVragen";
 }
 
-<h2>Veelgestelde vragen</h2>
+<!DOCTYPE html>
+<html lang="nl-nl">
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#1").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#div1").offset().top
+                }, 2000);
+            });
+        });
 
+        $(document).ready(function () {
+            $("#2").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#div2").offset().top
+                }, 2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <img class="hoofdfoto" src="~/images/VeelgesteldeVragen/Bloemen.png" alt="Bloemen" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <h1 class="toegankelijkheidoftitel" align="left">@Model[0].Content</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <p class="evenementtextklein" align="left">@Model[1].Content</p>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <p class="evenementtextklein" align="left">@Model[2].Content</p>
+            </div>
+        </div>
+        <div class="row">
+            <div style="background: #36454E; height: 64px" class="col-xs-12 col-md-12 col-lg-12">
+                <div style="left: 1.5%; top: 22px; cursor:pointer" class="colr-xs-12 col-md-1 col-lg-1"><a id="1" class="labeltext">@Model[3].Content</a></div>
+                <div style="left: 5.5%; top: 22px; cursor:pointer" class="colr-xs-12 col-md-1 col-lg-1"><a id="2" class="labeltext">@Model[4].Content</a></div>
+                <div style="left: 7.5%; top: 22px; cursor:pointer" class="colr-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">@Model[5].Content</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background: #E1EBE9">
+        <div id="div1" class="row">
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <h2 class="kleinetitel">@Model[6].Content</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="accordion">
+                    <h5>@Model[8].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[9].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[10].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[11].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[12].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[13].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[14].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[15].Content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="accordion">
+                    <h5>@Model[16].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[17].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[18].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[19].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[20].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[21].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[22].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[23].Content
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div2" class="row">
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <h2 class="kleinetitel">@Model[7].Content</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="accordion">
+                    <h5>@Model[24].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[25].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[26].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[27].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[28].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[29].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[30].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[31].Content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="accordion">
+                    <h5>@Model[32].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[33].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[34].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[35].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[36].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[37].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[38].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[39].Content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+﻿@model List<PraktischContent>
+@{
+    ViewData["Title"] = "Praktisch";
+}
+<!DOCTYPE html>
+<html lang="nl-nl">
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#1").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#div1").offset().top
+                }, 2000);
+            });
+        });
+
+        $(document).ready(function () {
+            $("#2").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#div2").offset().top
+                }, 2000);
+            });
+        });
+
+        $(document).ready(function () {
+            $(".accordion h5").click(function () {
+                var id = this.id;
+                $(".accordion-content").each(function () {
+                    if ($("#" + id).next()[0].id != this.id) {
+                        $(this).slideUp("slow");
+                    }
+                });
+
+                $(this).next().toggle("slow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <img class="hoofdfoto" src="~/images/P05Praktisch/ctalImage2.png" alt="Hoofdfoto" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[1].Id"><h1 class="toegankelijkheidoftitel" align="left" style="margin-left: -15%">@Model[0].Content</h1></a>
+</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[1].Id"> <p class="evenementtextklein" align="left">@Model[1].Content</p></a>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[2].Id">  <p class="evenementtextklein" align="left">@Model[2].Content</p></a>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-2 col-lg-2">
+                <button class="videobutton">Bekijk video</button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div style="background: #36454E; height: 64px" class="col-xs-12 col-md-12 col-lg-12">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[3].Id">
+                    <div style="left: 1.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="1" class="labeltext">@Model[3].Content</a></div>
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[4].Id">
+                    <div style="left: 3.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="2" class="labeltext">@Model[4].Content</a></div>
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[5].Id">
+                    <div style="left: 7.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">@Model[5].Content</a></div>
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[6].Id">  <div style="left: 10.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">@Model[6].Content</a></div></a>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background: #E1EBE9; height: 550px">
+        <div class="row">
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[7].Id"> <h2 class="kleinetitel">@Model[7].Content</h2></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[8].Id">  <p class="evenementtextklein">@Model[8].Content</p></a>
+            </div>
+            <div class="col-xs-12 col-md-7 col-lg-7">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[9].Id"> <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="VeelgesteldeVragen" asp-action="VeelgesteldeVragen">@Model[9].Content</a></div></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="map">
+                    <div class="download-btn">
+                        <a href="~/images/PLATTEGROND Keukenhof 2019.png" download>
+                            <label>Download de kaart</label>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="accordion">
+                    <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[10].Id">
+                        <h5>@Model[10].Content</h5>
+                    </a>
+                    <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[11].Id">
+                        <div id="faq-text_1" class="faq-text">
+                            @Model[11].Content
+                    </a>
+                </div>
+            </div>
+            <div class="accordion">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[12].Id">
+                    <h5>@Model[12].Content</h5>
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[13].Id">
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[13].Content
+                    </div>
+                </a>
+            </div>
+            <div class="accordion">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[14].Id">
+                    <h5>@Model[14].Content</h5>
+                </a>
+                <div id="faq-text_1" class="faq-text">
+                    <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[15].Id"> @Model[15].Content
+                </div></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container" style="background: #FBDFD3">
+        <div class="row">
+            <div class="col-xs-12 col-md-7 col-lg-7">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[16].Id"> <h3 class="bereikbaarheidtitel">@Model[16].Content</h3></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[17].Id">
+                    <img class="kleinefoto" src="@Model[17].Content" alt="bus1" />
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[21].Id"> <h5 class="kleinefototext">@Model[21].Content</h5></a>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[18].Id">
+                    <img class="kleinefoto" src="@Model[18].Content" alt="bus1" />
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[22].Id"> <h5 class="kleinefototext">@Model[22].Content</h5></a>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[19].Id">
+                    <img class="kleinefoto" src="@Model[19].Content" alt="bus1" />
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[23].Id"> <h5 class="kleinefototext">@Model[23].Content</h5></a>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[20].Id">
+                    <img class="kleinefoto" src="@Model[20].Content" alt="bus1" />
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[24].Id"> <h5 class="kleinefototext">@Model[24].Content</h5></a>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background: #E1EBE9">
+        <div class="col-xs-12 col-md-5 col-lg-5">
+            <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[25].Id">
+                <h2 class="kleinetitel">@Model[25].Content</h2>
+            </a>
+            <div class="col-xs-1 col-md-1 col-lg-1">
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/wifi.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/locker.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/dog 1.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/scootmobiel.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/fiets.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/lost and found.png" />
+            </div>
+            <div class="col-xs-10 col-md-10 col-lg-10" style="left: 30px">
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[26].Id">
+                    <label style="margin-top: 20px"><a class="voorzieningentext">@Model[26].Content</a></label>
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[27].Id">
+                    <label style="margin-top: 30px"><a class="voorzieningentext">@Model[27].Content</a></label>
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[28].Id">
+                    <label style="margin-top: 30px"><a class="voorzieningentext">@Model[28].Content</a></label>
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[29].Id">
+                    <label style="margin-top: 25px"><a class="voorzieningentext">@Model[29].Content</a></label>
+                </a>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[30].Id"></a>
+                <label style="margin-top: 30px"><a class="voorzieningentext">@Model[30].Content</a></label>
+                <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[31].Id"> <label style="margin-top: 30px"><a class="voorzieningentext">@Model[31].Content</a></label></a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <img class="voorzieningenfoto" src="~/images/P05Praktisch/bloemen.png" alt="Bloemen" />
+            <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[32].Id"> <p><a class="voorzieningfototext" asp-controller="Praktisch" asp-action="Toegankelijkheid">@Model[32].Content</a></p></a>
+        </div>
+    </div>
+    <div class="container" style="background: #FBDFD3">
+        <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
+            <img class="groepenfoto" src="~/images/P05Praktisch/bloemenveld.png" alt="Bloemenveld" />
+            <a asp-controller="PraktischContent" asp-action="Edit" asp-route-id="@Model[33].Id"> <label class="voorzieningfototext">@Model[33].Content</label></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿@model IEnumerable<KeukenhofV2.Models.ZoekResultaten>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var counter = 0;
+    foreach (var item in Model)
+    {
+        @if (item.Type == "h1" || item.Type == "h2" ||
+         item.Type == "h3" || item.Type == "h4" ||
+         item.Type == "h5" || item.Type == "p" ||
+         item.Type == "label")
+        {
+            counter++;
+        }
+        }
+
+    }
+    <div class="container zoekresultaten-container">
+        <div class="row zoekresultaten-row-background zoekresultaten-top-content">
+            <div class="col-xs-12">
+                <form class="zoekresultaten-form" action="/Zoekresultaten" method="get">
+                    <input name="searchVal" type="text" id="search-value" class="zoekresultaten-zoek-input" placeholder="@ViewData["SearchVal"]">
+                    <button type="submit" class="zoekresultaten-search-button"><label class="zoekresultaten-search-label"><img class="search-dialog-search-icon" src="~/images/Icons/Essentials/search.png" />Zoeken</label></button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-md-10 col-lg-9">
+                <h1 class="zoekresultaten-header-text">Zoekresultaten</h1>
+            </div>
+            <div class="col-xs-2 col-md-2 col-lg-3">
+                <p class="zoekresultaten-aantal-p"> @counter zoekresultaten</p>
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+            @if (item.Type == "h1" || item.Type == "h2" ||
+            item.Type == "h3" || item.Type == "h4" ||
+            item.Type == "h5" || item.Type == "p" ||
+            item.Type == "label")
+            {
+
+
+                <a asp-controller="@item.Location" asp-action="Index">
+                    <div class="row zoekresultaten-row-background zoekresultaten-zoek-row">
+                        <div class="col-xs-12 col-md-12 col-lg-12">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 col-lg-6">
+                                    <h4 class="zoekresultaten-row-header-h4">
+                                        @Html.DisplayFor(modelItem => item.Location)
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12 col-lg-12">
+                                    <p class="zoekresultaten-row-content-p">
+                                        @Html.DisplayFor(modelItem => item.Content)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row zoekresultaten-row-bottom">
+                                <div class="col-xs-5 col-md-1 col-lg-1 custom-col-home">
+                                    <img src="~/images/Icons/Essentials/home.png" />
+                                </div>
+                                <div class="col-xs-1 col-md-1 col-lg-1 custom-col-slash">
+                                    <p class="zoekreultaten-row-slash-p">/</p>
+                                </div>
+                                <div class="col-xs-5 col-md-2 col-lg-2 custom-col-location">
+                                    <p class="zoekresultaten-row-location-p">
+                                        @Html.DisplayFor(modelItem => item.Location)
+                                    </p>
+                                </div>
+
+                                <div class="col-xs-6 col-offset-4 col-lg-offset-5">
+                                    <img class="zoekresultaten-row-arrow-right" src="~/images/Icons/Essentials/arrow-right.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            }
+
+        }
+
+        <!--Einde van row 1-->
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <label class="zoekresultaten-pagination-labels">
+                    <label class="zoekresultaten-pagination-bg">
+                        <label class="zoekresultaten-pagination-deselected">
+                            1
+                        </label>
+                    </label>
+                    <label class="zoekresultaten-pagination-bg">
+                        <label class="zoekresultaten-pagination-selected">
+                            2
+                        </label>
+                    </label>
+                </label>
+
+                <p></p>
+            </div>
+        </div>
+    </div>

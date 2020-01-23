@@ -1,7 +1,184 @@
-﻿
+﻿@model List<PraktischContent>
 @{
     ViewData["Title"] = "Praktisch";
 }
+<!DOCTYPE html>
+<html lang="nl-nl">
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#1").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#div1").offset().top
+                }, 2000);
+            });
+        });
 
-<h2>Praktisch</h2>
+        $(document).ready(function () {
+            $("#2").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#div2").offset().top
+                }, 2000);
+            });
+        });
 
+        $(document).ready(function () {
+            $("#3").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#div3").offset().top
+                }, 2000);
+            });
+        });
+
+        $(document).ready(function () {
+            $("#4").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#div4").offset().top
+                }, 2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <img class="hoofdfoto" src="~/images/P05Praktisch/ctalImage2.png" alt="Hoofdfoto" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <h1 class="toegankelijkheidoftitel" align="left" style="margin-left: -15%">@Model[0].Content</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <p class="evenementtextklein" align="left">@Model[1].Content</p>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <p class="evenementtextklein" align="left">@Model[2].Content</p>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-2 col-lg-2">
+                <button class="videobutton">Bekijk video</button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div style="background: #36454E; height: 64px" class="col-xs-12 col-md-12 col-lg-12">
+                <div style="left: 1.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="1" class="labeltext">@Model[3].Content</a></div>
+                <div style="left: 3.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="2" class="labeltext">@Model[4].Content</a></div>
+                <div style="left: 7.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">@Model[5].Content</a></div>
+                <div style="left: 10.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="4" class="labeltext">@Model[6].Content</a></div>
+            </div>
+        </div>
+    </div>
+    <div id="div1" class="container" style="background: #E1EBE9; height: 550px">
+        <div class="row">
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <h2 class="kleinetitel">@Model[7].Content</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <p class="evenementtextklein">@Model[8].Content</p>
+            </div>
+            <div class="col-xs-12 col-md-7 col-lg-7">
+                <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="VeelgesteldeVragen" asp-action="VeelgesteldeVragen">@Model[9].Content</a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="map">
+                    <div class="download-btn">
+                        <a href="~/images/PLATTEGROND Keukenhof 2019.png" download>
+                            <label>Download de kaart</label>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="accordion">
+                    <h5>@Model[10].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[11].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[12].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[13].Content
+                    </div>
+                </div>
+                <div class="accordion">
+                    <h5>@Model[14].Content</h5>
+                    <div id="faq-text_1" class="faq-text">
+                        @Model[15].Content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="div2" class="container" style="background: #FBDFD3">
+        <div class="row">
+            <div class="col-xs-12 col-md-7 col-lg-7">
+                <h3 class="bereikbaarheidtitel">@Model[16].Content</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <img class="kleinefoto" src="@Model[17].Content" alt="bus1" />
+                <h5 class="kleinefototext"><a asp-controller="Bereikbaarheid" asp-action="Bereikbaarheid">@Model[21].Content</a></h5>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <img class="kleinefoto" src="@Model[18].Content" alt="bus1" />
+                <h5 class="kleinefototext">@Model[22].Content</h5>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <img class="kleinefoto" src="@Model[19].Content" alt="bus1" />
+                <h5 class="kleinefototext"><a asp-controller="Bereikbaarheid" asp-action="Bereikbaarheid">@Model[23].Content</a></h5>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <img class="kleinefoto" src="@Model[20].Content" alt="bus1" />
+                <h5 class="kleinefototext"><a asp-controller="Bereikbaarheid" asp-action="Bereikbaarheid">@Model[24].Content</a></h5>
+            </div>
+        </div>
+    </div>
+    <div id="div3" class="container" style="background: #E1EBE9">
+        <div class="col-xs-12 col-md-5 col-lg-5">
+            <h2 class="kleinetitel">@Model[25].Content</h2>
+            <div class="col-xs-1 col-md-1 col-lg-1">
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/wifi.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/locker.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/dog 1.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/scootmobiel.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/fiets.png" />
+                <img class="voorzieningenicoon" style="margin-top: 20px" src="~/images/Icons/Graphic/lost and found.png" />
+            </div>
+            <div class="col-xs-10 col-md-10 col-lg-10" style="left: 30px">
+                <label style="margin-top: 20px"><a class="voorzieningentext">@Model[26].Content</a></label>
+                <label style="margin-top: 30px"><a class="voorzieningentext">@Model[27].Content</a></label>
+                <label style="margin-top: 30px"><a class="voorzieningentext">@Model[28].Content</a></label>
+                <label style="margin-top: 25px"><a class="voorzieningentext">@Model[29].Content</a></label>
+                <label style="margin-top: 30px"><a class="voorzieningentext">@Model[30].Content</a></label>
+                <label style="margin-top: 30px"><a class="voorzieningentext">@Model[31].Content</a></label>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <img class="voorzieningenfoto" src="~/images/P05Praktisch/bloemen.png" alt="Bloemen" />
+            <p><a class="voorzieningfototext" asp-controller="Praktisch" asp-action="Toegankelijkheid">@Model[32].Content</a></p>
+        </div>
+    </div>
+    <div id="div4" class="container" style="background: #FBDFD3">
+        <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
+            <img class="groepenfoto" src="~/images/P05Praktisch/bloemenveld.png" alt="Bloemenveld" />
+            <label class="voorzieningfototext">@Model[33].Content</label>
+        </div>
+    </div>
+</body>
+</html>

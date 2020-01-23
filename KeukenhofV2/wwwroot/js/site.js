@@ -6,9 +6,39 @@ $(document).ready(function () {
          
         $(".navbar-header-items").hide();
         $(".mobile-menu-button").show();
-        
+        $(".header-p-mobile-menu").show();
+        $(".desktop-pagination").hide();
+        $(".mobile-pagination").show();
+        $(".mobile-menu-button").on("click", function (e) {
+            $(".mobile-menu-button").hide();
+            $(".header-p-mobile-menu").hide();
+            $(".mobile-close-button").show();
+            $(".header-p-mobile-close").show();
+            $(".mobile-sub-menu").show();
+           
+        });
 
+        $(".mobile-close-button").on("click", function (e) {
+            $(".mobile-close-button").hide();
+            $(".header-p-mobile-close").hide();
+            $(".mobile-menu-button").show();
+            $(".header-p-mobile-menu").show();
+            $(".mobile-sub-menu").hide();
+        });
     }
+
+    $(".search-icon").on("click", function (e) {
+        $(".search-dialog").show();
+        $('#overlay').fadeIn(300);
+        $('.expose').css('z-index', '99999');
+
+    });
+
+    $(".search-dialog-cancel-button").on("click", function (e) {
+        $('#overlay').stop().fadeOut(300);
+        $(".search-dialog").hide();
+        $('.expose').css('z-index', '1');
+    });
     
 });
 
@@ -28,10 +58,14 @@ function off() {
     cover.style.display = "none";
 }
 
-
+$(document).ready(function () { /* ensures elements whithin this class will be hidden */
+    $('.download-hide').each(function () {
+        $(this).hide();
+    });
+});
 
 $(document).ready(function () {
-    $(".accordion h1").click(function () {
+    $(".accordion h5").click(function () {
         var id = this.id;
         $(".accordion-content").each(function () {
             if ($("#" + id).next()[0].id != this.id) {

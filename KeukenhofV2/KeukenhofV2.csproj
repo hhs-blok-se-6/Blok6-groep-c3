@@ -12,12 +12,24 @@
     <Compile Remove="Data\Migrations\20200119150333_pages.Designer.cs" />
     <Compile Remove="Data\Migrations\20200119150604_Initial.cs" />
     <Compile Remove="Data\Migrations\20200119150604_Initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200121145954_RefineDatabase.cs" />
+    <Compile Remove="Data\Migrations\20200121145954_RefineDatabase.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200121150742_UpdateFAQ.cs" />
+    <Compile Remove="Data\Migrations\20200121150742_UpdateFAQ.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200121184737_ModelsV3.cs" />
+    <Compile Remove="Data\Migrations\20200121184737_ModelsV3.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="microsoft-web-helpers" Version="2.1.20710.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
     <PackageReference Include="WebGridMvc" Version="1.0.0" />
   </ItemGroup>
@@ -27,7 +39,34 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Bereikbaarheid\EditBereikbaarheid.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Bereikbaarheid\Bereikbaarheid.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Contact\EditContact.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Evenementen\EditEvenementen.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Home\EditHome.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Park\EditPark.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Praktisch\Praktisch.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Praktisch\Praktischepaginas\EditToegankelijkheid.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Privacy\EditPrivacy.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Zoekresultaten\Backup.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

@@ -1,0 +1,93 @@
+﻿@model List<ToegankelijkheidContent>
+@{ 
+    ViewData["Title"] = "Toegankelijkheid";
+}
+
+<!DOCTYPE html>
+<html lang="nl-nl">
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <img class="hoofd-foto hoofdfoto" src="~/images/Toegankelijkheid/Bloemen.png" alt="Hoofdfoto" />
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col-xs-12 col-md-4 col-lg-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumbsvisual" style="margin-left: -40%">
+                        <li class="breadcrumb-item"><a class="nav-link-item" asp-controller="Home" asp-action="Home">Home</a></li>
+                        <li class="breadcrumb-item breadcrumbsactive" aria-current="page">Toegankelijkheid</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <a asp-controller="ToegankelijkheidContent" asp-action="Edit" asp-route-id="@Model[0].Id">
+                    <h1 class="toegankelijkheidoftitel" align="left">@Model[0].Content</h1></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-10 col-lg-10">
+                <a asp-controller="ToegankelijkheidContent" asp-action="Edit" asp-route-id="@Model[1].Id">
+                    <p class="evenementtext" align="left">@Model[1].Content</p></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-3 col-lg-3">
+                <a asp-controller="ToegankelijkheidContent" asp-action="Edit" asp-route-id="@Model[2].Id">
+                    <h2 class="kleinetitel" align="left">@Model[2].Content</h2></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <a asp-controller="ToegankelijkheidContent" asp-action="Edit" asp-route-id="@Model[3].Id">
+                    <p class="evenementtextklein" align="left">@Model[3].Content</p></a>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <a asp-controller="ToegankelijkheidContent" asp-action="Edit" asp-route-id="@Model[4].Id">
+                    <p class="evenementtextklein" align="left">@Model[4].Content</p></a>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-1 col-md-2 col-lg-2">
+                <button class="rolstoelbutton">Rolstoel reserveren</button>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-10 col-lg-10">
+                <a asp-controller="ToegankelijkheidContent" asp-action="Edit" asp-route-id="@Model[5].Id">
+                    <p class="grijzetext" align="left">@Model[5].Content</p></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-10 col-lg-10">
+                <a asp-controller="ToegankelijkheidContent" asp-action="Edit" asp-route-id="@Model[6].Id">
+                    <h1 class="kleinetitel" align="left">@Model[6].Content</h1></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <a asp-controller="ToegankelijkheidContent" asp-action="Edit" asp-route-id="@Model[7].Id">
+                    <p class="evenementtextklein" align="left">@Model[7].Content</p></a>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <a asp-controller="ToegankelijkheidContent" asp-action="Edit" asp-route-id="@Model[8].Id">
+                    <p class="evenementtextklein" align="left">@Model[8].Content</p></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

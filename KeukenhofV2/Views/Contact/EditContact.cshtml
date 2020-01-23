@@ -1,0 +1,38 @@
+﻿@model KeukenhofV2.ViewModel.ContactViewModel
+@{
+    ViewData["Title"] = "Contact";
+    var contact = Model.ContactContent.ToList();
+    var feature = Model.FeaturedContent.ToList();
+    var featureCounter = 0;
+    var miniFaq = Model.MiniFAQ;
+}
+<div class="alinea">
+    <img src="~/images/P08Contact/cover.png" />
+    <a asp-controller="ContactContent" asp-action="Edit" asp-route-id="@contact[0].Id"><h1>@contact[0].Content</h1></a>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <a asp-controller="ContactContent" asp-action="Edit" asp-route-id="@contact[1].Id"><p>@contact[1].Content</p></a>
+</div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <p><a asp-controller="ContactContent" asp-action="Edit" asp-route-id="@contact[2].Id">@contact[2].Content</a><br /><a asp-controller="ContactContent" asp-action="Edit" asp-route-id="@contact[3].Id">@contact[3].Content</p></a>
+        </div>
+    </div>
+</div>
+<div class="rectangle" style="height:421px; background:var(--green-background)">
+    <a asp-controller="ContactContent" asp-action="Edit" asp-route-id="@contact[4].Id">
+        <h3>@contact[4].Content</h3></a>
+        @for (var i = 0; i < Model.FeatureRows; i++)
+        {
+            <div class="row feature">
+                @for (var j = 0; j < Model.FeatureColumns; j++)
+                {
+                    <partial name="_FeaturedPartial" model="feature[j+featureCounter]" />
+                }
+            </div>
+            featureCounter += Model.FeatureColumns; <!--zodat de loop elke keer de <column aantal> volgende neemt-->
+        }
+</div>
+<div class="rectangle" style="height:495px; background:var(--orange-light)">
+    <a asp-controller="ContactContent" asp-action="Edit" asp-route-id="@contact[5].Id"><h2>@contact[5].Content</h2></a>
+    <partial name="_MiniFaqPartial" model="miniFaq" />
+</div>

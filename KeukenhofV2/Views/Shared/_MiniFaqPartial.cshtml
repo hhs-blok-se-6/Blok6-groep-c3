@@ -1,0 +1,36 @@
+﻿@model KeukenhofV2.ViewModel.MiniFaqViewModel
+@{
+    var faq = Model.FAQ;
+    int counter = 1;
+    string classname;
+    if (@Model.ButtonText == null || Model.ButtonText.Equals(""))
+    {
+        classname = "download-hide";
+    }
+    else
+    {
+        classname = "download-btn";
+    }
+}
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="map" style="background:url(@Model.Image)">
+            <div class="@classname">
+                <a href="@Model.Image" download>
+                    <label>@Model.ButtonText</label>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        @foreach (var item in faq)
+        {
+            <div class="accordion">
+                <h5>@item.Vraag</h5>
+                <div id="faq-text_@counter" class="faq-text">
+                    @item.Antwoord
+                </div>
+            </div>
+        }
+    </div>
+</div>
