@@ -1,13 +1,15 @@
-﻿using KeukenhofV2.Data;
-using Microsoft.AspNetCore.Authorization;
+﻿using KeukenhofV2.ViewModels;
+using KeukenhofV2.Data;
+using KeukenhofV2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace KeukenhofV2.Controllers
 {
-
     public class EvenementenController : Controller
     {
         private readonly KeukenhofContext _context;
@@ -16,13 +18,15 @@ namespace KeukenhofV2.Controllers
         {
             _context = context;
         }
-
-        [Route("/Evenementen")]
+        [Route("Evenementen")]
         public async Task<IActionResult> Evenementen()
         {
-            var evenementen = from ec in _context.Evenementen select ec;
+            var evenementenPaginaContent = from ec in _context.EvenementenPagina select ec;
+            var evenementen = from evenementenList in _context.Evenementen select evenementenList;
 
-            return View("Evenementen", await evenementen.AsNoTracking().ToListAsync());
+            var model = new EvenementenPaginaViewModel { EvenementenPagina = await evenementenPaginaContent.AsNoTracking().ToListAsync(), Evenementen = await evenementen.AsNoTracking().ToListAsync() };
+
+            return View("Evenementen", model);
         }
 
         public async Task<IActionResult> BloemenFestival()
@@ -31,14 +35,5 @@ namespace KeukenhofV2.Controllers
 
             return View("Evenementenpaginas/BloemenFestival", await evenementenContent.AsNoTracking().ToListAsync());
         }
-
-        [Authorize]
-        public async Task<IActionResult> Edit()
-        {
-            var evenementContent = from hc in _context.EvenementenContent select hc;
-
-            return View("EditEvenementen", await evenementContent.AsNoTracking().ToListAsync());
-        }
-
     }
 }

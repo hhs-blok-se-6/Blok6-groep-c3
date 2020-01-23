@@ -17,8 +17,8 @@ namespace KeukenhofV2.Controllers
         {
             _context = context;
         }
-
         [Route("/Park")]
+        [Route("/Park/Index")]
         public IActionResult Park()
         {
             var parkContent = from pc in _context.ParkContent select pc;

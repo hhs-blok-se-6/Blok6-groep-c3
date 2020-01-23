@@ -305,6 +305,7 @@ header nav {
     text-align: right;
     /* White */
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 .search-dialog-cancel-label {
@@ -320,6 +321,7 @@ header nav {
     text-align: right;
     /* Dark Grey */
     color: #36454E;
+    cursor: pointer;
 }
 
 .search-dialog-search-button {
@@ -329,6 +331,9 @@ header nav {
     padding-inline-start: 20px;
     padding-inline-end: 15px;
     padding-block-start: 5px;
+    margin-left: 45px;
+    margin-top: 10px;
+    margin-right: -40px;
 }
 
 .search-dialog-cancel-button {
@@ -344,6 +349,7 @@ header nav {
 
 .search-dialog-search-icon {
     padding-inline-end: 5px;
+    cursor: pointer;
 }
 
 .search-dialog-cancel-icon {
@@ -367,7 +373,7 @@ header nav {
     line-height: 28px;
     color: #808E96;
     width: 60%;
-    margin-left: 150px;
+    margin-left: 5%;
     padding-bottom: 15px;
 }
 
@@ -441,6 +447,41 @@ p, a, label, caption {
     text-decoration: none;
 }
 
+.footer-li {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 156% */
+    /* Black */
+    color: #1F2325;
+    border-radius: 4px;
+}
+
+.footer-h5 {
+    /* H5 */
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+    /* Dark Grey */
+    color: #36454E;
+    border-radius: 4px;
+}
+
+.footer-p5 {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 156% */
+    /* Dark Grey */
+    color: #36454E;
+}
 /* headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: Source Sans Pro;
@@ -858,7 +899,6 @@ textarea, textarea:focus, input, input:focus {
             cursor: pointer;
             background-color: gray;
         }
-
 /*Evenementen*/
 
 .pinkbg {
@@ -872,11 +912,47 @@ textarea, textarea:focus, input, input:focus {
     margin-top: 10%;
     margin-left: 10px;
     border-radius: 27px;
-    display: inline-block;
+    display: inline;
     cursor: pointer;
 }
 
-/* alinea */
+.evenement-list {
+    background: #FBDFD3;
+}
+
+.evenement-item {
+    width: 200px;
+    height: 300px;
+    background: #FFFFFF;
+    float: left;
+    margin: 16px;
+    border-radius: 4px;
+}
+
+.evenementen-header .header-image {
+    width: 100%;
+   max-height: 329px;
+}
+
+.evenementen-header .header-image-wrapper {
+    height: 330px;
+    overflow: hidden;
+}
+
+.evenemten-list:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.evenement-item h1 {
+    font-size: 14px;
+}
+
+.evenement-item img {
+    width: 100%;
+}/* alinea */
 
 .alinea {
     margin: 0 auto;
@@ -891,21 +967,265 @@ textarea, textarea:focus, input, input:focus {
         padding-bottom: 10px;
     }
 
+/*Zoekresultaten*/
+
+.zoekresultaten-container {
+    background: var(--green-light);
+    width: 100%;
+    height: 90%;
+}
+
+.zoekresultaten-header-text {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 56px;
+    color: #1F2325;
+    padding-left: 10%;
+    margin-bottom: 3%;
+    margin-top: 4%;
+}
+
+.zoekresultaten-aantal-p {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: right;
+    color: #36454E;
+    margin-top: 30%;
+    margin-left: 5%;
+}
+
+
+.zoekresultaten-row-content-p {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+    /* Dark Grey */
+    color: #36454E;
+}
+
+
+.zoekresultaten-row-location-p {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+    /* Green Secundary */
+    color: #2B7F68;
+    font-family: Source Sans Pro;
+}
+
+.zoekresultaten-top-content {
+    margin-top: 30px;
+}
+
+.zoekresultaten-row-background {
+    width: 85%;
+    margin-left: 7.5%;
+    background: white;
+    border-radius: 4px;
+}
+
+.zoekresultaten-zoek-row{
+    margin-bottom: 2%;
+    padding-left: 1%;
+}
+
+.zoekresultaten-row-bottom {
+    margin-bottom: 1.75%;
+    margin-top: 0.75%;
+}
+
+.zoekreultaten-row-slash-p {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+    /* Green Light */
+    color: #CEDBD8;
+}
+
+.zoekresultaten-row-header-h4 {
+    margin-top: 6%;
+}
+
+.zoekresultaten-zoek-input {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #36454E;
+    width: 60%;
+    margin-left: 2%;
+    padding-bottom: 3%;
+    padding-top: 2%;
+}
+
+.zoekresultaten-search-button {
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+    padding-block-start: 5px;
+    background: #FFFFFF;
+    border: 1.5px solid #00694C;
+    box-sizing: border-box;
+    border-radius: 27px;
+    padding-block-end: 5px;
+    margin-left:20%;
+    margin-top: 2%;
+}
+
+.zoekresultaten-search-label {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #36454E;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.zoekresultaten-pagination-bg {
+    background: #FFFFFF;
+    /* Green Light */
+    border: 1px solid #CEDBD8;
+    box-sizing: border-box;
+    padding-inline-start: 15px;
+    padding-inline-end: 15px;
+    padding-block-start: 8px;
+    padding-block-end: 8px;
+    cursor: pointer;
+}
+
+.zoekresultaten-pagination-labels {
+    margin-left: 45%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.zoekresultaten-pagination-deselected {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* Green Background */
+    color: #E1EBE9;
+    cursor: pointer;
+}
+
+.zoekresultaten-pagination-selected {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* Green Default */
+    color: #00694C;
+    cursor: pointer;
+}
+.mobile-pagination {
+    margin-left: 18%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+}
+
+.zoekresultaten-row-background h5 {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+        .zoekresultaten-row-background h5:after {
+            margin-top: 10px;
+            margin-left: auto;
+            content: var(--chevron-down);
+        }
+
+        .zoekresultaten-row-background h5:hover {
+            cursor: pointer;
+            background-color: gray;
+        }
+
+
+.custom-col-home{
+    width: 5%;
+}
+
+.custom-col-slash{
+    width: 1%;
+}
+
+.custom-col-location{
+    width: 16%;
+}
+
+.zoekresultaten-row-arrow-right{
+    float:right;
+
+}
 /*Media queries*/
-
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 736px) {
     /* Styles */
-}
+    .zoekresultaten-header-text {
+        display:none;
+    }
 
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-    /* Styles */
-}
+    .zoekresultaten-aantal-p {
+        margin-top: 10%;
+    }
+
+    .zoekresultaten-row-background{
+        padding-bottom: 8%;
+    }
+    .footer-social-icons {
+        margin: 10px;
+        padding:10px;
+
+    }
+
+    .footer-logo-keukenhof{
+        margin: 15px;
+    }
+    /* Smartphones (landscape) ----------- */
+    @media only screen and (min-width : 321px) {
+        /* Styles */
+    }
 
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-    /* Styles */
+@media only screen and (min-width : 400px) {
+    ..zoekresultaten-search-button {
+        margin-left: 0%;
+    }
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -924,6 +1244,12 @@ textarea, textarea:focus, input, input:focus {
 }
 
 /* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {
-    /* Styles */
+@media and (min-width : 1070px) {
+    .zoekresultaten-zoek-input {
+        padding-bottom: 2%;
+    }
+
+    .zoekresultaten-search-button{
+        margin-left: 20%;
+    }
 }

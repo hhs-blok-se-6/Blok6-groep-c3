@@ -17,7 +17,7 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
-        // GET: PraktischContent
+       
         public async Task<IActionResult> Index()
         {
             return View(await _context.PraktischContent.ToListAsync());

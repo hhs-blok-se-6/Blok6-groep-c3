@@ -1,9 +1,139 @@
-﻿
+﻿@using KeukenhofV2.Data;
+@model PaginatedList<ZoekResultaten>
+
+
+
 @{
-    ViewData["Title"] = "Zoekresultaten";
-    string trefwoord = (string)ViewData["Search"];
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var maxColumn = 12;
+    
+
 }
+<div class="container zoekresultaten-container">
+    <div class="row zoekresultaten-row-background zoekresultaten-top-content">
+        <div class="col-xs-12">
+            <form class="zoekresultaten-form" action="/Zoekresultaten" method="get">
+                <input name="searchVal" type="text" id="search-value" class="zoekresultaten-zoek-input" placeholder="@ViewData["CurrentFilter"]">
+                <button type="submit" class="zoekresultaten-search-button"><label class="zoekresultaten-search-label"><img class="search-dialog-search-icon" src="~/images/Icons/Essentials/search.png" />Zoeken</label></button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-10 col-lg-9">
+            <h1 class="zoekresultaten-header-text">Zoekresultaten</h1>
+        </div>
+        <div class="col-xs-12 col-md-2 col-lg-3">
+            <p class="zoekresultaten-aantal-p"> @ViewData["Counter"] </p>
+        </div>
+    </div>
+    @foreach (var item in Model)
+    {
+        @if (item.Type == "h1" || item.Type == "h2" ||
+      item.Type == "h3" || item.Type == "h4" ||
+      item.Type == "h5" || item.Type == "p" ||
+      item.Type == "label")
+        {
 
 
-<h1>Zoekresultaten</h1>
-<h2>@trefwoord</h2>
+            <a asp-controller="@item.Location" asp-action="Index">
+                <div class="row zoekresultaten-row-background zoekresultaten-zoek-row">
+                    <div class="col-xs-12 col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 col-lg-6">
+                                <h4 class="zoekresultaten-row-header-h4">
+                                    @Html.DisplayFor(modelItem => item.Location)
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12 col-lg-12">
+                                <p class="zoekresultaten-row-content-p">
+                                    @Html.DisplayFor(modelItem => item.Content)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row zoekresultaten-row-bottom">
+                            <div class="col-xs-5 col-md-1 col-lg-1 custom-col-home">
+                                <img src="~/images/Icons/Essentials/home.png" />
+                            </div>
+                            <div class="col-xs-1 col-md-1 col-lg-1 custom-col-slash">
+                                <p class="zoekreultaten-row-slash-p">/</p>
+                            </div>
+                            <div class="col-xs-5 col-md-2 col-lg-2 custom-col-location">
+                                <p class="zoekresultaten-row-location-p">
+                                    @Html.DisplayFor(modelItem => item.Location)
+                                </p>
+                            </div>
+
+                            <div class="col-xs-6 col-offset-4 col-lg-offset-5">
+                                <img class="zoekresultaten-row-arrow-right" src="~/images/Icons/Essentials/arrow-right.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        }
+
+    }
+
+    <!--Einde van row 1-->
+    
+    <div class="row desktop-pagination">
+        @if(Model.TotalPages > 4)
+        {
+            maxColumn = 6;
+        }
+        
+        <div class="col-xs-12 col-md-@maxColumn col-lg-@maxColumn">
+            <label class="zoekresultaten-pagination-labels">
+                @for (int i = 1; i < Model.TotalPages; i++)
+                {
+                    var numbOfPages = i;
+                    @if (i == Model.PageIndex)
+                    {
+                <a asp-controller="Zoekresultaten" asp-action="Index" 
+                   asp-route-pagina="@numbOfPages" asp-route-searchVal="@ViewBag.CurrentFilter">
+                    <label class="zoekresultaten-pagination-bg">
+                        <label class="zoekresultaten-pagination-selected">
+                            @numbOfPages
+                        </label>
+                    </label>
+                </a>
+                    }
+                    else
+                    {
+                <a asp-controller="Zoekresultaten" asp-action="Index" 
+                   asp-route-pagina="@numbOfPages" asp-route-searchVal="@ViewBag.CurrentFilter">
+                    <label class="zoekresultaten-pagination-bg">
+                        <label class="zoekresultaten-pagination-deselected">
+                            @numbOfPages
+                        </label>
+                    </label>
+                </a>
+                    }
+
+                }
+            </label>
+        </div>
+    </div>
+    <div class="row mobile-pagination" hidden>
+        <div class="col-xs-12">
+            @{
+                string prevDisabled = !Model.HasPreviousPage() ? "disabled" : "";
+                string nextDisabled = !Model.HasNextPage() ? "disabled" : "";
+            }
+            <a asp-action="Index" asp-route-pagina="@(Model.PageIndex - 1)"
+               asp-route-searchVal="@ViewBag.CurrentFilter"
+               class="btn btn-default @prevDisabled">
+                < Vorige
+            </a>
+            <a asp-action="Index" asp-route-pagina="@(Model.PageIndex + 1)"
+               asp-route-searchVal="@ViewBag.CurrentFilter"
+               class="btn btn-default @nextDisabled">
+                Volgende >
+            </a>
+
+        </div>
+    </div>
+</div>

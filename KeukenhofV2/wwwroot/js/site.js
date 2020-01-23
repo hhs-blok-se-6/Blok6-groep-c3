@@ -7,7 +7,8 @@ $(document).ready(function () {
         $(".navbar-header-items").hide();
         $(".mobile-menu-button").show();
         $(".header-p-mobile-menu").show();
-
+        $(".desktop-pagination").hide();
+        $(".mobile-pagination").show();
         $(".mobile-menu-button").on("click", function (e) {
             $(".mobile-menu-button").hide();
             $(".header-p-mobile-menu").hide();

@@ -1,9 +1,12 @@
-﻿using KeukenhofV2.Data;
-using KeukenhofV2.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using KeukenhofV2.Data;
+using KeukenhofV2.Models;
 
 namespace KeukenhofV2.Controllers
 {
@@ -16,17 +19,31 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
-
-        /*
-        // GET: ZoekResultaten
-        public async Task<IActionResult> Index()
+        private IQueryable<ZoekResultaten> GetLijst()
         {
-            return View(await _context.ZoekResultaten.ToListAsync());
+            return _context.ZoekResultaten;
         }
-        */
-        [Route("/Zoekresultaten")]
+
+        public IQueryable<ZoekResultaten> Filter(IQueryable<ZoekResultaten> lijst, string searchVal)
+        {
+            ViewData["CurrentFilter"] = searchVal;
+            if (!String.IsNullOrEmpty(searchVal))
+            {
+                lijst = lijst.Where(s => s.Content.ToLower().Contains(searchVal.ToLower()) 
+                || s.Location.ToLower().Contains(searchVal.ToLower()));
+
+                
+            }
+
+            return lijst;
+
+        }
+
+
         public async Task<IActionResult> Index(string searchVal)
         {
+            //Oude versie, met zoek functionaliteit zoals ik die had bedacht
+            //Nieuw versie (van Karel) is stukken beter
 
             if (searchVal == null)
             {
@@ -38,13 +55,59 @@ namespace KeukenhofV2.Controllers
 
                 ViewData["SearchVal"] = searchVal;
 
-                var result = await _context.ZoekResultaten.Where(w => w.Content.Contains(searchVal)).ToListAsync();
+               // var result = await _context.ZoekResultaten.Where(w => w.Content.Contains(searchVal)).ToListAsync();
 
-                return View(result);
+
+                var result = from item in _context.ZoekResultaten
+                             where (item.Content.ToLower().Contains(searchVal.ToLower()))
+                             && (item.Location.ToLower().Contains(searchVal.ToLower()))
+                             select item;
+                //var result = await item from _context.ZoekResultaten.Where(w => w.Content.Contains(searchVal)).ToListAsync();
+
+                return View(await result.AsNoTracking().ToListAsync());
             }
 
         }
 
+       
+        [Route("/Zoekresultaten")]
+       
+        [Route("/Zoekresultaten/Index")]
+        public async Task<IActionResult> Zoekresultaten(string newSearchVal, string searchVal, 
+                                                            int? pagina)
+        {
+
+            if (String.IsNullOrEmpty(newSearchVal))
+                newSearchVal = searchVal;
+
+            else
+                pagina = 1;
+
+            IQueryable<ZoekResultaten> lijst = GetLijst();
+            lijst = Filter(lijst, newSearchVal);
+            int counter = 0; 
+            foreach(var item in lijst)
+            {
+                if(item.Type == "h1" || item.Type == "h2" ||
+              item.Type == "h3" || item.Type == "h4" ||
+              item.Type == "h5" || item.Type == "p" ||
+              item.Type == "label")
+                {
+                    counter++;
+                }
+            }
+            ViewData["Counter"] = counter + " zoekresultaten";
+
+            return View(await Paging(lijst, pagina));
+        }
+
+        private async Task<PaginatedList<ZoekResultaten>> Paging(IQueryable<ZoekResultaten> lijst, int? pagina)
+        {
+            pagina = pagina ?? 1;
+            ViewData["CurrentPage"] = pagina;
+            int aantalItemsPerPagina = 8;
+            return await PaginatedList<ZoekResultaten>.CreateAsync(lijst.AsNoTracking(), (int)pagina, aantalItemsPerPagina);
+        }
 
         // GET: ZoekResultaten/Details/5
         public async Task<IActionResult> Details(string id)

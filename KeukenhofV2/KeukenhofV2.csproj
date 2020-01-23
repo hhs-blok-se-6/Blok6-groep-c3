@@ -60,6 +60,9 @@
     <Content Update="Views\Privacy\EditPrivacy.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\Zoekresultaten\Backup.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
   </ItemGroup>
 
 </Project>

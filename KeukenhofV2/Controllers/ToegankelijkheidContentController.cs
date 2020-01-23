@@ -19,6 +19,7 @@ namespace KeukenhofV2.Controllers
         }
 
         // GET: ToegankelijkheidContent
+      
         public async Task<IActionResult> Index()
         {
             return View(await _context.ToegankelijkheidContent.ToListAsync());
