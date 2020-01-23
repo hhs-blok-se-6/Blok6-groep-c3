@@ -5,12 +5,10 @@
 }
 
 <div class="pinkbg">
-    <div class="container">
+    <div class="evenementen-header">
         <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
-                <div style="width: 1152px; height: 329px; overflow: hidden">
-                    <img src="~/images/Evenementen/EvenementenImg.png" alt="Evenementen foto" />
-                </div>
+            <div class="col-xs-12 col-md-12 col-lg-12 header-image-wrapper">
+                <img class="header-image" src="~/images/Evenementen/EvenementenImg.png" alt="Evenementen foto" />
             </div>
         </div>
 
@@ -21,12 +19,11 @@
     <div align="left">
         <h1>@Model.EvenementenPagina[0].Content</h1>
     </div>
-    <p>lalala</p>
-    <p>lalala</p>
+
     <div class="evenemten-list">
         @foreach (var evenement in Model.Evenementen)
         {
-            
+
             @await Html.PartialAsync("_Evenement", (Evenementen)evenement);
         }
     </div>

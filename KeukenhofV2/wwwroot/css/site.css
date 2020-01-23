@@ -774,7 +774,7 @@ textarea, textarea:focus, input, input:focus {
 }
 
 .evenement-list {
-    background-color: #FBDFD3;
+    background: #FBDFD3;
 }
 
 .evenement-item {
@@ -784,6 +784,22 @@ textarea, textarea:focus, input, input:focus {
     float: left;
     margin: 0 32px 0 32px;
     border-radius: 4px;
+}
+
+.evenementen-header .header-image {
+    width:100%;
+}
+
+.evenementen-header .header-image-wrapper {
+    height: 330px;
+    overflow: hidden;
+}
+
+.evenemten-list:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
 }
 
     .evenement-item h1 {
