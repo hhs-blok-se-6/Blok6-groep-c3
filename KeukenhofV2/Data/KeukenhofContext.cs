@@ -14,6 +14,7 @@ namespace KeukenhofV2.Data
         public DbSet<HomeContent> HomeContent { get; set; }
         public DbSet<EvenementenContent> EvenementenContent { get; set; }
         public DbSet<Evenementen> Evenementen { get; set; }
+        public DbSet<ContentContent> ContentContent { get; set; }
         public DbSet<ToegankelijkheidContent> ToegankelijkheidContent { get; set; }
         public DbSet<ContactContent> ContactContent { get; set; }
         public DbSet<FeaturedContent> FeaturedContent { get; set; }
@@ -25,8 +26,6 @@ namespace KeukenhofV2.Data
         public DbSet<PrivacyContent> PrivacyContent { get; set; }
         public DbSet<PraktischContent> PraktischContent { get; set; }
         public DbSet<CTAButton> CTAButtons { get; set; }
-        public DbSet<KeukenhofV2.Models.ZoekResultaten> ZoekResultaten { get; set; }
-
-        
+        public DbSet<ZoekResultaten> ZoekResultaten { get; set; }
     }
 }
