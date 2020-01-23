@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using KeukenhofV2.Data;
+using KeukenhofV2.ViewModel;
 using Microsoft.AspNetCore.Mvc;
-using KeukenhofV2.Data;
-using KeukenhofV2.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authorization;
+using System.Linq;
+
 
 namespace KeukenhofV2.Controllers
 {
     public class ContactController : Controller
     {
-
         private readonly KeukenhofContext _context;
 
         public ContactController(KeukenhofContext context)
@@ -20,19 +15,29 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        [Route("/Contact")]
+        public IActionResult Contact()
         {
-            return View();
+            var contact = from c in _context.ContactContent select c;
+            var feature = from f in _context.FeaturedContent where f.Page.Equals("Contact") select f;
+            var faq = from fq in _context.FAQ where fq.Page.Equals("Contact") select fq;
+
+            MiniFaqViewModel miniFaq = new MiniFaqViewModel()
+            {
+                Image = "/images/P08Contact/FAQImage.png",
+                FAQ = faq,
+                Theme = "orange"
+            };
+
+            ContactViewModel cvm = new ContactViewModel()
+            {
+                ContactContent = contact,
+                FeaturedContent = feature,
+                FeatureRows = 1,
+                FeatureColumns = 4,
+                MiniFAQ = miniFaq
+            };
+            return View(cvm);
         }
-
-        [Authorize]
-        public async Task<IActionResult> Edit()
-        {
-            var contactContent = from bc in _context.ContactContent select bc;
-
-            return View("EditContact", await contactContent.AsNoTracking().ToListAsync());
-        }
-
-
     }
 }
