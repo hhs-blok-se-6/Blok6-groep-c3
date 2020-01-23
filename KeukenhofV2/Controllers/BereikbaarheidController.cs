@@ -18,8 +18,9 @@ namespace KeukenhofV2.Controllers
         {
             _context = context;
         }
-
+        
         [Route("/Bereikbaarheid")]
+        [Route("/Bereikbaarheid/Index")]
         public IActionResult Bereikbaarheid()
         {
             return View();

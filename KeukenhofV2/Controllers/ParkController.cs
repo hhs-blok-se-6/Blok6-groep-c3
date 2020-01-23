@@ -19,8 +19,8 @@ namespace KeukenhofV2.Controllers
         {
             _context = context;
         }
-
         [Route("/Park")]
+        [Route("/Park/Index")]
         public IActionResult Park()
         {
             return View();

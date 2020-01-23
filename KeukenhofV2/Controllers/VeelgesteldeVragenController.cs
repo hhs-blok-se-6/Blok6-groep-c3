@@ -17,8 +17,8 @@ namespace KeukenhofV2.Controllers
         {
             _context = context;
         }
-
         [Route("/VeelgesteldeVragen")]
+        [Route("/VeelgesteldeVragen/Index")]
         public async Task<IActionResult> VeelgesteldeVragen()
         {
             var veelgesteldevragenContent = from vc in _context.VeelgesteldeVragen select vc;
