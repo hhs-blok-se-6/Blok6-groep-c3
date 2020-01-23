@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using KeukenhofV2.Data;
+﻿using KeukenhofV2.Data;
 using KeukenhofV2.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace KeukenhofV2.Controllers
 {
@@ -45,7 +42,7 @@ namespace KeukenhofV2.Controllers
             return View(featuredContent);
         }
 
-      
+
         // GET: FeaturedContent/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -97,7 +94,7 @@ namespace KeukenhofV2.Controllers
             return View(featuredContent);
         }
 
-        
+
 
         private bool FeaturedContentExists(int id)
         {

@@ -52,9 +52,9 @@ namespace KeukenhofV2.Controllers
         [Authorize]
         public async Task<IActionResult> Edit()
         {
-            var evenementContent = from pc in _context.EvenementenContent select pc;
+            var parkContent = from pc in _context.ParkContent select pc;
 
-            return View("EditPark", await evenementContent.AsNoTracking().ToListAsync());
+            return View("EditPark", await parkContent.AsNoTracking().ToListAsync());
         }
 
     }

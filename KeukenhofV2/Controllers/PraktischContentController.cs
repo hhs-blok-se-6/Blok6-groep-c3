@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using KeukenhofV2.Data;
+using KeukenhofV2.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using KeukenhofV2.Data;
-using KeukenhofV2.Models;
 
 namespace KeukenhofV2.Controllers
 {
@@ -96,7 +93,7 @@ namespace KeukenhofV2.Controllers
             return View(praktischContent);
         }
 
-      
+
 
 
         private bool PraktischContentExists(int id)

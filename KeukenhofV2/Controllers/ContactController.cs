@@ -1,8 +1,9 @@
 ﻿using KeukenhofV2.Data;
 using KeukenhofV2.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
-
+using System.Threading.Tasks;
 
 namespace KeukenhofV2.Controllers
 {
@@ -38,6 +39,14 @@ namespace KeukenhofV2.Controllers
                 MiniFAQ = miniFaq
             };
             return View(cvm);
+        }
+
+        [Autorize]
+        public async Task<IActionResult> Edit()
+        {
+            var contactContent = from hc in _context.ContactContent select hc;
+
+            return View("EditContact", await contactContent.AsNoTracking().ToListAsync());
         }
     }
 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using KeukenhofV2.Data;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using KeukenhofV2.Data;
-using KeukenhofV2.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authorization;
 
 
 
@@ -22,10 +19,12 @@ namespace KeukenhofV2.Controllers
             _context = context;
         }
 
-
-        public IActionResult Index()
+        [Route("Privacy")]
+        public async Task<IActionResult> PrivacyAsync()
         {
-            return View();
+            var privacyContent = from pc in _context.PrivacyContent select pc;
+
+            return View("Privacy", await privacyContent.AsNoTracking().ToListAsync());
         }
 
         [Authorize]
