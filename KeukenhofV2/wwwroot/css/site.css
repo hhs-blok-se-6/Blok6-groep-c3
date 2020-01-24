@@ -79,11 +79,8 @@ img {
 /*Home*/
 
 .cover {
-    background-image: url(../images/P01Home/cover1.png);
     width: 100%;
     height: 628px;
-    left: 0;
-    top: 0;
 }
 
     .cover .textbox {
@@ -92,23 +89,16 @@ img {
 
 .cover-img {
     float: left;
-    margin-left: 15%;
+    margin-left: 15%; /**/
 }
 
 .cover-text {
-    color: white;
+    color: #FFFFFF;
     padding-top: 35%;
-    padding-left: 3%;
-    font-size: 52px;
-    line-height: 56px;
-    float: left;
 }
 
 .textbox {
-    text-align: left;
-    position: relative;
-    display: inline-block;
-    margin-left: 0;
+    display: table-cell;
     padding: 16px;
 }
 
@@ -1216,6 +1206,16 @@ textarea, textarea:focus, input, input:focus {
 
     .news {
         overflow-x: auto;
+    }
+
+    cover-img {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .textbox {
+        display: grid;
+        padding: 25px;
     }
 }
 /* Smartphones (landscape) ----------- */

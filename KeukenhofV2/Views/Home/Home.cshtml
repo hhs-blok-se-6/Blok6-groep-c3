@@ -6,11 +6,12 @@
     var card = Model.CardContent.ToList();
 }
 <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
-<div class="cover">
-    <h1 class="cover-text">@home[7].Content</h1>
-    <div class="cover-img">
+<div class="container cover" style="background:url(@home[22].Content);">
+    <!-- cover -->
+    <h1 class="cover-text">@home[0].Content</h1>
+    <div class="row">
         <div class="textbox white">
-            <h4>@home[0].Content</h4>
+            <h4>@home[1].Content</h4>
             <label>@home[2].Content</label>
         </div>
         <div class="textbox orange">
@@ -22,12 +23,15 @@
             <label>@home[6].Content</label>
         </div>
     </div>
+    <img class="scroll" src="~/images/Icons/Essentials/arrow-down.svg" />
+    <label class="scroll">scroll</label>
+    <!-- cover -->
 </div>
 <div id="div2" class="container" style="background: #FBDFD3">
     <!-- featured -->
     <div class="row">
         <div class="col-xs-12 col-md-7 col-lg-7">
-            <h3 class="bereikbaarheidtitel">@home[8].Content</h3>
+            <h3 class="bereikbaarheidtitel">@home[7].Content</h3>
         </div>
     </div>
     <div class="row">
@@ -36,22 +40,34 @@
             <partial name="_FeaturedPartial" model="item" />
         }
     </div>
-</div> <!-- featured -->
+    <!-- featured -->
+</div>
 <div class="container" style="background:var(--green-light)">
+    <!-- praktische informatie -->
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <h2>Praktische informatie</h2>
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <h2>@home[8].Content</h2>
         </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <label style="float:right;"><a asp-controller="Praktisch" asp-action="Praktisch" />Meer praktische informatie</label>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-5 col-lg-5">
+            <p>@home[9].Content</p>
+        </div>
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <label style="float:right;"><a asp-controller="Praktisch" asp-action="Praktisch" />@home[10].Content</label>
         </div>
     </div>
     <partial name="_MiniFaqPartial" model="Model.MiniFaq" />
+    <!-- praktische informatie -->
 </div>
 <div id="div2" class="container" style="background: #FBDFD3">
+    <!-- nieuws-->
     <div class="row">
+        <div class="col-xs-12 col-md-5 col-lg-5">
+            <p class="evenementtextklein">@home[11].Content</p>
+        </div>
         <div class="col-xs-12 col-md-7 col-lg-7">
-            <h3 class="bereikbaarheidtitel">Nieuws</h3>
+            <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="VeelgesteldeVragen" asp-action="VeelgesteldeVragen">@home[12].Content</a></div>
         </div>
     </div>
     <div class="row">
@@ -60,31 +76,39 @@
             <partial name="_CardPartial" model="item" />
         }
     </div>
+    <!-- niewus -->
 </div>
 <div id="div4" class="container" style="background: var(--green-background)">
+    <!-- groepen -->
     <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
-        <img class="groepenfoto" src="@home[18].Content" alt="Bloemenveld" />
-        <label class="voorzieningfototext">@home[17].Content</label>
+        <img class="groepenfoto" src="@home[25].Content" alt="Bloemenveld" />
+        <label class="voorzieningfototext">@home[13].Content</label>
     </div>
+    <!-- groepen -->
 </div>
 <div id="div2" class="container" style="background: var(--orange-light)">
+    <!-- instagram feed-->
     <div class="row">
         <div class="col-xs-12 col-md-7 col-lg-7">
             <h3 class="bereikbaarheidtitel">@home[20].Content</h3>
         </div>
+        <div class="col-xs-12 col-md-5 col-lg-5">
+            <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="VeelgesteldeVragen" asp-action="VeelgesteldeVragen">@home[21].Content</a></div>
+        </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
-            <img src="@home[21].Content" />
+            <img src="@home[26].Content" />
         </div>
         <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
-            <img src="@home[22].Content" />
+            <img src="@home[27].Content" />
         </div>
         <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
-            <img src="@home[23].Content" />
+            <img src="@home[28].Content" />
         </div>
         <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
-            <img src="@home[24].Content" />
+            <img src="@home[29].Content" />
         </div>
     </div>
+    <!-- instagram feed -->
 </div>

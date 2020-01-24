@@ -25,6 +25,8 @@ $(document).ready(function () {
             $(".header-p-mobile-menu").show();
             $(".mobile-sub-menu").hide();
         });
+
+        $("#hideWhenSmall").hide();
     }
 
     $(".search-icon").on("click", function (e) {
