@@ -6,7 +6,7 @@
     var evenementen = Model.Evenementen.ToList();
     var shows = Model.Bloemenshows.ToList();
 }
-
+<link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
 <div class="alinea">
     <img src="~/images/P02Park/cover.png" />
     <h1>Het fleurigste dagje uit</h1>
@@ -29,7 +29,7 @@
         <div style="left: 10.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">Bloemenshows</a></div>
     </div>
 </div>
-<div class="rectangle" style="height:562px; background:var(--orange-light);">
+<div class="container" style=" background:var(--orange-light);">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <h2> Wat is er te doen bij de Keukenhof?</h2>
@@ -39,22 +39,20 @@
             <label style="float:right;"><a href="#"></a>Bekijk alle</label>
         </div>
     </div>
-    <div class="row">
+    <div class="row rectangle">
         @for (var j = 0; j < Model.BezighedenColumns; j++)
         {
             <partial name="_CardPartial" model="bezigheden[j]" />
         }
     </div>
 </div>
-<div class="rectangle" style="height:528px; background: var(--green-background)">
-    <div class="feature">
-        <img src="~/images/P02Park/mapdownload.png" />
-        <div class="rectangle">
-            <h4>Download de plattegrond van het park</h4>
-        </div>
+<div id="div4" class="container" style="background: var(--green-background)">
+    <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
+        <img class="groepenfoto" src="~/images/P02Park/mapdownload.png" alt="Bloemenveld" />
+        <label class="voorzieningfototext">Download de plattegrond van het park</label>
     </div>
 </div>
-<div class="rectangle" style="height:562px; background:var(--orange-light);">
+<div class="container" style="background:var(--orange-light);">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <h2>Evenementen</h2>
@@ -64,22 +62,20 @@
             <label style="float:right;"><a href="#"></a>Bekijk alle</label>
         </div>
     </div>
-    <div class="row">
+    <div class="row rectangle">
         @for (var j = 0; j < Model.EvenementenColumns; j++)
         {
             <partial name="_CardPartial" model="evenementen[j]" />
         }
     </div>
 </div>
-<div class="rectangle" style="height:528px; background: var(--green-background)">
-    <div class="feature">
-        <img src="~/images/P02Park/tulpomania.png" />
-        <div class="rectangle">
-            <h4>Tulpomania</h4>
-        </div>
+<div id="div4" class="container" style="background: var(--green-background)">
+    <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
+        <img class="groepenfoto" src="~/images/P02Park/tulpomania.png" alt="tulpomania" />
+        <label class="voorzieningfototext">Tulpomania</label>
     </div>
 </div>
-<div class="rectangle" style="height:562px; background:var(--orange-light);">
+<div class="container" style=" background:var(--orange-light);">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <h2>Bloemenshows</h2>
@@ -89,7 +85,7 @@
             <label style="float:right;"><a href="#"></a>Bekijk alle</label>
         </div>
     </div>
-    <div class="row">
+    <div class="row rectangle">
         @for (var j = 0; j < Model.BloemenshowsColumns; j++)
         {
             <partial name="_CardPartial" model="shows[j]" />

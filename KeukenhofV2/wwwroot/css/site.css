@@ -742,7 +742,7 @@ textarea, textarea:focus, input, input:focus {
     right: 0;
     bottom: 0;
     width: 100%;
-    display: inline-block;
+    display: table-cell;
     padding-left: 32px;
     text-align: left;
 }
@@ -785,10 +785,7 @@ textarea, textarea:focus, input, input:focus {
 /* news */
 
 .news {
-    position: absolute;
-    text-align: left;
-    width: 120px;
-    display: grid;
+    display: table-caption;
     background: white;
 }
 
@@ -818,10 +815,8 @@ textarea, textarea:focus, input, input:focus {
 /* map */
 
 .map {
-    position: absolute;
     width: 528px;
     height: 352px;
-    background: url(../images/P01Home/Map.png);
 }
 
     .map img {
@@ -931,7 +926,7 @@ textarea, textarea:focus, input, input:focus {
 
 .evenementen-header .header-image {
     width: 100%;
-   max-height: 329px;
+    max-height: 329px;
 }
 
 .evenementen-header .header-image-wrapper {
@@ -952,7 +947,8 @@ textarea, textarea:focus, input, input:focus {
 
 .evenement-item img {
     width: 100%;
-}/* alinea */
+}
+/* alinea */
 
 .alinea {
     margin: 0 auto;
@@ -1035,7 +1031,7 @@ textarea, textarea:focus, input, input:focus {
     border-radius: 4px;
 }
 
-.zoekresultaten-zoek-row{
+.zoekresultaten-zoek-row {
     margin-bottom: 2%;
     padding-left: 1%;
 }
@@ -1082,7 +1078,7 @@ textarea, textarea:focus, input, input:focus {
     box-sizing: border-box;
     border-radius: 27px;
     padding-block-end: 5px;
-    margin-left:20%;
+    margin-left: 20%;
     margin-top: 2%;
 }
 
@@ -1148,11 +1144,13 @@ textarea, textarea:focus, input, input:focus {
     color: #00694C;
     cursor: pointer;
 }
+
 .mobile-pagination {
     margin-left: 18%;
     margin-top: 8%;
     margin-bottom: 8%;
 }
+
 }
 
 .zoekresultaten-row-background h5 {
@@ -1164,62 +1162,66 @@ textarea, textarea:focus, input, input:focus {
     padding-bottom: 24px;
 }
 
-        .zoekresultaten-row-background h5:after {
-            margin-top: 10px;
-            margin-left: auto;
-            content: var(--chevron-down);
-        }
+    .zoekresultaten-row-background h5:after {
+        margin-top: 10px;
+        margin-left: auto;
+        content: var(--chevron-down);
+    }
 
-        .zoekresultaten-row-background h5:hover {
-            cursor: pointer;
-            background-color: gray;
-        }
+    .zoekresultaten-row-background h5:hover {
+        cursor: pointer;
+        background-color: gray;
+    }
 
 
-.custom-col-home{
+.custom-col-home {
     width: 5%;
 }
 
-.custom-col-slash{
+.custom-col-slash {
     width: 1%;
 }
 
-.custom-col-location{
+.custom-col-location {
     width: 16%;
 }
 
-.zoekresultaten-row-arrow-right{
-    float:right;
-
+.zoekresultaten-row-arrow-right {
+    float: right;
 }
 /*Media queries*/
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 736px) {
     /* Styles */
     .zoekresultaten-header-text {
-        display:none;
+        display: none;
     }
 
     .zoekresultaten-aantal-p {
         margin-top: 10%;
     }
 
-    .zoekresultaten-row-background{
+    .zoekresultaten-row-background {
         padding-bottom: 8%;
     }
+
     .footer-social-icons {
         margin: 10px;
-        padding:10px;
-
+        padding: 10px;
     }
 
-    .footer-logo-keukenhof{
+    .footer-logo-keukenhof {
         margin: 15px;
     }
-    /* Smartphones (landscape) ----------- */
-    @media only screen and (min-width : 321px) {
-        /* Styles */
+
+    .news {
+        overflow-x: auto;
     }
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    /* Styles */
+}
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (min-width : 400px) {
@@ -1244,12 +1246,12 @@ textarea, textarea:focus, input, input:focus {
 }
 
 /* Desktops and laptops ----------- */
-@media and (min-width : 1070px) {
+@media only screen and (min-width : 1070px) {
     .zoekresultaten-zoek-input {
         padding-bottom: 2%;
     }
 
-    .zoekresultaten-search-button{
+    .zoekresultaten-search-button {
         margin-left: 20%;
     }
 }

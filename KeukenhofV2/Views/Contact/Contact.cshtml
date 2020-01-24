@@ -3,9 +3,9 @@
     ViewData["Title"] = "Contact";
     var contact = Model.ContactContent.ToList();
     var feature = Model.FeaturedContent.ToList();
-    var featureCounter = 0;
     var miniFaq = Model.MiniFAQ;
 }
+<link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
 <div class="alinea">
     <img src="~/images/P08Contact/cover.png" />
     <h1>@contact[0].Content</h1>
@@ -18,20 +18,22 @@
         </div>
     </div>
 </div>
-<div class="rectangle" style="height:421px; background:var(--green-background)">
-    <h3>@contact[4].Content</h3>
-    @for (var i = 0; i < Model.FeatureRows; i++)
-    {
-        <div class="row feature">
-            @for (var j = 0; j < Model.FeatureColumns; j++)
-            {
-                <partial name="_FeaturedPartial" model="feature[j+featureCounter]" />
-            }
+<div id="div2" class="container" style="background: var(--green-background)">
+    <div class="row">
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <h3 class="bereikbaarheidtitel">@contact[4].Content</h3>
         </div>
-        featureCounter += Model.FeatureColumns; <!--zodat de loop elke keer de <column aantal> volgende neemt-->
-    }
+    </div>
+    <div class="row rectangle">
+        @foreach (var item in feature)
+        {
+            <partial name="_FeaturedPartial" model="item" />
+        }
+    </div>
 </div>
-<div class="rectangle" style="height:495px; background:var(--orange-light)">
-    <h2>@contact[5].Content</h2>
-    <partial name="_MiniFaqPartial" model="miniFaq" />
+<div class="container" style="background:var(--orange-light); height:500px">
+    <div class="row">
+        <h2>@contact[5].Content</h2>
+        <partial name="_MiniFaqPartial" model="miniFaq" />
+    </div>
 </div>

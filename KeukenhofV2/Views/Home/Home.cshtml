@@ -4,10 +4,8 @@
     var home = Model.HomeContent.ToList();
     var feature = Model.FeaturedContent.ToList();
     var card = Model.CardContent.ToList();
-    var featureCounter = 0;
-    var cardCounter = 0;
 }
-
+<link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
 <div class="cover">
     <h1 class="cover-text">@home[7].Content</h1>
     <div class="cover-img">
@@ -25,20 +23,21 @@
         </div>
     </div>
 </div>
-<div class="rectangle" style="height:421px; background:var(--orange-light)">
-    <h3>Waar bent u naar opzoek?</h3>
-    @for (var i = 0; i < Model.FeatureRows; i++)
-    {
-        <div class="row feature">
-            @for (var j = 0; j < Model.FeatureColumns; j++)
-            {
-                <partial name="_FeaturedPartial" model="feature[j+featureCounter]" />
-            }
+<div id="div2" class="container" style="background: #FBDFD3">
+    <!-- featured -->
+    <div class="row">
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <h3 class="bereikbaarheidtitel">@home[8].Content</h3>
         </div>
-        featureCounter += 4; <!--zodat de loop elke keer de 4 volgende neemt-->
-    }
-</div>
-<div class="rectangle" style="height:512px; background:var(--green-light)">
+    </div>
+    <div class="row">
+        @foreach (var item in feature)
+        {
+            <partial name="_FeaturedPartial" model="item" />
+        }
+    </div>
+</div> <!-- featured -->
+<div class="container" style="background:var(--green-light)">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <h2>Praktische informatie</h2>
@@ -49,48 +48,43 @@
     </div>
     <partial name="_MiniFaqPartial" model="Model.MiniFaq" />
 </div>
-<div class="rectangle" style="height:498px; background:var(--orange-light)">
+<div id="div2" class="container" style="background: #FBDFD3">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <h3>Nieuws</h3>
-        </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <label style="float:right;"><a href="#"></a>Bekijk alle</label>
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <h3 class="bereikbaarheidtitel">Nieuws</h3>
         </div>
     </div>
-    @for (var i = 0; i < Model.CardRows; i++)
-    {
-        <div class="row">
-            @for (var j = 0; j < Model.CardColumns; j++)
-            {
-                <partial name="_CardPartial" model="card[j+cardCounter]" />
-            }
-        </div>
-        cardCounter += 4; <!--zodat de loop elke keer de 4 volgende neemt-->
-    }
-</div>
-<div class="rectangle" style="height:528px; background: var(--green-background)">
-    <div class="feature">
-        <img src="~/images/P01Home/ctaImage.png" />
-        <div class="rectangle">
-            <h4>Groepen</h4>
-        </div>
+    <div class="row">
+        @foreach (var item in card)
+        {
+            <partial name="_CardPartial" model="item" />
+        }
     </div>
 </div>
-<div class="rectangle" style="height:378px; background:var(--orange-light)">
-    <h2>Instagram #VisitKeukenhof</h2>
+<div id="div4" class="container" style="background: var(--green-background)">
+    <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
+        <img class="groepenfoto" src="@home[18].Content" alt="Bloemenveld" />
+        <label class="voorzieningfototext">@home[17].Content</label>
+    </div>
+</div>
+<div id="div2" class="container" style="background: var(--orange-light)">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <img src="~/images/P01Home/instagram-1.png" />
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <h3 class="bereikbaarheidtitel">@home[20].Content</h3>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <img src="~/images/P01Home/instagram-2.png" />
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
+            <img src="@home[21].Content" />
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <img src="~/images/P01Home/instagram-3.png" />
+        <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
+            <img src="@home[22].Content" />
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <img src="~/images/P01Home/instagram-4.png" />
+        <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
+            <img src="@home[23].Content" />
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
+            <img src="@home[24].Content" />
         </div>
     </div>
 </div>
