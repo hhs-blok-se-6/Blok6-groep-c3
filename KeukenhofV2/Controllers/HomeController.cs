@@ -74,8 +74,31 @@ namespace KeukenhofV2.Controllers
         public async Task<IActionResult> Edit()
         {
             var homeContent = from hc in _context.HomeContent select hc;
+            var featuredContent = from fc in _context.FeaturedContent where fc.Page.Equals("Home") select fc;
+            var cardContent = from cc in _context.CardContent where cc.Page.Equals("Home") select cc;
+            var praktisch = from p in _context.FAQ where p.Page.Equals("Home") select p;
 
-            return View("EditHome", await homeContent.AsNoTracking().ToListAsync());
+            MiniFaqViewModel pvm = new MiniFaqViewModel()
+            {
+                Image = "/images/P01Home/Map.png",
+                FAQ = praktisch,
+                ButtonText = "Download de kaart",
+                Theme = "green"
+            };
+
+            HomeViewModel cvm = new HomeViewModel()
+            {
+                HomeContent = homeContent,
+                FeaturedContent = featuredContent,
+                FeatureRows = 1,
+                FeatureColumns = 4,
+                CardContent = cardContent,
+                CardRows = 1,
+                CardColumns = 4,
+                MiniFaq = pvm
+            };
+
+            return View("EditHome", cvm);
         }
     }
 }

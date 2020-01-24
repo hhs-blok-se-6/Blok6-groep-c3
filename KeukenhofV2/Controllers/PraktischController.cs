@@ -24,6 +24,16 @@ namespace KeukenhofV2.Controllers
             return View("Praktisch", await PraktischContent.AsNoTracking().ToListAsync());
         }
 
+        [Authorize]
+        [Route("/Praktisch/Edit")]
+        public async Task<IActionResult> Edit()
+        {
+            var PraktischContent = from pc in _context.PraktischContent select pc;
+
+            return View("EditPraktisch", await PraktischContent.AsNoTracking().ToListAsync());
+        }
+
+
         public async Task<IActionResult> Toegankelijkheid()
         {
             var ToegankelijkheidContent = from tc in _context.ToegankelijkheidContent select tc;
@@ -32,11 +42,12 @@ namespace KeukenhofV2.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Edit()
+        [Route("/Toegankelijkheid/Edit")]
+        public async Task<IActionResult> ToegankelijkheidEdit()
         {
             var toegankelijkheidContent = from hc in _context.ToegankelijkheidContent select hc;
 
-            return View("EditPraktisch", await toegankelijkheidContent.AsNoTracking().ToListAsync());
+            return View("Praktischepaginas/EditToegankelijkheid", await toegankelijkheidContent.AsNoTracking().ToListAsync());
         }
     }
 }
