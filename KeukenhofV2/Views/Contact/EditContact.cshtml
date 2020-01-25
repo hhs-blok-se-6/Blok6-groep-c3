@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-<div class="rectangle" style="height:421px; background:var(--green-background)">
+<div class="container" style="height:421px; background:var(--green-background)">
     <a asp-controller="ContactContent" asp-action="Edit" asp-route-id="@contact[4].Id">
         <h3>@contact[4].Content</h3></a>
         @for (var i = 0; i < Model.FeatureRows; i++)
@@ -32,7 +32,7 @@
             featureCounter += Model.FeatureColumns; <!--zodat de loop elke keer de <column aantal> volgende neemt-->
         }
 </div>
-<div class="rectangle" style="height:495px; background:var(--orange-light)">
+<div class="container" style="height:495px; background:var(--orange-light)">
     <a asp-controller="ContactContent" asp-action="Edit" asp-route-id="@contact[5].Id"><h2>@contact[5].Content</h2></a>
     <partial name="_MiniFaqPartial" model="miniFaq" />
 </div>

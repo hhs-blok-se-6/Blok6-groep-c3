@@ -39,7 +39,7 @@
             <label style="float:right;"><a href="#"></a>Bekijk alle</label>
         </div>
     </div>
-    <div class="row rectangle">
+    <div class="row">
         @for (var j = 0; j < Model.BezighedenColumns; j++)
         {
             <partial name="_CardPartial" model="bezigheden[j]" />
@@ -62,7 +62,7 @@
             <label style="float:right;"><a href="#"></a>Bekijk alle</label>
         </div>
     </div>
-    <div class="row rectangle">
+    <div class="row">
         @for (var j = 0; j < Model.EvenementenColumns; j++)
         {
             <partial name="_CardPartial" model="evenementen[j]" />
@@ -85,7 +85,7 @@
             <label style="float:right;"><a href="#"></a>Bekijk alle</label>
         </div>
     </div>
-    <div class="row rectangle">
+    <div class="row">
         @for (var j = 0; j < Model.BloemenshowsColumns; j++)
         {
             <partial name="_CardPartial" model="shows[j]" />
