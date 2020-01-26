@@ -21,12 +21,7 @@ namespace KeukenhofV2.Controllers
         }
         [Route("/Evenementen")]
         [Route("/Evenementen/Index")]
-        public async Task<IActionResult> Evenementen()
-        {
-            var evenementen = from ec in _context.Evenementen select ec;
-
-            return View("Evenementen", await evenementen.AsNoTracking().ToListAsync());
-        }
+        
 
         public async Task<IActionResult> BloemenFestival()
         {
