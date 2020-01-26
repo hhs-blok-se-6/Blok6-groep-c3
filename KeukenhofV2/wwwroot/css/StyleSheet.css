@@ -1,5 +1,5 @@
-﻿:root{
-    --arrow-right: url(../images/Icons/Essentials/arrow-right.svg);
+﻿:root {
+    --arrow-right: url(../images/Icons/Essentials/arrow-right.png);
     --download: url(../images/Icons/Misc/Download.png);
 }
 
@@ -243,17 +243,17 @@
     color: #36454E;
 }
 
-.voorzieningenicoon{
+.voorzieningenicoon {
     width: 40px;
     height: 40px;
 }
 
-.voorzieningenicoon:hover{
-    cursor: pointer;
-    text-underline-position: below;
-}
+    .voorzieningenicoon:hover {
+        cursor: pointer;
+        text-underline-position: below;
+    }
 
-.voorzieningenfoto{
+.voorzieningenfoto {
     margin-top: 30px;
     width: 100%;
     height: 396px;
@@ -287,7 +287,16 @@
         background-color: #EA6025;
     }
 
-.groepenfoto{
+h4.voorzieningfototext {
+    font-weight: bold;
+    margin: 0;
+}
+
+    h4.voorzieningfototext:hover {
+        color: #FFFFFF;
+    }
+
+.groepenfoto {
     width: 100%;
     height: 400px;
     object-fit: cover;
@@ -309,6 +318,7 @@
     color: #36454E;
     background-color: #FFFFFF;
 }
+
     .openbaarvervoerdownload:after {
         margin-left: auto;
         margin-top: 10px;
@@ -320,3 +330,10 @@
         cursor: pointer;
         background-color: #EA6025;
     }
+
+.download:after {
+    margin-left: auto;
+    margin-top: 10px;
+    content: var(--download);
+    fill: #EA6025;
+}

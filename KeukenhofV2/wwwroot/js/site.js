@@ -3,7 +3,7 @@
 $(document).ready(function () {
     var mq = window.matchMedia("(max-width: 812px)");
     if (mq.matches) {
-         
+
         $(".navbar-header-items").hide();
         $(".mobile-menu-button").show();
         $(".header-p-mobile-menu").show();
@@ -15,7 +15,7 @@ $(document).ready(function () {
             $(".mobile-close-button").show();
             $(".header-p-mobile-close").show();
             $(".mobile-sub-menu").show();
-           
+
         });
 
         $(".mobile-close-button").on("click", function (e) {
@@ -41,7 +41,38 @@ $(document).ready(function () {
         $(".search-dialog").hide();
         $('.expose').css('z-index', '1');
     });
-    
+
+    $("#link1").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#div1").offset().top
+        }, 1000);
+    });
+
+    $("#link2").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#div2").offset().top
+        }, 1000);
+    });
+
+    $("#link3").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#div3").offset().top
+        }, 1000);
+    });
+
+    $("#link4").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#div4").offset().top
+        }, 1000);
+    });
+
+    $("#link5").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#div5").offset().top
+        }, 1000);
+    });
+
+
 });
 
 var x = document.getElementById("search-bar"); /* the search bar */

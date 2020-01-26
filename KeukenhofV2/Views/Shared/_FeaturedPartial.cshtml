@@ -1,5 +1,18 @@
 ﻿@model KeukenhofV2.Models.FeaturedContent
+@{
+    var link = Model.Link.Split("/");
+    var controller = link[0];
+    string action;
+    try
+    {
+        action = link[1];
+    }
+    catch
+    {
+        action = "index";
+    }
+}
 <div class="col-xs-12 col-md-3 col-lg-3">
-    <img class="kleinefoto" src="@Model.Image" alt="@Model.Text" />
-    <h5 class="kleinefototext"><a asp-controller="Bereikbaarheid" asp-action="Bereikbaarheid">@Model.Text</a></h5>
+    <img src="@Model.Image" alt="@Model.Text" />
+    <a asp-controller="@controller" asp-action="@action" style="text-decoration:none;"><h5 class="feature-button @Model.Theme">@Model.Text</h5></a>
 </div>

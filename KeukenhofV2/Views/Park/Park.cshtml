@@ -8,87 +8,103 @@
 }
 <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
 <div class="alinea">
-    <img src="~/images/P02Park/cover.png" />
-    <h1>Het fleurigste dagje uit</h1>
+    <img src="@park[0].Content" />
+    <h1>@park[1].Content</h1>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <p>Dit voorjaar staan meer dan 7 miljoen bloembollen in bloei met wel 800 verschillende soorten tulpen.</p>
+            <p>@park[2].Content</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <p>In alle rust genieten van Keukenhof? Voor 10:30 uur en na 16:00 uur is het minder druk.</p>
+            <p>@park[3].Content</p>
         </div>
     </div>
-    <button class="button green">Geschiedenis</button>
+    <button class="button green">@park[4].Content</button>
 </div>
-<div class="row" style="margin-top: 20px">
-    <div style="background: #36454E; height: 64px" class="col-xs-12 col-md-12 col-lg-12">
-        <div style="left: 1.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1">Wat is er te doen?<a id="1" class="labeltext"></a></div>
-        <div style="left: 3.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="2" class="labeltext">Plattegron</a></div>
-        <div style="left: 7.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">Evenementen</a></div>
-        <div style="left: 10.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">Tulpomania</a></div>
-        <div style="left: 10.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="3" class="labeltext">Bloemenshows</a></div>
+<div class="container">
+    <div class="row" style="margin-top: 20px">
+        <div style="background: #36454E; height: 64px" class="col-xs-12 col-md-12 col-lg-12">
+            <div style="left: 1.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="link1" class="labeltext">@park[5].Content</a></div>
+            <div style="left: 3.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="link2" class="labeltext">@park[6].Content</a></div>
+            <div style="left: 7.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="link3" class="labeltext">@park[7].Content</a></div>
+            <div style="left: 10.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="link4" class="labeltext">@park[8].Content</a></div>
+            <div style="left: 10.5%; top: 22px; cursor:pointer" class="col-xs-12 col-md-1 col-lg-1"><a id="link5" class="labeltext">@park[9].Content</a></div>
+        </div>
     </div>
 </div>
-<div class="container" style=" background:var(--orange-light);">
+<div id="div1" class="container" style=" background:var(--orange-light);">
+    <!-- bezigheden -->
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <h2> Wat is er te doen bij de Keukenhof?</h2>
-            <p>Naast de ruim 32ha aan bloemen kunt u genieten van verrassende inspiratietuinen. Voor kinderen is er de gratis speurtocht, een kinderboerderij, doolhof en speeltuin.</p>
-        </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <label style="float:right;"><a href="#"></a>Bekijk alle</label>
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <h2>@park[10].Content</h2>
         </div>
     </div>
     <div class="row">
+        <div class="col-xs-12 col-md-5 col-lg-9">
+            <p>@park[11].Content</p>
+        </div>
+        <div class="col-xs-12 col-md-7 col-lg-3">
+            <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="Park" asp-action="Park">@park[12].Content</a></div>
+        </div>
+    </div>
+    <div class="row feature">
         @for (var j = 0; j < Model.BezighedenColumns; j++)
         {
             <partial name="_CardPartial" model="bezigheden[j]" />
         }
     </div>
+    <!-- bezigheden -->
 </div>
-<div id="div4" class="container" style="background: var(--green-background)">
-    <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
-        <img class="groepenfoto" src="~/images/P02Park/mapdownload.png" alt="Bloemenveld" />
-        <label class="voorzieningfototext">Download de plattegrond van het park</label>
+<div id="div2" class="container" style="background: var(--green-background)">
+    <!-- plattegrond download-->
+    <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px; margin-bottom:20px;">
+        <img class="groepenfoto" src="@park[13].Content" alt="Bloemenveld" />
+        <h4 class="voorzieningfototext download">@park[14].Content</h4>
     </div>
+    <!-- plattegrond download -->
 </div>
-<div class="container" style="background:var(--orange-light);">
+<div id="div3" class="container" style="background:var(--orange-light);">
+    <!-- evenementen -->
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <h2>Evenementen</h2>
-            <p>In Keukenhof kunt u genieten van geweldige evenementen. Elke weekend zijn er verschillende evenementen, dus zoek de juiste datum voor uw bezoek uit!</p>
+            <h2>@park[15].Content</h2>
+            <p>@park[16].Content</p>
         </div>
         <div class="col-xs-12 col-md-4 col-lg-4">
-            <label style="float:right;"><a href="#"></a>Bekijk alle</label>
+            <div style="cursor:pointer;" align="right"> <a class="labeltextzwart" asp-controller="Evenementen" asp-action="Index">@park[17].Content</a></div>
         </div>
     </div>
-    <div class="row">
+    <div class="row feature">
         @for (var j = 0; j < Model.EvenementenColumns; j++)
         {
             <partial name="_CardPartial" model="evenementen[j]" />
         }
     </div>
+    <!-- evenementen -->
 </div>
-<div id="div4" class="container" style="background: var(--green-background)">
-    <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
-        <img class="groepenfoto" src="~/images/P02Park/tulpomania.png" alt="tulpomania" />
-        <label class="voorzieningfototext">Tulpomania</label>
+<div id="div2" class="container" style="background: var(--green-background)">
+    <!-- tulpomania -->
+    <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px; margin-bottom:20px;">
+        <img class="groepenfoto" src="@park[18].Content" alt="Tulpomania" />
+        <h4  class="voorzieningfototext">@park[19].Content</h4>
     </div>
+    <!-- tulpomania -->
 </div>
-<div class="container" style=" background:var(--orange-light);">
+<div id="div5" class="container" style=" background:var(--orange-light);">
+    <!-- bloemenshows-->
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <h2>Bloemenshows</h2>
-            <p>In Keukenhof kunt u genieten van spectaculaire bloemenshows en unieke kunstwerken. Vergeet vooral de Tulpomania tentoonstelling in het Juliana Paviljoen niet.</p>
+            <h2>@park[20].Content</h2>
+            <p>@park[21].Content</p>
         </div>
         <div class="col-xs-12 col-md-4 col-lg-4">
-            <label style="float:right;"><a href="#"></a>Bekijk alle</label>
+            <div style="cursor:pointer;" align="right"> <a class="labeltextzwart" asp-controller="Evenementen" asp-action="Bloemenfestival">@park[22].Content</a></div>
         </div>
     </div>
-    <div class="row">
+    <div class="row feature">
         @for (var j = 0; j < Model.BloemenshowsColumns; j++)
         {
             <partial name="_CardPartial" model="shows[j]" />
         }
     </div>
+    <!-- bloemenshows-->
 </div>

@@ -6,25 +6,37 @@
     var card = Model.CardContent.ToList();
 }
 <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
-<div class="container cover" style="background:url(@home[22].Content);">
+<div class="container" style="background:url(@home[22].Content); background-size:cover">
     <!-- cover -->
-    <h1 class="cover-text">@home[0].Content</h1>
-    <div class="row">
-        <div class="textbox white">
-            <h4>@home[1].Content</h4>
-            <label>@home[2].Content</label>
+    <div class="cover">
+        <div class="row">
+            <h1 class="cover-text">@home[0].Content</h1>
         </div>
-        <div class="textbox orange">
-            <h4>@home[3].Content</h4>
-            <label>@home[4].Content</label>
-        </div>
-        <div id="hideWhenSmall" class="textbox white">
-            <h4>@home[5].Content</h4>
-            <label>@home[6].Content</label>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="textbox white left">
+                    <h4>@home[1].Content</h4>
+                    <label>@home[2].Content</label>
+                </div>
+                <div class="textbox orange">
+                    <h4>@home[3].Content</h4>
+                    <label>@home[4].Content</label>
+                </div>
+                <div id="hideWhenSmall" class="textbox white right">
+                    <h4>@home[5].Content</h4>
+                    <label>@home[6].Content</label>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="1" class="scroll" style="cursor:pointer">
+                    <label>@home[30].Content</label>
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9998 16.8316L17.2927 12.5387L18.7069 13.9529L11.9998 20.66L5.29272 13.9529L6.70694 12.5387L10.9998 16.8316V3.99579H12.9998V16.8316Z" />
+                    </svg>
+                </div>
+            </div>
         </div>
     </div>
-    <img class="scroll" src="~/images/Icons/Essentials/arrow-down.svg" />
-    <label class="scroll">scroll</label>
     <!-- cover -->
 </div>
 <div id="div2" class="container" style="background: #FBDFD3">
@@ -34,7 +46,7 @@
             <h3 class="bereikbaarheidtitel">@home[7].Content</h3>
         </div>
     </div>
-    <div class="row">
+    <div class="row feature">
         @foreach (var item in feature)
         {
             <partial name="_FeaturedPartial" model="item" />
@@ -54,7 +66,7 @@
             <p>@home[9].Content</p>
         </div>
         <div class="col-xs-12 col-md-7 col-lg-7">
-            <label style="float:right;"><a asp-controller="Praktisch" asp-action="Praktisch" />@home[10].Content</label>
+            <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="Praktisch" asp-action="Praktisch">@home[10].Content</a></div>
         </div>
     </div>
     <partial name="_MiniFaqPartial" model="Model.MiniFaq" />
@@ -64,19 +76,21 @@
     <!-- nieuws-->
     <div class="row">
         <div class="col-xs-12 col-md-5 col-lg-5">
-            <p class="evenementtextklein">@home[11].Content</p>
+            <h2>@home[11].Content</h2>
         </div>
         <div class="col-xs-12 col-md-7 col-lg-7">
-            <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="VeelgesteldeVragen" asp-action="VeelgesteldeVragen">@home[12].Content</a></div>
+            <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="Home" asp-action="Index">@home[12].Content</a></div>
         </div>
     </div>
-    <div class="row">
-        @foreach (var item in card)
-        {
-            <partial name="_CardPartial" model="item" />
-        }
+    <div class="rectangle">
+        <div class="row">
+            @foreach (var item in card)
+            {
+                <partial name="_CardPartial" model="item" />
+            }
+        </div>
     </div>
-    <!-- niewus -->
+    <!-- niews -->
 </div>
 <div id="div4" class="container" style="background: var(--green-background)">
     <!-- groepen -->

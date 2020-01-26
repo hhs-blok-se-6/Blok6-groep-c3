@@ -4,97 +4,163 @@
     var home = Model.HomeContent.ToList();
     var feature = Model.FeaturedContent.ToList();
     var card = Model.CardContent.ToList();
-    var featureCounter = 0;
-    var cardCounter = 0;
 }
-
-<div class="cover">
-    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[7].Id">
-        <h1 class="cover-text">@home[7].Content</h1></a>
-        <div class="cover-img">
-            <div class="textbox white">
-                <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[0].Id">
-                    <h4>@home[0].Content</h4></a>
-                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[2].Id"> <label>@home[2].Content</label></a>
-</div>
-            <div class="textbox orange">
-                <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[3].Id">
-                    <h4>@home[3].Content</h4></a>
-                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[4].Id"><label>@home[4].Content</label></a>
-</div>
-            <div id="hideWhenSmall" class="textbox white">
-                <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[5].Id">
-                    <h4>@home[5].Content</h4></a>
-                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[6].Id"> <label>@home[6].Content</label></a>
-</div>
+<link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
+<div class="container" style="background:url(@home[22].Content); background-size:cover">
+    <!-- cover -->
+    <div class="cover">
+        <div class="row">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[0].Id">
+                <h1 class="cover-text">@home[0].Content</h1>
+            </a>
         </div>
-</div>
-<div class="rectangle" style="height:421px; background:var(--orange-light)">
-    <h3>Waar bent u naar opzoek?</h3>
-    @for (var i = 0; i < Model.FeatureRows; i++)
-    {
-        <div class="row feature">
-            @for (var j = 0; j < Model.FeatureColumns; j++)
-            {
-                <partial name="_FeaturedPartial" model="feature[j+featureCounter]" />
-            }
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="textbox white left">
+                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[1].Id">
+                        <h4>@home[1].Content</h4>
+                    </a>
+                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[2].Id">
+                        <label>@home[2].Content</label>
+                    </a>
+                </div>
+                <div class="textbox orange">
+                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[3].Id">
+                        <h4>@home[3].Content</h4>
+                    </a>
+                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[4].Id">
+                        <label>@home[4].Content</label>
+                    </a>
+                </div>
+                <div id="hideWhenSmall" class="textbox white right">
+                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[5].Id">
+                        <h4>@home[5].Content</h4>
+                    </a>
+                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[6].Id">
+                        <label>@home[6].Content</label>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="1" class="scroll" style="cursor:pointer">
+                    <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[30].Id">
+                        <label>@home[30].Content</label>
+                    </a>
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9998 16.8316L17.2927 12.5387L18.7069 13.9529L11.9998 20.66L5.29272 13.9529L6.70694 12.5387L10.9998 16.8316V3.99579H12.9998V16.8316Z" />
+                    </svg>
+                </div>
+            </div>
         </div>
-        featureCounter += 4; <!--zodat de loop elke keer de 4 volgende neemt-->
-    }
+    </div>
+    <!-- cover -->
 </div>
-<div class="rectangle" style="height:512px; background:var(--green-light)">
+<div id="div2" class="container" style="background: #FBDFD3">
+    <!-- featured -->
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <h2>Praktische informatie</h2>
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[7].Id">
+                <h3 class="bereikbaarheidtitel">@home[7].Content</h3>
+            </a>
         </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <label style="float:right;"><a asp-controller="Praktisch" asp-action="Praktisch" />Meer praktische informatie</label>
+    </div>
+    <div class="row feature">
+        @foreach (var item in feature)
+        {
+            <partial name="_FeaturedPartial" model="item" />
+        }
+    </div>
+    <!-- featured -->
+</div>
+<div class="container" style="background:var(--green-light)">
+    <!-- praktische informatie -->
+    <div class="row">
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[8].Id">
+                <h2>@home[8].Content</h2>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-5 col-lg-5">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[9].Id">
+                <p>@home[9].Content</p>
+            </a>
+        </div>
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="Praktisch" asp-action="Praktisch">@home[10].Content</a></div>
         </div>
     </div>
     <partial name="_MiniFaqPartial" model="Model.MiniFaq" />
+    <!-- praktische informatie -->
 </div>
-<div class="rectangle" style="height:498px; background:var(--orange-light)">
+<div id="div2" class="container" style="background: #FBDFD3">
+    <!-- nieuws-->
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <h3>Nieuws</h3>
+        <div class="col-xs-12 col-md-5 col-lg-5">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[11].Id">
+                <h2>@home[11].Content</h2>
+            </a>
         </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <label style="float:right;"><a href="#"></a>Bekijk alle</label>
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="Home" asp-action="Index">@home[12].Content</a></div>
         </div>
     </div>
-    @for (var i = 0; i < Model.CardRows; i++)
-    {
+    <div class="rectangle">
         <div class="row">
-            @for (var j = 0; j < Model.CardColumns; j++)
+            @foreach (var item in card)
             {
-                <partial name="_CardPartial" model="card[j+cardCounter]" />
+                <partial name="_CardPartial" model="item" />
             }
         </div>
-        cardCounter += 4; <!--zodat de loop elke keer de 4 volgende neemt-->
-    }
-</div>
-<div class="rectangle" style="height:528px; background: var(--green-background)">
-    <div class="feature">
-        <img src="~/images/P01Home/ctaImage.png" />
-        <div class="rectangle">
-            <h4>Groepen</h4>
-        </div>
     </div>
+    <!-- niews -->
 </div>
-<div class="rectangle" style="height:378px; background:var(--orange-light)">
-    <h2>Instagram #VisitKeukenhof</h2>
+<div id="div4" class="container" style="background: var(--green-background)">
+    <!-- groepen -->
+    <div class="col-xs-12 col-md-12 col-lg-12" style="margin-top: 20px">
+        <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[25].Id">
+            <img class="groepenfoto" src="@home[25].Content" alt="Bloemenveld" />
+        </a>
+        <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[13].Id">
+            <label class="voorzieningfototext">@home[13].Content</label>
+        </a>
+    </div>
+    <!-- groepen -->
+</div>
+<div id="div2" class="container" style="background: var(--orange-light)">
+    <!-- instagram feed-->
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <img src="~/images/P01Home/instagram-1.png" />
+        <div class="col-xs-12 col-md-7 col-lg-7">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[20].Id">
+                <h3 class="bereikbaarheidtitel">@home[20].Content</h3>
+            </a>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <img src="~/images/P01Home/instagram-2.png" />
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <img src="~/images/P01Home/instagram-3.png" />
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <img src="~/images/P01Home/instagram-4.png" />
+        <div class="col-xs-12 col-md-5 col-lg-5">
+            <div style="cursor:pointer" align="right"> <a class="labeltextzwart" asp-controller="VeelgesteldeVragen" asp-action="VeelgesteldeVragen">@home[21].Content</a></div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[26].Id">
+                <img src="@home[26].Content" />
+            </a>
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[27].Id">
+                <img src="@home[27].Content" />
+            </a>
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[28].Id">
+                <img src="@home[28].Content" />
+            </a>
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-3" style="padding:10px">
+            <a asp-controller="HomeContent" asp-action="Edit" asp-route-id="@home[29].Id">
+                <img src="@home[29].Content" />
+            </a>
+        </div>
+    </div>
+    <!-- instagram feed -->
 </div>

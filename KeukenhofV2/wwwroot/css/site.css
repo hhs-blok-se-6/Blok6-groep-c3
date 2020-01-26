@@ -70,17 +70,11 @@ html, body {
     overflow-x: hidden;
 }
 
-img {
-    position: center;
-    /*mix-blend-mode: darken;*/
-    display: block;
-}
-
 /*Home*/
 
 .cover {
-    width: 100%;
-    height: 628px;
+    padding-left: 2%;
+    padding-bottom: 2%
 }
 
     .cover .textbox {
@@ -102,26 +96,32 @@ img {
     padding: 16px;
 }
 
+    .textbox label, .textbox:hover {
+        opacity: 0.95;
+        cursor: pointer;
+    }
+
     .textbox.white {
-        color: black;
-        background: white;
+        color: var(--black);
+        background: #FFFFFF;
+        /*green secundary arrow*/
     }
 
     .textbox.orange {
-        color: white;
-        background: orange;
+        color: #FFFFFF;
+        background: var(--orange);
+        /*orange-light arrow*/
     }
 
+    .textbox.left {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
 
-#left {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-#right {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
+    .textbox.right {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
 
 h4.orange, label + .textbox orange {
     color: white;
@@ -148,8 +148,22 @@ label.textbox.orange {
     filter: orange;
 }
 
-/*Header*/
 
+.scroll {
+    padding-right: 5%;
+    padding-top: 15%;
+    color: #FFFFFF;
+    float: right;
+    fill: #FFFFFF;
+}
+
+
+    .scroll label, .scroll:hover {
+        cursor: pointer;
+    }
+
+
+/*Header*/
 
 header .nav-container, header #actions-container {
     display: block;
@@ -727,14 +741,11 @@ textarea, textarea:focus, input, input:focus {
 }
 
 .rectangle {
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
-    display: table-cell;
-    padding-left: 32px;
-    text-align: left;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .round { /* rounds the border */
@@ -751,25 +762,53 @@ textarea, textarea:focus, input, input:focus {
 /* featured */
 
 .feature {
-    position: absolute;
     margin: 4px auto;
+    position: relative;
+    padding-bottom: 2%;
 }
 
-    .feature .rectangle::before {
-        float: right;
-        content: url(../images/Icons/Essentials/arrow-right.png);
+.feature-content {
+    position: absolute;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); 
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+.feature-button {
+    margin: 0;
+    padding: 15px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: white;
+    color: var(--black);
+}
+
+    .feature-button.orange:after {
+        margin-left: auto;
+        margin-top: 10px;
     }
 
-    .feature .rectangle {
-        border-radius: 4px;
-        background: white;
-        color: var(--black);
+    .feature-button.orange {
+
+        background: #FFFFFF;
+        color: var(--grey-dark);
     }
 
-        .feature .rectangle:hover {
+        .feature-button.orange:hover {
             background: var(--orange);
-            color: white;
-            cursor: pointer;
+            color: #FFFFFF;
+        }
+
+    .feature-button.green {
+        background: #FFFFFF;
+        color: var(--grey-dark);
+    }
+
+        .feature-button.green:hover {
+            background: var(--green);
+            color: #FFFFFF;
         }
 
 /* news */
@@ -945,7 +984,7 @@ textarea, textarea:focus, input, input:focus {
 }
 
     .alinea p, h1, button {
-        margin-left: 50px;
+        margin-left: 2%;
     }
 
     .alinea p {
