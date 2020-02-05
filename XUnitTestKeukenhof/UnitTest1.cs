@@ -30,6 +30,9 @@ namespace XUnitTestKeukenhof
             context.Add(new FeaturedContent { Id = 1, Page = "Home", Link = "Bereikbaarheid", Image = "/images/P01Home/featured-1.png", Text = "Bereikbaarheid", Theme = "orange" });
             context.Add(new FeaturedContent { Id = 2, Page = "Home", Link = "Evenementen", Image = "/images/P01Home/featured-2.jpg", Text = "Evenementen", Theme = "orange" });
             context.Add(new FeaturedContent { Id = 3, Page = "Home", Link = "Evenementen/Bloemenshow", Image = "/images/P01Home/featured-4.svg", Text = "Bloemenshow", Theme = "orange" });
+            context.Add(new CardContent { Id = 1, Page = "Home", Title = "De bloembollen voor 2020 worden weer geplant", Image = "/images/P01Home/news-1.png", Date = "7 OKT 2019", Link = "Content/news" });
+            context.Add(new CardContent { Id = 2, Page = "Home", Title = "De bloembollenmarkt was weer een groot succes", Image = "/images/P01Home/news-2.png", Date = "5 OKT 2019", Link = "Content/news" });
+            context.Add(new CardContent { Id = 3, Page = "Home", Title = "Wat zal het thema volgend jaar Keukenhof worden?", Image = "/images/P01Home/news-3.png", Date = "2 OKT 2019", Link = "Content/news" });
             context.SaveChanges();
             return context;
         }
@@ -78,11 +81,30 @@ namespace XUnitTestKeukenhof
             for (int i = 0; i < featured.Count(); i++) // alle items moeten correcte content hebben
             {
                 Assert.NotNull(featured[i].Page);
-                Assert.NotNull(featured[i].Link);
-                Assert.NotNull(featured[i].Text);
                 Assert.True(IsImage(featured[i].Image));
+                Assert.NotNull(featured[i].Text);
+                Assert.NotNull(featured[i].Link);
             }
+        }
 
+        [Fact]
+        public void ValidateCardContent() // test of de card items goed geladen worden
+        {
+            var controller = new HomeController(GetInMemoryDBMetData());
+            var view = controller.Home() as ViewResult;
+
+            var model = Assert.IsAssignableFrom<HomeViewModel>(view.Model);
+            var cardContent = model.CardContent.ToList();
+            Assert.Equal(3, cardContent.Count());
+
+            for (int i = 0; i < cardContent.Count(); i++) // alle cards moeten correcte content hebben
+            {
+                Assert.NotNull(cardContent[i].Page);
+                Assert.True(IsImage(cardContent[i].Image));
+                Assert.NotNull(cardContent[i].Date);
+                Assert.NotNull(cardContent[i].Title);
+                Assert.NotNull(cardContent[i].Link);
+            }
         }
     }
 }
