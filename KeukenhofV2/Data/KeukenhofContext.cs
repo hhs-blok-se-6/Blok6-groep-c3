@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KeukenhofV2.Data
 {
-    public class KeukenhofContext : IdentityDbContext
+    public class KeukenhofContext : DbContext
     {
         public KeukenhofContext(DbContextOptions<KeukenhofContext> options) : base(options)
         {
@@ -26,7 +26,7 @@ namespace KeukenhofV2.Data
         public DbSet<PrivacyContent> PrivacyContent { get; set; }
         public DbSet<PraktischContent> PraktischContent { get; set; }
         public DbSet<CTAButton> CTAButtons { get; set; }
-        public DbSet<KeukenhofV2.Models.ZoekResultaten> ZoekResultaten { get; set; }
+        public DbSet<ZoekResultaten> ZoekResultaten { get; set; }
 
         
     }
