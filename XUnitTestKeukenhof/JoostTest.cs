@@ -10,7 +10,7 @@ using Xunit;
 
 namespace XUnitTestKeukenhof
 {
-    public class UnitTest1
+    public class JoostTest
     {
 
         public KeukenhofContext GetContext()
