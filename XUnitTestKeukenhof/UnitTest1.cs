@@ -60,11 +60,13 @@ namespace XUnitTestKeukenhof
 
         public bool IsImage(string path) // checkt of de extension van het path een image is
         {
-            string[] imgPath = path.Split(".");
-            string extension = imgPath[imgPath.Length - 1];
-            if (extension == "png" || extension == "jpg" || extension == "gif" || extension == "svg")
-                return true;
-
+            if (path != null)
+            {
+                string[] imgPath = path.Split(".");
+                string extension = imgPath[imgPath.Length - 1];
+                if (extension == "png" || extension == "jpg" || extension == "gif" || extension == "svg")
+                    return true;
+            }
             return false;
         }
 
