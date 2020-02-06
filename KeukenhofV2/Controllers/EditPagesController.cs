@@ -27,6 +27,8 @@ namespace KeukenhofV2.Controllers
             return View(await _context.EditPagesModel.ToListAsync());
         }
 
+
+
         // GET: EditPages/Details/5
         public async Task<IActionResult> Details(int? id)
         {
