@@ -104,11 +104,14 @@ namespace XUnitTestKeukenhof
         [Fact]
         public async Task DetailsNotNull()
         {
+            //Arrange
             var context = GetInMemoryDBMetData();
             var controller = new HomeContentController(context);
 
+            //Act
             var result = await controller.Details(1);
 
+            //Assert
             Assert.NotNull(controller.Details(1));
         }
     }
