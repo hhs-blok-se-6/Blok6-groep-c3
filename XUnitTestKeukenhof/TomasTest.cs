@@ -40,7 +40,7 @@ namespace XUnitTestKeukenhof
             var controller = new HomeContentController(context);
 
             //Act
-            var result = await controller.Index();
+            var result = await controller.Edit(1);
 
             //Assert
             var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
@@ -55,12 +55,31 @@ namespace XUnitTestKeukenhof
             var controller = new HomeContentController(context);
 
             //Act
-            var result = await controller.Index();
+            var result = await controller.Edit(1);
 
             //Assert
             var redirectToActionResult = Assert.IsType<ViewResult>(result);
-            Assert.Null(redirectToActionResult.Model);
-            Assert.Equal("Index", redirectToActionResult.ViewName);
+            //Assert.Null(redirectToActionResult.Model);
+            Assert.Equal("Edit", redirectToActionResult.ViewName);
+        }
+
+        [Fact]
+        public async System.Threading.Tasks.Task CorrectID() //Checken of alle ID's wel kloppen en niks is overgeslagen
+        {
+            var context = GetInMemoryDBMetData();
+            var controller = new HomeContentController(context);
+
+            var result = await controller.Edit(1) as ViewResult;
+            var model = Assert.IsAssignableFrom<HomeContent>(result.Model);
+
+            var content = model.Id;
+
+            //Loop om te kijken of alle ID's er in staan
+            for (int i = 1; i < 3 /* dit nummer is de grootte van de database */; i++)
+            {
+                Assert.Equal(i.ToString(), content.ToString());
+                content += i;
+            }
         }
     }
 }
