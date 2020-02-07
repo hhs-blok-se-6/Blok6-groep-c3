@@ -32,32 +32,41 @@ namespace XUnitTestKeukenhof
             return context;
         }
 
+        //Redirect vanaf de homepage naar de park pagina
         [Fact]
         public void RedirectPark()
         {
+            //Arrange
             var context = GetInMemoryDBMetData();
             var controller = new HomeController(context);
 
+            //Act
             var result = controller.Park();
 
+            //Assert
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal("Park", redirectToActionResult.ControllerName);
             Assert.Equal("Index", redirectToActionResult.ActionName);
         }
 
+        //Redirect vanaf de homepage naar de praktische info pagina
         [Fact]
         public void RedirectPraktisch()
         {
+            //Arrange
             var context = GetInMemoryDBMetData();
             var controller = new HomeController(context);
 
+            //Act
             var result = controller.Praktisch();
 
+            //Assert
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal("Praktisch", redirectToActionResult.ControllerName);
             Assert.Equal("Index", redirectToActionResult.ActionName);
         }
 
+        //Is de modelstate in Edit van HomeContent invalid
         [Fact]
         public async Task ModelState_Invalid()
         {
@@ -73,6 +82,7 @@ namespace XUnitTestKeukenhof
             Assert.IsType<SerializableError>(badRequestResult.Value);
         }
 
+        //Is de modelstate in Edit van HomeContent valid
         [Fact]
         public async Task ModelState_Valid()
         {
@@ -85,10 +95,21 @@ namespace XUnitTestKeukenhof
 
             //Assert
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
-            //Assert.Null(redirectToActionResult.Model);
             Assert.Equal("Home", redirectToActionResult.ControllerName);
             Assert.Equal("Index", redirectToActionResult.ActionName);
 
+        }
+
+        //Controleren of de detail methode in homecontentcontroller geen null of notFound geeft als je een ID waarde geeft
+        [Fact]
+        public async Task DetailsNotNull()
+        {
+            var context = GetInMemoryDBMetData();
+            var controller = new HomeContentController(context);
+
+            var result = await controller.Details(1);
+
+            Assert.NotNull(controller.Details(1));
         }
     }
 }
